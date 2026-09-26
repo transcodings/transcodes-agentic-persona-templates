@@ -24,8 +24,5 @@
     "skills": [
       "persona/skills/research-report/SKILL.md"
     ]
-  },
-  "knowledge": [
-    "knowledge/sources-and-scope.md"
-  ]
+  }
 }

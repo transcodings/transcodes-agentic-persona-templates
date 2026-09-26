@@ -26,8 +26,5 @@
     "skills": [
       "persona/skills/ship-feature-slice/SKILL.md"
     ]
-  },
-  "knowledge": [
-    "knowledge/stack-and-contracts.md"
-  ]
+  }
 }
