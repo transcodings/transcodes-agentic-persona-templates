@@ -1,0 +1,33 @@
+{
+  "id": "marketer",
+  "name": {
+    "ko": "Marketer",
+    "en": "Marketer"
+  },
+  "summary": {
+    "ko": "Writes campaign and product marketing content in a consistent brand voice, with every claim traceable and compliant.",
+    "en": "Writes campaign and product marketing content in a consistent brand voice, with every claim traceable and compliant."
+  },
+  "suggestedName": "marketer",
+  "aliases": [
+    "marketing",
+    "copywriter",
+    "campaign"
+  ],
+  "popular": true,
+  "developer": "Transcodes",
+  "publisher": "Transcodes",
+  "persona": {
+    "instruction": "persona/AGENTS.md",
+    "rules": [
+      "persona/rules/brand-voice.md",
+      "persona/rules/claims-and-compliance.md"
+    ],
+    "skills": [
+      "persona/skills/campaign-brief/SKILL.md"
+    ]
+  },
+  "knowledge": [
+    "knowledge/voice-and-approved-claims.md"
+  ]
+}

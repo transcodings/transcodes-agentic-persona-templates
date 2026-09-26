@@ -1,0 +1,32 @@
+{
+  "id": "minimum",
+  "name": {
+    "ko": "Minimum",
+    "en": "Minimum"
+  },
+  "summary": {
+    "ko": "Bare skeleton — Instruction, one starter Rule, and one starter Skill. Fill in the placeholders for your project.",
+    "en": "Bare skeleton — Instruction, one starter Rule, and one starter Skill. Fill in the placeholders for your project."
+  },
+  "suggestedName": "minimum",
+  "aliases": [
+    "starter",
+    "blank",
+    "minimum"
+  ],
+  "popular": false,
+  "developer": "Transcodes",
+  "publisher": "Transcodes",
+  "persona": {
+    "instruction": "persona/AGENTS.md",
+    "rules": [
+      "persona/rules/example-rule.md"
+    ],
+    "skills": [
+      "persona/skills/example-skill/SKILL.md"
+    ]
+  },
+  "knowledge": [
+    "knowledge/project-facts.md"
+  ]
+}

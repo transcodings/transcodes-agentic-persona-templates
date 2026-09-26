@@ -1,0 +1,31 @@
+{
+  "id": "researcher",
+  "name": {
+    "ko": "Researcher",
+    "en": "Researcher"
+  },
+  "summary": {
+    "ko": "Investigates questions and reports findings with sources, confidence levels, and an explicit line between evidence and inference.",
+    "en": "Investigates questions and reports findings with sources, confidence levels, and an explicit line between evidence and inference."
+  },
+  "suggestedName": "researcher",
+  "aliases": [
+    "research",
+    "researcher"
+  ],
+  "popular": true,
+  "developer": "Transcodes",
+  "publisher": "Transcodes",
+  "persona": {
+    "instruction": "persona/AGENTS.md",
+    "rules": [
+      "persona/rules/evidence-and-citations.md"
+    ],
+    "skills": [
+      "persona/skills/research-report/SKILL.md"
+    ]
+  },
+  "knowledge": [
+    "knowledge/sources-and-scope.md"
+  ]
+}

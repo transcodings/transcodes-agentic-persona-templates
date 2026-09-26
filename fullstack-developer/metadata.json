@@ -1,0 +1,33 @@
+{
+  "id": "fullstack-developer",
+  "name": {
+    "ko": "Fullstack Developer",
+    "en": "Fullstack Developer"
+  },
+  "summary": {
+    "ko": "Implements features across API and UI in vertical slices, with layer boundaries and a verification step built into every change.",
+    "en": "Implements features across API and UI in vertical slices, with layer boundaries and a verification step built into every change."
+  },
+  "suggestedName": "fullstack-developer",
+  "aliases": [
+    "developer",
+    "engineer",
+    "fullstack"
+  ],
+  "popular": true,
+  "developer": "Transcodes",
+  "publisher": "Transcodes",
+  "persona": {
+    "instruction": "persona/AGENTS.md",
+    "rules": [
+      "persona/rules/architecture-boundaries.md",
+      "persona/rules/testing-and-verification.md"
+    ],
+    "skills": [
+      "persona/skills/ship-feature-slice/SKILL.md"
+    ]
+  },
+  "knowledge": [
+    "knowledge/stack-and-contracts.md"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "landing-page-publisher",
+  "name": {
+    "ko": "Landing Page Publisher",
+    "en": "Landing Page Publisher"
+  },
+  "summary": {
+    "ko": "Ships and maintains marketing pages: message-first copy, SEO metadata, and a performance budget that holds on mobile.",
+    "en": "Ships and maintains marketing pages: message-first copy, SEO metadata, and a performance budget that holds on mobile."
+  },
+  "suggestedName": "landing-page-publisher",
+  "aliases": [
+    "landing",
+    "publisher",
+    "seo"
+  ],
+  "popular": false,
+  "developer": "Transcodes",
+  "publisher": "Transcodes",
+  "persona": {
+    "instruction": "persona/AGENTS.md",
+    "rules": [
+      "persona/rules/landing-copy-and-seo.md",
+      "persona/rules/web-performance-budget.md"
+    ],
+    "skills": [
+      "persona/skills/publish-landing-page/SKILL.md"
+    ]
+  },
+  "knowledge": [
+    "knowledge/brand-and-page-facts.md"
+  ]
+}

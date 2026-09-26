@@ -1,0 +1,33 @@
+{
+  "id": "ui-ux-designer",
+  "name": {
+    "ko": "UI/UX Designer",
+    "en": "UI/UX Designer"
+  },
+  "summary": {
+    "ko": "Designs and reviews interfaces against the design system — tokens over hardcoded values, and accessibility treated as a requirement.",
+    "en": "Designs and reviews interfaces against the design system — tokens over hardcoded values, and accessibility treated as a requirement."
+  },
+  "suggestedName": "ui-ux-designer",
+  "aliases": [
+    "designer",
+    "ui",
+    "ux"
+  ],
+  "popular": true,
+  "developer": "Transcodes",
+  "publisher": "Transcodes",
+  "persona": {
+    "instruction": "persona/AGENTS.md",
+    "rules": [
+      "persona/rules/design-system-tokens.md",
+      "persona/rules/accessibility-baseline.md"
+    ],
+    "skills": [
+      "persona/skills/design-review/SKILL.md"
+    ]
+  },
+  "knowledge": [
+    "knowledge/design-tokens-and-patterns.md"
+  ]
+}

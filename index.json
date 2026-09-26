@@ -1,0 +1,154 @@
+{
+  "version": 1,
+  "templates": [
+    {
+      "id": "minimum",
+      "name": {
+        "ko": "Minimum",
+        "en": "Minimum"
+      },
+      "summary": {
+        "ko": "Bare skeleton — Instruction, one starter Rule, and one starter Skill. Fill in the placeholders for your project.",
+        "en": "Bare skeleton — Instruction, one starter Rule, and one starter Skill. Fill in the placeholders for your project."
+      },
+      "suggestedName": "minimum",
+      "aliases": [
+        "starter",
+        "blank",
+        "minimum"
+      ],
+      "popular": false,
+      "developer": "Transcodes",
+      "publisher": "Transcodes",
+      "counts": {
+        "rules": 1,
+        "skills": 1,
+        "knowledge": 1
+      }
+    },
+    {
+      "id": "landing-page-publisher",
+      "name": {
+        "ko": "Landing Page Publisher",
+        "en": "Landing Page Publisher"
+      },
+      "summary": {
+        "ko": "Ships and maintains marketing pages: message-first copy, SEO metadata, and a performance budget that holds on mobile.",
+        "en": "Ships and maintains marketing pages: message-first copy, SEO metadata, and a performance budget that holds on mobile."
+      },
+      "suggestedName": "landing-page-publisher",
+      "aliases": [
+        "landing",
+        "publisher",
+        "seo"
+      ],
+      "popular": false,
+      "developer": "Transcodes",
+      "publisher": "Transcodes",
+      "counts": {
+        "rules": 2,
+        "skills": 1,
+        "knowledge": 1
+      }
+    },
+    {
+      "id": "fullstack-developer",
+      "name": {
+        "ko": "Fullstack Developer",
+        "en": "Fullstack Developer"
+      },
+      "summary": {
+        "ko": "Implements features across API and UI in vertical slices, with layer boundaries and a verification step built into every change.",
+        "en": "Implements features across API and UI in vertical slices, with layer boundaries and a verification step built into every change."
+      },
+      "suggestedName": "fullstack-developer",
+      "aliases": [
+        "developer",
+        "engineer",
+        "fullstack"
+      ],
+      "popular": true,
+      "developer": "Transcodes",
+      "publisher": "Transcodes",
+      "counts": {
+        "rules": 2,
+        "skills": 1,
+        "knowledge": 1
+      }
+    },
+    {
+      "id": "ui-ux-designer",
+      "name": {
+        "ko": "UI/UX Designer",
+        "en": "UI/UX Designer"
+      },
+      "summary": {
+        "ko": "Designs and reviews interfaces against the design system — tokens over hardcoded values, and accessibility treated as a requirement.",
+        "en": "Designs and reviews interfaces against the design system — tokens over hardcoded values, and accessibility treated as a requirement."
+      },
+      "suggestedName": "ui-ux-designer",
+      "aliases": [
+        "designer",
+        "ui",
+        "ux"
+      ],
+      "popular": true,
+      "developer": "Transcodes",
+      "publisher": "Transcodes",
+      "counts": {
+        "rules": 2,
+        "skills": 1,
+        "knowledge": 1
+      }
+    },
+    {
+      "id": "marketer",
+      "name": {
+        "ko": "Marketer",
+        "en": "Marketer"
+      },
+      "summary": {
+        "ko": "Writes campaign and product marketing content in a consistent brand voice, with every claim traceable and compliant.",
+        "en": "Writes campaign and product marketing content in a consistent brand voice, with every claim traceable and compliant."
+      },
+      "suggestedName": "marketer",
+      "aliases": [
+        "marketing",
+        "copywriter",
+        "campaign"
+      ],
+      "popular": true,
+      "developer": "Transcodes",
+      "publisher": "Transcodes",
+      "counts": {
+        "rules": 2,
+        "skills": 1,
+        "knowledge": 1
+      }
+    },
+    {
+      "id": "researcher",
+      "name": {
+        "ko": "Researcher",
+        "en": "Researcher"
+      },
+      "summary": {
+        "ko": "Investigates questions and reports findings with sources, confidence levels, and an explicit line between evidence and inference.",
+        "en": "Investigates questions and reports findings with sources, confidence levels, and an explicit line between evidence and inference."
+      },
+      "suggestedName": "researcher",
+      "aliases": [
+        "research",
+        "researcher"
+      ],
+      "popular": true,
+      "developer": "Transcodes",
+      "publisher": "Transcodes",
+      "counts": {
+        "rules": 1,
+        "skills": 1,
+        "knowledge": 1
+      }
+    }
+  ]
+}
