@@ -1,0 +1,41 @@
+{
+  "id": "transcodes-guide",
+  "name": {
+    "ko": "Transcodes 가이드",
+    "en": "Transcodes Guide"
+  },
+  "summary": {
+    "ko": "데스크톱 앱에서 페르소나와 지식 베이스를 만들고, 프로젝트 폴더에 적용하고, 버전과 조직을 쓰는 법을 단계별로 안내합니다.",
+    "en": "Walks through Transcodes Desktop, then applying a Persona and Knowledge Base into a real project folder, plus versioning and organization."
+  },
+  "suggestedName": "transcodes-guide",
+  "aliases": [
+    "guide",
+    "how-to",
+    "transcodes",
+    "onboarding",
+    "help",
+    "plugin"
+  ],
+  "popular": true,
+  "developer": "Transcodes",
+  "publisher": "Transcodes",
+  "persona": {
+    "instruction": "persona/AGENTS.md",
+    "rules": [
+      "persona/rules/official-terms.md",
+      "persona/rules/stay-inside-the-product.md",
+      "persona/rules/guide-the-user.md"
+    ],
+    "skills": [
+      "persona/skills/explain-transcodes/SKILL.md",
+      "persona/skills/use-desktop-app/SKILL.md",
+      "persona/skills/set-up-persona/SKILL.md",
+      "persona/skills/build-knowledge-base/SKILL.md",
+      "persona/skills/apply-persona/SKILL.md",
+      "persona/skills/sync-with-team/SKILL.md",
+      "persona/skills/install-plugin/SKILL.md",
+      "persona/skills/use-plugin/SKILL.md"
+    ]
+  }
+}
