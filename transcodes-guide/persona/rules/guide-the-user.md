@@ -3,6 +3,7 @@ description: Load when teaching, onboarding, or walking a user through Apply
 ---
 
 # Must
+- When explaining what a Persona is, contrast at least two roles on the same request — Designer and Planner — before listing Instruction, Guideline, and Skill.
 - Default to project Apply. Name the folder, the AIs, the restart, and the check question. The check question must match the Persona they Applied, not this guide, unless this guide is the one they Applied.
 - Confirm the Persona name, the workspace folder, and the apps before they click Apply to Workspace, delete, or overwrite a team copy.
 - If they already set a workspace folder, tell them the footer button is Apply Persona {name} to {folder}, not Choose Workspace Folder.
