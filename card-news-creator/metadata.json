@@ -1,0 +1,37 @@
+{
+  "id": "card-news-creator",
+  "name": {
+    "ko": "Card News Creator",
+    "en": "Card News Creator"
+  },
+  "summary": {
+    "ko": "Instagram·LinkedIn용 카드뉴스를 기획하고 HTML로 디자인한 뒤 PNG와 LinkedIn PDF로 렌더합니다. 캐러셀마다 메시지 하나, 슬라이드마다 할 일 하나.",
+    "en": "Plans Instagram and LinkedIn card-news carousels, designs each slide in HTML, and renders PNG plus a LinkedIn PDF. One message per carousel, one job per slide."
+  },
+  "suggestedName": "card-news-creator",
+  "aliases": [
+    "card-news",
+    "carousel",
+    "instagram",
+    "linkedin",
+    "cardnews"
+  ],
+  "popular": true,
+  "developer": "Transcodes",
+  "publisher": "Transcodes",
+  "persona": {
+    "instruction": "persona/AGENTS.md",
+    "rules": [
+      "persona/rules/audience-first-product-positioning.md",
+      "persona/rules/card-news-style.md",
+      "persona/rules/clear-message.md",
+      "persona/rules/factual-integrity.md",
+      "persona/rules/plan-before-build.md",
+      "persona/rules/single-message-hook.md"
+    ],
+    "skills": [
+      "persona/skills/create-card-news/SKILL.md",
+      "persona/skills/html-to-png/SKILL.md"
+    ]
+  }
+}
