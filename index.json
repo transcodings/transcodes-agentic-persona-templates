@@ -2,31 +2,6 @@
   "version": 1,
   "templates": [
     {
-      "id": "minimum",
-      "name": {
-        "ko": "Minimum",
-        "en": "Minimum"
-      },
-      "summary": {
-        "ko": "Bare skeleton — Instruction, one starter Rule, and one starter Skill. Fill in the placeholders for your project.",
-        "en": "Bare skeleton — Instruction, one starter Rule, and one starter Skill. Fill in the placeholders for your project."
-      },
-      "suggestedName": "minimum",
-      "aliases": [
-        "starter",
-        "blank",
-        "minimum"
-      ],
-      "popular": false,
-      "developer": "Transcodes",
-      "publisher": "Transcodes",
-      "counts": {
-        "rules": 1,
-        "skills": 1,
-        "knowledge": 0
-      }
-    },
-    {
       "id": "card-news-creator",
       "name": {
         "ko": "Card News Creator",
@@ -251,6 +226,31 @@
         "researcher"
       ],
       "popular": true,
+      "developer": "Transcodes",
+      "publisher": "Transcodes",
+      "counts": {
+        "rules": 1,
+        "skills": 1,
+        "knowledge": 0
+      }
+    },
+    {
+      "id": "minimum",
+      "name": {
+        "ko": "Minimum",
+        "en": "Minimum"
+      },
+      "summary": {
+        "ko": "Bare skeleton — Instruction, one starter Rule, and one starter Skill. Fill in the placeholders for your project.",
+        "en": "Bare skeleton — Instruction, one starter Rule, and one starter Skill. Fill in the placeholders for your project."
+      },
+      "suggestedName": "minimum",
+      "aliases": [
+        "starter",
+        "blank",
+        "minimum"
+      ],
+      "popular": false,
       "developer": "Transcodes",
       "publisher": "Transcodes",
       "counts": {
