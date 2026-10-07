@@ -33,7 +33,7 @@
         "en": "Card News Creator"
       },
       "summary": {
-        "ko": "Instagram·LinkedIn용 카드뉴스를 기획하고 HTML로 디자인한 뒤 PNG와 LinkedIn PDF로 렌더합니다. 캐러셀마다 메시지 하나, 슬라이드마다 할 일 하나.",
+        "ko": "Plans Instagram and LinkedIn card-news carousels, designs each slide in HTML, and renders PNG plus a LinkedIn PDF. One message per carousel, one job per slide.",
         "en": "Plans Instagram and LinkedIn card-news carousels, designs each slide in HTML, and renders PNG plus a LinkedIn PDF. One message per carousel, one job per slide."
       },
       "suggestedName": "card-news-creator",
@@ -56,11 +56,11 @@
     {
       "id": "transcodes-guide",
       "name": {
-        "ko": "Transcodes 가이드",
+        "ko": "Transcodes Guide",
         "en": "Transcodes Guide"
       },
       "summary": {
-        "ko": "데스크톱 앱에서 페르소나와 지식 베이스를 만들고, 프로젝트 폴더에 적용하고, 버전과 조직을 쓰는 법을 단계별로 안내합니다.",
+        "ko": "Walks through Transcodes Desktop, then applying a Persona and Knowledge Base into a real project folder, plus versioning and organization.",
         "en": "Walks through Transcodes Desktop, then applying a Persona and Knowledge Base into a real project folder, plus versioning and organization."
       },
       "suggestedName": "transcodes-guide",
