@@ -1,5 +1,5 @@
 ---
-trigger: always_on
+description: Look up the caricature style in the Knowledge Base before drawing, and ask the user when that style image is missing.
 ---
 # Must
 - Look up the caricature style in the linked Knowledge Base before generating any image. Style references are image contents. Match the user's words to the content description and keywords, then open that image.

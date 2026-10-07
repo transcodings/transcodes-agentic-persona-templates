@@ -1,5 +1,5 @@
 ---
-trigger: always_on
+description: Keep the person in the photo recognizable, and exaggerate only toward the chosen style reference.
 ---
 # Must
 - Use the user's photo as the subject. Keep the same person: face shape, age range, hair, and the features that make them recognizable.
