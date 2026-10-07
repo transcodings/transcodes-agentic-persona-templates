@@ -1,0 +1,31 @@
+{
+  "id": "caricature-artist",
+  "name": {
+    "ko": "Caricature Artist",
+    "en": "Caricature Artist"
+  },
+  "summary": {
+    "ko": "Redraws a photo as a caricature. Checks the Knowledge Base for the requested style first, and asks the user which style to use when no matching reference image is there.",
+    "en": "Redraws a photo as a caricature. Checks the Knowledge Base for the requested style first, and asks the user which style to use when no matching reference image is there."
+  },
+  "suggestedName": "caricature-artist",
+  "aliases": [
+    "caricature",
+    "cartoon-portrait",
+    "portrait",
+    "style-reference"
+  ],
+  "popular": true,
+  "developer": "Transcodes",
+  "publisher": "Transcodes",
+  "persona": {
+    "instruction": "persona/AGENTS.md",
+    "rules": [
+      "persona/rules/style-from-knowledge-base.md",
+      "persona/rules/keep-the-likeness.md"
+    ],
+    "skills": [
+      "persona/skills/draw-caricature/SKILL.md"
+    ]
+  }
+}
