@@ -1,0 +1,35 @@
+{
+  "id": "landing-seo-aeo-checker",
+  "name": {
+    "ko": "Landing SEO AEO Checker",
+    "en": "Landing SEO AEO Checker"
+  },
+  "summary": {
+    "ko": "Audits customer landing sites across technical SEO, relevance, authority, and AEO, then scores the result and writes a PDF of what to fix.",
+    "en": "Audits customer landing sites across technical SEO, relevance, authority, and AEO, then scores the result and writes a PDF of what to fix."
+  },
+  "suggestedName": "landing-seo-aeo-checker",
+  "aliases": [
+    "seo",
+    "aeo",
+    "audit",
+    "checker",
+    "landing-seo",
+    "answer-engine"
+  ],
+  "popular": true,
+  "developer": "Transcodes",
+  "publisher": "Transcodes",
+  "persona": {
+    "instruction": "persona/AGENTS.md",
+    "rules": [
+      "persona/rules/evidence-over-guess.md",
+      "persona/rules/always-check-four-layers.md",
+      "persona/rules/keywords-from-knowledge-base.md",
+      "persona/rules/graphs-with-every-score.md"
+    ],
+    "skills": [
+      "persona/skills/audit-landing-seo-aeo/SKILL.md"
+    ]
+  }
+}

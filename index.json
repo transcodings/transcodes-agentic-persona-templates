@@ -133,6 +133,34 @@
       }
     },
     {
+      "id": "landing-seo-aeo-checker",
+      "name": {
+        "ko": "Landing SEO AEO Checker",
+        "en": "Landing SEO AEO Checker"
+      },
+      "summary": {
+        "ko": "Audits customer landing sites across technical SEO, relevance, authority, and AEO, then scores the result and writes a PDF of what to fix.",
+        "en": "Audits customer landing sites across technical SEO, relevance, authority, and AEO, then scores the result and writes a PDF of what to fix."
+      },
+      "suggestedName": "landing-seo-aeo-checker",
+      "aliases": [
+        "seo",
+        "aeo",
+        "audit",
+        "checker",
+        "landing-seo",
+        "answer-engine"
+      ],
+      "popular": true,
+      "developer": "Transcodes",
+      "publisher": "Transcodes",
+      "counts": {
+        "rules": 4,
+        "skills": 1,
+        "knowledge": 0
+      }
+    },
+    {
       "id": "fullstack-developer",
       "name": {
         "ko": "Fullstack Developer",
