@@ -1,0 +1,33 @@
+{
+  "id": "presentation-deck-kit",
+  "name": {
+    "ko": "Presentation Deck Kit",
+    "en": "Presentation Deck Kit"
+  },
+  "summary": {
+    "ko": "Builds a 16:9 deck as one HTML file from the Deck Kit, then prints a PDF and, when asked, an editable PowerPoint.",
+    "en": "Builds a 16:9 deck as one HTML file from the Deck Kit, then prints a PDF and, when asked, an editable PowerPoint."
+  },
+  "suggestedName": "presentation-deck-kit",
+  "aliases": [
+    "deck",
+    "presentation",
+    "slides",
+    "pptx",
+    "deck-kit"
+  ],
+  "popular": true,
+  "developer": "Transcodes",
+  "publisher": "Transcodes",
+  "persona": {
+    "instruction": "persona/AGENTS.md",
+    "rules": [
+      "persona/rules/use-the-deck-kit.md",
+      "persona/rules/print-safe-pages.md",
+      "persona/rules/deck-copy.md"
+    ],
+    "skills": [
+      "persona/skills/make-deck/SKILL.md"
+    ]
+  }
+}
