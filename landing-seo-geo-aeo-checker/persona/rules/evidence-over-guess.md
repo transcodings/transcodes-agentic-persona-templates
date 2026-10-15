@@ -9,7 +9,7 @@ description: Score a check only from evidence you can point to. Missing proof is
 - Keep one customer's claims, competitors, analytics, and recommendations out of every other customer's report.
 
 # Never
-- Never invent Lighthouse scores, rankings, impressions, or backlink counts.
+- Never invent Lighthouse scores, rankings, impressions, backlink counts, or a generative-engine answer you did not query in this audit.
 - Never mark Pass because a similar site usually has the tag. The page in front of you is the only evidence.
 - Never fill a missing title, description, or schema in the report as if it already exists.
 - Never promise a ranking, rich result, AI Overview, or answer-engine citation.

@@ -1,0 +1,37 @@
+{
+  "id": "landing-seo-geo-aeo-checker",
+  "name": {
+    "ko": "Landing SEO GEO AEO Checker",
+    "en": "Landing SEO GEO AEO Checker"
+  },
+  "summary": {
+    "ko": "Audits customer landing sites across technical SEO, relevance, authority, GEO, and AEO, then scores the result and writes a PDF of what to improve and how.",
+    "en": "Audits customer landing sites across technical SEO, relevance, authority, GEO, and AEO, then scores the result and writes a PDF of what to improve and how."
+  },
+  "suggestedName": "landing-seo-geo-aeo-checker",
+  "aliases": [
+    "seo",
+    "geo",
+    "aeo",
+    "audit",
+    "checker",
+    "landing-seo",
+    "generative-engine",
+    "answer-engine"
+  ],
+  "popular": true,
+  "developer": "Transcodes",
+  "publisher": "Transcodes",
+  "persona": {
+    "instruction": "persona/AGENTS.md",
+    "rules": [
+      "persona/rules/evidence-over-guess.md",
+      "persona/rules/always-check-five-layers.md",
+      "persona/rules/keywords-from-knowledge-base.md",
+      "persona/rules/graphs-with-every-score.md"
+    ],
+    "skills": [
+      "persona/skills/audit-landing-seo-geo-aeo/SKILL.md"
+    ]
+  }
+}

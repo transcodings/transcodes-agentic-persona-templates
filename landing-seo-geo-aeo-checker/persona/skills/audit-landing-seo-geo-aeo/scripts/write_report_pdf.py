@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Score a landing SEO / AEO audit and write a client PDF.
+"""Score a landing SEO / GEO / AEO audit and write a client PDF.
 
 Usage:
   python3 write_report_pdf.py audit.json --out report.pdf [--font PATH]
@@ -7,7 +7,7 @@ Usage:
 The JSON lists checks. This script owns the score. Pass counts, Fail does not,
 and Unknown or Not applicable stays out of the percentage.
 
-Weights: Tier 1 40, Tier 2 25, Tier 3 20, AEO 15.
+Weights: Tier 1 35, Tier 2 20, Tier 3 15, AEO 15, GEO 15.
 A layer with no scored checks drops out and the remaining weights are rescaled.
 """
 import argparse
@@ -15,14 +15,14 @@ import json
 import pathlib
 import sys
 
-LAYERS = ("tier1", "tier2", "tier3", "aeo")
-WEIGHTS = {"tier1": 40, "tier2": 25, "tier3": 20, "aeo": 15}
+LAYERS = ("tier1", "tier2", "tier3", "aeo", "geo")
+WEIGHTS = {"tier1": 35, "tier2": 20, "tier3": 15, "aeo": 15, "geo": 15}
 RESULTS = {"pass", "fail", "unknown", "na"}
 IMPACT = {"high": 3, "높음": 3, "medium": 2, "중간": 2, "low": 1, "낮음": 1}
 
 COPY = {
     "en": {
-        "title": "Landing SEO / AEO report",
+        "title": "Landing SEO / GEO / AEO report",
         "customer": "Customer",
         "url": "URL",
         "date": "Audited",
@@ -35,23 +35,27 @@ COPY = {
         "fail": "Fail",
         "unknown": "Unknown",
         "layers": "Layer scores",
-        "fixes": "What to fix",
+        "fixes": "What to improve and how",
+        "what": "What",
+        "how": "How",
+        "evidence": "Evidence",
         "unknowns": "Needs more evidence",
         "plan": "30 / 60 / 90 days",
         "none": "None.",
-        "disclaimer": "This score measures the checked items only. It is not a ranking, traffic, or answer-engine citation guarantee. Unknown items are excluded from the percentage.",
+        "disclaimer": "This score measures the checked items only. It is not a ranking, traffic, answer-engine, or generative-engine citation guarantee. Unknown items are excluded from the percentage.",
         "layer": {
             "tier1": "SEO Tier 1",
             "tier2": "SEO Tier 2",
             "tier3": "SEO Tier 3",
             "aeo": "AEO",
+            "geo": "GEO",
         },
         "grade": [(90, "Strong"), (75, "Good, with fixes"), (60, "Needs work"), (0, "Not ready")],
         "counts": "{score}/100 · {passed} pass · {failed} fail · {unknown} unknown",
         "days": (("d30", "0–30 days"), ("d60", "31–60 days"), ("d90", "61–90 days")),
     },
     "ko": {
-        "title": "랜딩 SEO / AEO 보고서",
+        "title": "랜딩 SEO / GEO / AEO 보고서",
         "customer": "고객",
         "url": "URL",
         "date": "점검일",
@@ -64,16 +68,20 @@ COPY = {
         "fail": "실패",
         "unknown": "미확인",
         "layers": "계층 점수",
-        "fixes": "고칠 곳",
+        "fixes": "무엇을 어떻게 고칠지",
+        "what": "무엇",
+        "how": "어떻게",
+        "evidence": "근거",
         "unknowns": "증거가 더 필요한 항목",
         "plan": "30 / 60 / 90일",
         "none": "없음",
-        "disclaimer": "이 점수는 채점한 항목만 반영합니다. 검색 순위, 트래픽, 답변 엔진 인용을 보장하지 않습니다. 확인되지 않은 항목은 점수에서 뺍니다.",
+        "disclaimer": "이 점수는 채점한 항목만 반영합니다. 검색 순위, 트래픽, 답변 엔진 인용, 생성형 엔진 인용을 보장하지 않습니다. 확인되지 않은 항목은 점수에서 뺍니다.",
         "layer": {
             "tier1": "SEO Tier 1",
             "tier2": "SEO Tier 2",
             "tier3": "SEO Tier 3",
             "aeo": "AEO",
+            "geo": "GEO",
         },
         "grade": [(90, "양호"), (75, "보완하면 좋음"), (60, "개선 필요"), (0, "준비 부족")],
         "counts": "{score}/100 · 통과 {passed} · 실패 {failed} · 미확인 {unknown}",
@@ -334,8 +342,11 @@ def write_pdf(audit, destination, fonts):
     for number, item in enumerate(fixes, 1):
         impact = text(item.get("impact"))
         line(pdf, f"{number}. [{copy['layer'][item['layer']]}] {item['check']} ({impact})", 6)
-        line(pdf, f"   {text(item.get('fix'))}", 6)
-        line(pdf, f"   {text(item.get('evidence'))}", 6)
+        if str(item.get("what") or "").strip():
+            line(pdf, f"   {copy['what']}: {text(item.get('what'))}", 6)
+        how = item.get("how") or item.get("fix")
+        line(pdf, f"   {copy['how']}: {text(how)}", 6)
+        line(pdf, f"   {copy['evidence']}: {text(item.get('evidence'))}", 6)
         pdf.ln(1)
     unknowns = [item for item in audit["checks"] if item["result"] == "unknown"]
     pdf.ln(2)
@@ -365,7 +376,7 @@ def write_pdf(audit, destination, fonts):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Write a scored landing SEO / AEO PDF report.")
+    parser = argparse.ArgumentParser(description="Write a scored landing SEO / GEO / AEO PDF report.")
     parser.add_argument("audit", type=pathlib.Path)
     parser.add_argument("--out", type=pathlib.Path, required=True)
     parser.add_argument("--font")
