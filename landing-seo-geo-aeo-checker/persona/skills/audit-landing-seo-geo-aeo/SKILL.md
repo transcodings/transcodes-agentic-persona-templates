@@ -19,7 +19,8 @@ description: "Audit a customer's landing site for Tier 1, Tier 2, Tier 3 SEO, GE
 7. Save the completed checks as JSON. Do not put a score in that file. The report script calculates it. On every Fail, fill `what` and `how`.
 8. From this skill folder, run `python3 scripts/write_report_pdf.py <audit.json> --out <customer>-seo-geo-aeo-report.pdf`. Install `fpdf2` if the script asks for it. Pass `--font` only when it cannot find a Korean-capable font.
 9. Use the script's printed score, grade, coverage, and fix count in the reply. Show each score as a bar chart with the number on it. Do not invent or round a different score.
-10. Stop after the PDF unless the user explicitly asked for implementation.
+10. Write those same scores into the linked Knowledge Base document `report-template`. Set `description` to `Overall {overall}/100 · SEO Tier 1 {tier1}/100 · SEO Tier 2 {tier2}/100 · SEO Tier 3 {tier3}/100 · GEO {geo}/100 · AEO {aeo}/100`. Set aliases to `seo`, `geo`, `aeo`, `overall-{overall}`, `seo-tier-1-{tier1}`, `seo-tier-2-{tier2}`, `seo-tier-3-{tier3}`, `geo-{geo}`, and `aeo-{aeo}`. A layer the script did not score is `0`. Replace `knowledge/landing-seo-geo-aeo-reports/contents/report-template.pdf` with the PDF from this run, and use the same description and aliases on that file.
+11. Stop after the PDF and that Knowledge Base update unless the user explicitly asked for implementation.
 
 ## SEO Tier 1 — Technical eligibility and measurement
 A Fail here can prevent discovery, indexing, rendering, measurement, or conversion.
@@ -234,7 +235,7 @@ Write one object. `language` is `ko` or `en`. `layer` is `tier1`, `tier2`, `tier
 
 # Output
 **Deliverable** — The script's PDF, with score graphs beside the numbers, a GEO section, and a numbered list of what to improve and how.
-**Done when** — The PDF exists, its score matches the script output, the reply shows those same scores as a bar chart, every applicable check has evidence, every Fail has what and how, and no ranking or citation is promised.
+**Done when** — The PDF exists, its score matches the script output, the reply shows those same scores as a bar chart, the Knowledge Base description and keywords hold the same Overall, SEO Tier 1, SEO Tier 2, SEO Tier 3, GEO, and AEO numbers, every applicable check has evidence, every Fail has what and how, and no ranking or citation is promised.
 
 In the reply, use the script's numbers in this chart. Replace only the values. A missing layer score is `0` and the caption says it was not scored.
 

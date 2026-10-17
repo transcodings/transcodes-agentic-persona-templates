@@ -33,5 +33,28 @@
     "skills": [
       "persona/skills/audit-landing-seo-geo-aeo/SKILL.md"
     ]
+  },
+  "knowledge": {
+    "id": "landing-seo-geo-aeo-reports",
+    "name": "SEO GEO AEO reports",
+    "description": "Landing audit reports. The description and keywords hold the SEO, GEO, and AEO scores from the PDF.",
+    "documents": [
+      "knowledge/landing-seo-geo-aeo-reports/documents/report-template.md"
+    ],
+    "contents": [
+      {
+        "file": "knowledge/landing-seo-geo-aeo-reports/contents/report-template.pdf",
+        "description": "Overall —/100 · SEO Tier 1 —/100 · SEO Tier 2 —/100 · SEO Tier 3 —/100 · GEO —/100 · AEO —/100",
+        "aliases": [
+          "seo",
+          "geo",
+          "aeo",
+          "seo-score",
+          "geo-score",
+          "aeo-score",
+          "report-template"
+        ]
+      }
+    ]
   }
 }
