@@ -187,67 +187,124 @@ def font_candidates(explicit):
     return found
 
 
+INK = (17, 24, 39)
+MUTED = (107, 114, 128)
+TRACK = (237, 233, 254)
+GREEN = (22, 163, 74)
+AMBER = (217, 119, 6)
+RED = (220, 38, 38)
+SLATE = (156, 163, 175)
+PURPLE = (123, 97, 255)
+
+
 def text(value):
     cleaned = " ".join(str(value or "").split())
     return cleaned or "-"
 
 
+def score_color(value):
+    if value is None:
+        return SLATE
+    if value >= 75:
+        return GREEN
+    if value >= 60:
+        return AMBER
+    return RED
+
+
+def pill(pdf, x, y, width, height, color):
+    if width <= 0.4 or height <= 0:
+        return
+    pdf.set_fill_color(*color)
+    if width < height:
+        radius = width / 2
+        pdf.circle(x + radius, y + height / 2, radius, "F")
+        return
+    radius = height / 2
+    pdf.circle(x + radius, y + radius, radius, "F")
+    pdf.rect(x + radius, y, width - height, height, "F")
+    pdf.circle(x + width - radius, y + radius, radius, "F")
+
+
+def ensure_room(pdf, needed):
+    if pdf.get_y() > pdf.h - needed:
+        pdf.add_page()
+        pdf.set_y(16)
+
+
 def draw_bar(pdf, label, value):
     from fpdf.enums import XPos, YPos
 
-    height = 5
-    width = 110
+    height = 7
+    width = 112
+    ensure_room(pdf, 24)
     y = pdf.get_y()
-    if y > pdf.h - 28:
-        pdf.add_page()
-        y = pdf.get_y()
-    pdf.set_font("Report", size=9)
+    pdf.set_font("Report", size=10)
+    pdf.set_text_color(*INK)
     pdf.set_xy(pdf.l_margin, y)
-    pdf.cell(36, height, label, new_x=XPos.RIGHT, new_y=YPos.TOP)
+    pdf.cell(40, height, label, new_x=XPos.RIGHT, new_y=YPos.TOP)
     track_x = pdf.get_x()
-    pdf.set_fill_color(229, 231, 235)
-    pdf.rect(track_x, y, width, height, "F")
-    if value is not None:
-        pdf.set_fill_color(37, 99, 235)
-        pdf.rect(track_x, y, width * max(0, min(value, 100)) / 100, height, "F")
+    pill(pdf, track_x, y, width, height, TRACK)
+    if value is not None and value > 0:
+        pill(pdf, track_x, y, width * min(value, 100) / 100, height, score_color(value))
         caption = str(value)
     else:
-        caption = "-"
-    pdf.set_xy(track_x + width + 2, y)
-    pdf.cell(18, height, caption, new_x=XPos.LMARGIN, new_y=YPos.NEXT)
-    pdf.ln(1.5)
+        caption = "-" if value is None else "0"
+    pdf.set_xy(track_x + width + 3, y)
+    pdf.set_text_color(*score_color(value))
+    pdf.cell(16, height, caption, new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+    pdf.set_text_color(*INK)
+    pdf.ln(2.2)
 
 
 def draw_counts(pdf, label, passed, failed, unknown):
     from fpdf.enums import XPos, YPos
 
-    height = 5
-    width = 110
+    height = 7
+    width = 112
+    ensure_room(pdf, 24)
     y = pdf.get_y()
-    if y > pdf.h - 28:
-        pdf.add_page()
-        y = pdf.get_y()
-    pdf.set_font("Report", size=9)
+    pdf.set_font("Report", size=10)
+    pdf.set_text_color(*INK)
     pdf.set_xy(pdf.l_margin, y)
-    pdf.cell(36, height, label, new_x=XPos.RIGHT, new_y=YPos.TOP)
+    pdf.cell(40, height, label, new_x=XPos.RIGHT, new_y=YPos.TOP)
     track_x = pdf.get_x()
     total = passed + failed + unknown
-    pdf.set_fill_color(229, 231, 235)
-    pdf.rect(track_x, y, width, height, "F")
-    cursor = track_x
+    pill(pdf, track_x, y, width, height, TRACK)
     if total:
-        for count, color in (
-            (passed, (22, 163, 74)),
-            (failed, (220, 38, 38)),
-            (unknown, (156, 163, 175)),
-        ):
-            part = width * count / total
+        inset = 1.3
+        cursor = track_x + inset
+        inner = width - inset * 2
+        for count, color in ((passed, GREEN), (failed, RED), (unknown, SLATE)):
+            if count <= 0:
+                continue
+            part = inner * count / total
             pdf.set_fill_color(*color)
-            pdf.rect(cursor, y, part, height, "F")
+            pdf.rect(cursor, y + inset, part, height - inset * 2, "F")
             cursor += part
-    pdf.set_xy(track_x + width + 2, y)
+    pdf.set_xy(track_x + width + 3, y)
+    pdf.set_text_color(*MUTED)
     pdf.cell(28, height, f"{passed}/{failed}/{unknown}", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
-    pdf.ln(1.5)
+    pdf.set_text_color(*INK)
+    pdf.ln(2.2)
+
+
+def draw_legend(pdf, items):
+    from fpdf.enums import XPos, YPos
+
+    pdf.set_font("Report", size=9)
+    pdf.set_x(pdf.l_margin)
+    y = pdf.get_y()
+    x = pdf.l_margin
+    for label, color in items:
+        pdf.set_fill_color(*color)
+        pdf.circle(x + 1.6, y + 1.6, 1.6, "F")
+        pdf.set_xy(x + 4.6, y)
+        pdf.set_text_color(*MUTED)
+        pdf.cell(28, 4, label, new_x=XPos.RIGHT, new_y=YPos.TOP)
+        x = pdf.get_x() + 2
+    pdf.set_text_color(*INK)
+    pdf.ln(6)
 
 
 def line(pdf, content, height):
@@ -279,13 +336,18 @@ def write_pdf(audit, destination, fonts):
     score, coverage = overall(stats)
     grade = grade_for(score, copy["grade"])
     pdf = FPDF(format="A4", unit="mm")
-    pdf.set_auto_page_break(auto=True, margin=16)
+    pdf.set_auto_page_break(auto=True, margin=18)
     use_font(pdf, fonts)
     pdf.add_page()
-    pdf.set_font("Report", size=18)
-    line(pdf, copy["title"], 9)
-    pdf.ln(2)
-    pdf.set_font("Report", size=11)
+    pdf.set_fill_color(*PURPLE)
+    pdf.rect(0, 0, pdf.w, 4, "F")
+    pdf.set_y(14)
+    pdf.set_text_color(*INK)
+    pdf.set_font("Report", size=20)
+    line(pdf, copy["title"], 10)
+    pdf.ln(1)
+    pdf.set_font("Report", size=10)
+    pdf.set_text_color(*MUTED)
     meta = [
         (copy["customer"], audit.get("customer")),
         (copy["url"], audit.get("url")),
@@ -293,13 +355,16 @@ def write_pdf(audit, destination, fonts):
         (copy["scope"], audit.get("scope")),
     ]
     for label, value in meta:
-        line(pdf, f"{label}: {text(value)}", 6)
-    pdf.ln(2)
-    shown = "-" if score is None else f"{score}/100 · {grade}"
-    pdf.set_font("Report", size=14)
-    line(pdf, f"{copy['score']}: {shown}", 8)
-    pdf.set_font("Report", size=11)
-    line(pdf, f"{copy['coverage']}: {coverage}%", 6)
+        line(pdf, f"{label}: {text(value)}", 5.5)
+    pdf.ln(3)
+    shown = "-" if score is None else f"{score}"
+    pdf.set_text_color(*score_color(score))
+    pdf.set_font("Report", size=28)
+    line(pdf, shown, 12)
+    pdf.set_text_color(*INK)
+    pdf.set_font("Report", size=12)
+    grade_line = grade if score is None else f"{grade} · {copy['coverage']} {coverage}%"
+    line(pdf, grade_line, 6)
     pdf.ln(2)
     pdf.set_font("Report", size=14)
     line(pdf, copy["scoreChart"], 8)
@@ -325,10 +390,17 @@ def write_pdf(audit, destination, fonts):
         )
         line(pdf, f"{copy['layer'][layer]} · {counts}", 6)
     pdf.ln(2)
+    pdf.set_text_color(*INK)
     pdf.set_font("Report", size=14)
     line(pdf, copy["countChart"], 8)
-    pdf.set_font("Report", size=9)
-    line(pdf, f"{copy['pass']} / {copy['fail']} / {copy['unknown']}", 5)
+    draw_legend(
+        pdf,
+        (
+            (copy["pass"], GREEN),
+            (copy["fail"], RED),
+            (copy["unknown"], SLATE),
+        ),
+    )
     for layer in LAYERS:
         row = stats[layer]
         draw_counts(pdf, copy["layer"][layer], row["passed"], row["failed"], row["unknown"])
