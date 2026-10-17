@@ -36,7 +36,7 @@
   },
   "knowledge": {
     "id": "card-news-layouts",
-    "name": "Card news layouts",
+    "name": "card news layouts",
     "description": "Paper desk HTML templates for card news slides. Copy the matching layout and change only the words.",
     "documents": [
       "knowledge/card-news-layouts/documents/design.md"

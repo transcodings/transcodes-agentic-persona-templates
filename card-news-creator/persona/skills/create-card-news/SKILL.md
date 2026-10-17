@@ -5,9 +5,9 @@ description: "Use when asked to plan, design, or produce a card news carousel fo
 
 # Prerequisites
 - Confirm the topic, audience, goal, platform, brand (name, handle, accent color, theme), CTA, and slide count. If a missing detail changes the core message or structure, ask first. For minor details, use a default and say which one you chose.
-- With no brand given, use the colors and font in the linked Knowledge Base document "Card news design". Do not pick another palette or typeface.
+- With no brand given, use the colors and font in the linked Knowledge Base document "card news design". Do not pick another palette or typeface.
 - Any slide built on a fact, statistic, or quote needs a verified source link. If you cannot find one, ask the user for a source or drop the claim.
-- Read the linked Knowledge Base document "Card news design" for colors and the font. Pick the Knowledge Base HTML whose description and keywords match the slide, then copy that file.
+- Read the linked Knowledge Base document "card news design" for colors and the font. Pick the Knowledge Base HTML whose description and keywords match the slide, then copy that file.
 
 # Steps
 1. Summarize the brief: topic, audience, goal, platform, brand, CTA, slide count, and every claim that needs a source. Ask about any gap that would change the direction before you write.

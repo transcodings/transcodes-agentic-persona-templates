@@ -1,5 +1,5 @@
 ---
-name: "Card news design"
+name: "card news design"
 description: "Paper desk colors and Hanken Grotesk. Accent #E8762A, accent text #C9581C, paper #F3EEE4. Use these when no brand is given."
 aliases:
   - "design"
@@ -10,7 +10,7 @@ aliases:
   - "paper"
 ---
 
-# Card news design
+# card news design
 
 These are the colors and the font for Transcodes card news. The look comes from the Shorts videos (SEO · AEO Shorts v7). All six templates (`paper-01-cover.html` to `paper-06-cover-black.html`) follow these rules. When no brand is given, keep these values. When a brand is given, change only `--accent`, `--accent-text`, and the brand name in the header.
 
