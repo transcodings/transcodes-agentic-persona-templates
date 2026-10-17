@@ -33,5 +33,45 @@
       "persona/skills/create-card-news/SKILL.md",
       "persona/skills/html-to-png/SKILL.md"
     ]
+  },
+  "knowledge": {
+    "id": "card-news-layouts",
+    "name": "Card news layouts",
+    "description": "Paper desk HTML templates for card news slides. Copy the matching layout and change only the words.",
+    "documents": [
+      "knowledge/card-news-layouts/documents/design.md"
+    ],
+    "contents": [
+      {
+        "file": "knowledge/card-news-layouts/contents/paper-01-cover.html",
+        "description": "Paper cover, 1080×1350. Use for the hook: tape label, title, subtitle, and a score box.",
+        "aliases": ["cover", "hook", "opening"]
+      },
+      {
+        "file": "knowledge/card-news-layouts/contents/paper-02-text.html",
+        "description": "Paper text slide, 1080×1350. Use for a two-line headline and body copy.",
+        "aliases": ["text", "problem", "explanation"]
+      },
+      {
+        "file": "knowledge/card-news-layouts/contents/paper-03-score.html",
+        "description": "Paper score slide, 1080×1350. Use for a before-and-after number.",
+        "aliases": ["score", "before-after", "comparison"]
+      },
+      {
+        "file": "knowledge/card-news-layouts/contents/paper-04-steps.html",
+        "description": "Paper steps slide, 1080×1350. Use for a short how-to.",
+        "aliases": ["steps", "how-to", "process"]
+      },
+      {
+        "file": "knowledge/card-news-layouts/contents/paper-05-screen.html",
+        "description": "Paper screenshot slide, 1080×1350. Use when the slide shows a real screen in a browser frame.",
+        "aliases": ["screenshot", "screen", "demo"]
+      },
+      {
+        "file": "knowledge/card-news-layouts/contents/paper-06-cover-black.html",
+        "description": "CTA slide, 1080×1350. Black cover with one large accent word. Use for the last slide: what the reader should do next.",
+        "aliases": ["cta", "closing", "last-slide"]
+      }
+    ]
   }
 }

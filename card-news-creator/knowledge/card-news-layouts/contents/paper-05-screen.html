@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080">
+<title>Transcodes · Screenshot</title>
+<!-- Transcodes card news template · paper desk look (from the Shorts) · 1080x1350 · one font: Hanken Grotesk · no sentence-ending periods -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=block');
+:root {
+  --paper: #F3EEE4;
+  --paper-shade: #E9E1D3;
+  --box: #FFFDF8;
+  --ink: #23201C;
+  --ink-soft: #6A6358;
+  --accent: #E8762A;       /* strokes, fills, stamps, rings; keyword on the black cover */
+  --accent-text: #C9581C;  /* orange text, 24px and up only: 3.7:1 on paper, 4.2:1 on a white box */
+  --tape: #F2DFAE;
+  --night: #0B0A09;
+  --line: rgba(35,32,28,.14);
+  --shadow: 0 30px 60px rgba(35,32,28,.16), 0 4px 10px rgba(35,32,28,.10);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1080px; height:1350px; overflow:hidden; background:var(--paper); }
+.card {
+  position:relative; width:1080px; height:1350px; overflow:hidden; color:var(--ink);
+  background-color:var(--paper);
+  background-image:radial-gradient(rgba(35,32,28,.075) 1.3px, transparent 1.7px);
+  background-size:14px 14px;
+  font-family:'Hanken Grotesk', sans-serif;
+}
+.card.night { background-color:var(--night); background-image:none; color:var(--box); }
+
+/* ---------- top header ---------- */
+.dots { position:absolute; top:125px; height:0; border-top:4px dotted var(--ink); opacity:.5; }
+.brandtop { position:absolute; top:104px; left:108px; font:700 29px/1.4 'Hanken Grotesk'; letter-spacing:.12em; }
+.num { position:absolute; top:96px; right:134px; font:800 50px/1.2 'Hanken Grotesk'; letter-spacing:.04em; }
+.night .dots { border-color:var(--box); }
+
+/* ---------- content ---------- */
+.content { position:absolute; left:108px; top:236px; width:864px; }
+/* tape label: the masking-tape strip from the video */
+.label { display:inline-block; background:var(--tape); font:600 28px/1 'Hanken Grotesk'; letter-spacing:.02em;
+         padding:16px 28px 14px; margin-bottom:34px; transform:rotate(-2deg); box-shadow:0 4px 10px rgba(35,32,28,.12);
+         clip-path:polygon(0 8%,2% 0,98% 4%,100% 0,99% 50%,100% 100%,97% 94%,3% 100%,0 96%,1.5% 50%); }
+.title { font:800 92px/1.0 'Hanken Grotesk'; letter-spacing:-.035em; }
+.body { margin-top:90px; width:830px; font:500 40px/1.32 'Hanken Grotesk'; }
+.body p + p, .body p + div, .body div + p { margin-top:30px; }
+.accent { color:var(--accent-text); }
+.night .accent { color:var(--accent); }
+.muted { color:var(--ink-soft); }
+.note { color:var(--ink-soft); font-size:30px; }
+.hl { background:linear-gradient(transparent 58%, rgba(232,118,42,.30) 58%); padding:0 4px; }
+
+/* white box: the paper card from the video */
+.box { background:var(--box); border-radius:22px; box-shadow:var(--shadow); padding:40px 44px; }
+.tilt-l { transform:rotate(-1.5deg); }
+.tilt-r { transform:rotate(1.5deg); }
+.kicker { font:700 24px/1 'Hanken Grotesk'; letter-spacing:.22em; text-transform:uppercase; color:var(--ink-soft); }
+
+/* score box: WEBSITE SCORE + big number */
+.score { position:relative; text-align:center; padding:36px 40px 30px; }
+.score .n { font:800 168px/1 'Hanken Grotesk'; letter-spacing:-.04em; margin-top:20px; }
+.score .n small { font:700 58px/1 'Hanken Grotesk'; letter-spacing:-.02em; color:var(--ink-soft); }
+
+/* browser-frame screenshot box */
+.shot { padding:0; overflow:hidden; }
+.shot .bar { height:58px; display:flex; align-items:center; gap:12px; padding:0 24px; background:var(--paper-shade); }
+.shot .bar i { width:16px; height:16px; border-radius:50%; background:rgba(35,32,28,.25); }
+.shot .bar b { margin-left:12px; height:22px; width:44%; border-radius:999px; background:rgba(35,32,28,.10); }
+.shot img { display:block; width:100%; }
+.shot .ph { height:420px; display:flex; align-items:center; justify-content:center; font:600 30px/1 'Hanken Grotesk'; color:var(--ink-soft);
+            background:repeating-linear-gradient(135deg, rgba(35,32,28,.04) 0 14px, transparent 14px 28px); }
+
+/* chip (outlined box), pill (dark capsule), stamp (round seal) */
+.chip { display:inline-block; background:var(--box); border:3px solid var(--ink); border-radius:12px; font:700 36px/1 'Hanken Grotesk';
+        padding:14px 22px 12px; box-shadow:0 6px 14px rgba(35,32,28,.10); }
+.pill { display:inline-block; background:var(--ink); color:var(--box); border-radius:999px; font:700 32px/1 'Hanken Grotesk'; padding:18px 32px 16px; }
+.pills { display:flex; flex-wrap:wrap; gap:18px; }
+.stamp { display:flex; align-items:center; justify-content:center; width:210px; height:210px; border-radius:50%; border:9px solid var(--accent);
+         background:rgba(255,248,240,.94); font:800 46px/1 'Hanken Grotesk'; letter-spacing:.02em; transform:rotate(-12deg); }
+
+/* checklist and numbered steps */
+.checks li { list-style:none; display:flex; align-items:center; gap:22px; font:600 40px/1.25 'Hanken Grotesk'; }
+.checks li + li { margin-top:26px; }
+.checks svg { flex:none; width:46px; height:46px; }
+.step { display:flex; align-items:flex-start; gap:28px; }
+.step + .step { margin-top:34px; }
+.step .n { flex:none; width:66px; height:66px; border-radius:50%; background:var(--ink); color:var(--box); font:800 32px/66px 'Hanken Grotesk'; text-align:center; }
+.step .t { font:600 40px/1.3 'Hanken Grotesk'; padding-top:9px; }
+.step .t small { display:block; margin-top:6px; font:500 28px/1.35 'Hanken Grotesk'; color:var(--ink-soft); }
+
+/* table: key | value | tag */
+.table { width:864px; border-collapse:collapse; }
+.table td { padding:24px 0; border-bottom:2px solid var(--line); vertical-align:top; }
+.table td.k { width:290px; white-space:nowrap; font:800 36px/1.2 'Hanken Grotesk'; color:var(--accent-text); }
+.table td.v { font:500 34px/1.3 'Hanken Grotesk'; padding-right:16px; }
+.table td.w { width:220px; white-space:nowrap; text-align:right; font:600 26px/1.5 'Hanken Grotesk'; color:var(--ink-soft); letter-spacing:.04em; }
+
+/* code block: a dark card is the one dark element allowed on paper */
+.code { background:var(--ink); color:var(--paper); border-radius:22px; padding:30px 34px; box-shadow:var(--shadow);
+        font:500 28px/1.6 ui-monospace, 'SF Mono', Menlo, monospace; white-space:pre; }
+
+/* hand marks (inline SVG): dashed arrow, ring, check */
+.mk { position:absolute; overflow:visible; }
+
+/* source (fact slides) */
+.source { position:absolute; left:108px; bottom:214px; width:864px; font:500 20px/1.45 'Hanken Grotesk'; color:var(--ink-soft); word-break:break-all; }
+.source b { display:block; font-weight:800; color:var(--ink); letter-spacing:.14em; font-size:17px; margin-bottom:4px; }
+
+/* footer */
+.footer-line { position:absolute; left:108px; top:1168px; width:864px; height:2px; background:rgba(35,32,28,.22); }
+.footer-l { position:absolute; left:108px; top:1198px; font:800 28px/1.4 'Hanken Grotesk'; letter-spacing:.06em; }
+.footer-r { position:absolute; right:108px; top:1202px; font:600 22px/1.4 'Hanken Grotesk'; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft); }
+.night .footer-line { background:rgba(255,253,248,.25); }
+.night .footer-r { color:#C9C3B8; }
+</style>
+</head>
+<body>
+<div class="card">
+  <!-- header: change the page number -->
+  <div class="dots" style="left:-20px; width:850px;"></div>
+  <div class="num">04</div>
+  <div class="dots" style="left:972px; width:140px;"></div>
+  <div class="content">
+    <span class="label">Real screen</span>
+    <div class="title" style="font-size:80px;">What You See<br>On Screen</div>
+  </div>
+  <!-- browser-frame screenshot box: replace the .ph block with <img src="your-screenshot.png" alt="Short description"> -->
+  <div class="box shot tilt-r" style="position:absolute; left:108px; top:520px; width:864px;">
+    <div class="bar"><i></i><i></i><i></i><b></b></div>
+    <div class="ph">Screenshot · zoomed crop</div>
+  </div>
+  <!-- optional orange ring around the part that matters: move it over the screenshot -->
+  <svg class="mk" style="left:540px; top:700px; width:300px; height:160px" viewBox="0 0 100 60"><ellipse cx="50" cy="30" rx="47" ry="26" fill="none" stroke="#E8762A" stroke-width="2.4" transform="rotate(-4 50 30)" vector-effect="non-scaling-stroke" style="stroke-width:6px"/></svg>
+  <!-- one-line caption box under the screenshot -->
+  <div class="box" style="position:absolute; left:108px; top:1010px; width:864px; padding:26px 36px; font:600 36px/1.25 'Hanken Grotesk';">One line that says <span class="hl">what to look at</span></div>
+  <!-- footer (fixed on every card) -->
+  <div class="footer-line"></div>
+  <div class="footer-l">Transcodes</div>
+  <div class="footer-r">Share Your/Team Memory with AI</div>
+</div>
+</body>
+</html>
