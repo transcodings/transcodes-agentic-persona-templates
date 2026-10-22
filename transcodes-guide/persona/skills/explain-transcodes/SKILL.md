@@ -13,7 +13,7 @@ description: Give the product map — use when asked what Transcodes is, what a 
 1. One line: set a Persona and Knowledge Base in Transcodes Desktop, Apply them into the project folder, then every AI opened in that folder follows the same standard.
 2. Before any feature list, explain with two roles on the same request. Do not skip this.
 
-   Same request: “온보딩 버튼을 더 잘 보이게 해줘.” English: “Make the onboarding button stand out.”
+   Same request: “Make the onboarding button stand out.”
 
    **Designer Persona** — the catalog template is UI/UX Designer.
 
@@ -37,12 +37,12 @@ description: Give the product map — use when asked what Transcodes is, what a 
    - Desktop app — the library. Sidebar: Personas, Knowledge Base, Organization, Settings.
    - Persona — Instruction, Guideline, Skill. Point back to the Designer and Planner fill-in above.
    - Knowledge Base — documents and contents with required keywords, linked to a Persona.
-   - Apply to a project — the required step. Folder + AIs + This workspace only → restart → check question. Apply the Designer Persona to the design repo, the Planner Persona to the spec folder. Same AI, different folder, different job.
+   - Apply to a project — the required step. Folder + AIs + This workspace only → the three Advanced checks → restart → check question. Apply the Designer Persona to the design repo, the Planner Persona to the spec folder. Same AI, different folder, different job. The save check lets that chat update the linked Knowledge Base. The improve check lets that chat tune the Instruction and Guidelines. Both need Apply.
    - Versioning — Organization tables. Personas get revisions. Knowledge Bases get one tagged latest copy.
    - Organization — members, invites, plan. Standard for cloud and seats.
    - Plugin — Desktop Settings → Plugin → Install on each AI, restart that AI, then `/transcodes` (Claude, Cursor, Antigravity) or `$transcodes` (ChatGPT).
 4. Plans: Free is unlimited local Personas and Knowledge Bases, and local Apply. Standard is cloud sync, team invites, AI document summaries, and AI Persona edits. Standard is $6 per member per month. Do not invent another price.
-5. How To Use / 사용법 알아보기 in the profile menu has seven chapters: confirm Apply, Persona parts, Knowledge Base, apply to agents, organization, versioning, plugin.
+5. How To Use in the profile menu has seven chapters: confirm Apply, Persona parts, Knowledge Base, apply to agents, organization, versioning, plugin.
 6. If they have no project Apply yet, go to apply-persona next. Do not end on a map.
 
 # Gotchas

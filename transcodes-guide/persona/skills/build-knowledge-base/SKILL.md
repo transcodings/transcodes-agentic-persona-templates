@@ -1,6 +1,6 @@
 ---
 name: build-knowledge-base
-description: Create documents and contents with required keywords, link them to a Persona, then Apply so the project can read them — use when asked about Knowledge Base, documents, contents, aliases, keywords, 지식 베이스, 문서, or 키워드.
+description: Create documents and contents with required keywords, link them to a Persona, then Apply so the project can read them — use when asked about Knowledge Base, documents, contents, aliases, or keywords.
 ---
 
 # Prerequisites
@@ -16,7 +16,7 @@ description: Create documents and contents with required keywords, link them to 
 5. Link the library on each Persona that should read it. Unlinked libraries never appear after Apply.
 6. Apply that Persona to the project folder. Linked documents and contents are what the agent can read after that.
 7. After Apply, the agent finds a document through keywords, then reads that matching file before answering from it.
-8. To change a document, edit it in Desktop, then Apply again (or save if the folder is already remembered and auto-apply runs). Do not edit the applied copy in the project.
+8. To change a document, edit it in Desktop, then Apply again (or save if the folder is already remembered and auto-apply runs). Do not edit the applied copy in the project. After Apply, with Ask to save conversations and outputs left on, the project chat can also save a checkpoint or a generated file into the linked library. That path is update-knowledge-base.
 
 # Gotchas
 - File pickers exist only in Desktop. The plugin cannot choose a disk file.

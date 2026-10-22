@@ -1,6 +1,6 @@
 ---
 name: install-plugin
-description: Install the Transcodes plugin into Claude, Cursor, ChatGPT, or Antigravity from Desktop — use when they ask how to install the plugin, /transcodes, $transcodes, 플러그인 설치, or why the command is missing.
+description: Install the Transcodes plugin into Claude, Cursor, ChatGPT, or Antigravity from Desktop — use when they ask how to install the plugin, /transcodes, $transcodes, or why the command is missing.
 ---
 
 # Prerequisites
@@ -9,9 +9,9 @@ description: Install the Transcodes plugin into Claude, Cursor, ChatGPT, or Anti
 
 # Steps
 1. Open Transcodes Desktop. Two entry points:
-   - First-run screen **Install the plugin / 플러그인 설치** — pick agents and connect.
-   - Any time later: profile menu → **Settings / 설정** → **Plugin / 플러그인**.
-2. On Plugin, the section is **Transcodes Plugin / Transcodes 플러그인**. Four rows:
+   - First-run screen **Install the plugin** — pick agents and connect.
+   - Any time later: profile menu → **Settings** → **Plugin**.
+2. On Plugin, the section is **Transcodes Plugin**. Four rows:
    - Claude
    - Cursor
    - ChatGPT (OpenAI)
@@ -19,10 +19,10 @@ description: Install the Transcodes plugin into Claude, Cursor, ChatGPT, or Anti
 3. Each row shows status and the command they will type after install:
    - Claude, Cursor, Antigravity — `/transcodes`
    - ChatGPT — `$transcodes`
-4. Status **Not Installed / 미설치** (red): click **Install / 설치**. Wait for **{name} plugin installed / {name} 플러그인을 설치했습니다**.
-5. Status **Installed / 설치됨** (green): already done. **Update / 업데이트** refreshes the plugin. **Remove / 지우기** uninstalls it from that agent only. Removing does not delete Personas or an already Applied Persona.
-6. Use **Refresh / 새로고침** if the row looks stale after an install.
-7. **How does it work? / 어떻게 사용하나요?** opens the official pictures: slash command for Claude, Cursor, Antigravity; dollar command for ChatGPT.
+4. Status **Not Installed** (red): click **Install**. Wait for **{name} plugin installed**.
+5. Status **Installed** (green): already done. **Update** refreshes the plugin. **Remove** uninstalls it from that agent only. Removing does not delete Personas or an already Applied Persona.
+6. Use **Refresh** if the row looks stale after an install.
+7. **How does it work?** opens the official pictures: slash command for Claude, Cursor, Antigravity; dollar command for ChatGPT.
 8. Fully quit that AI and reopen it. An already-open chat often will not see a new plugin.
 9. In a new chat, choose the command:
    - Claude, Cursor, Antigravity — type `/transcodes` and select it.

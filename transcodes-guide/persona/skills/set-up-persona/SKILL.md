@@ -1,6 +1,6 @@
 ---
 name: set-up-persona
-description: Create or edit a Persona in Desktop — use when asked to make, generate, or change Instruction, Guideline, or Skill, or 페르소나 만들기, before applying it to a project.
+description: Create or edit a Persona in Desktop — use when asked to make, generate, or change Instruction, Guideline, or Skill before applying it to a project.
 ---
 
 # Prerequisites
@@ -19,7 +19,7 @@ description: Create or edit a Persona in Desktop — use when asked to make, gen
 6. Add a Skill per repeatable job. The Skill name is lowercase kebab-case and matches its folder. Include trigger, steps, and a done check. Example: Designer `design-review`. Planner `write-spec`.
 7. On Standard, Generate or Edit with AI is a draft. They read and correct it before Apply.
 8. Link every Knowledge Base this Persona should read. Linking is on the Persona, not implied by creating a library.
-9. Save. Tell them the Persona is only in the Desktop library until Apply. Next skill is apply-persona.
+9. Save. Tell them the Persona is only in the Desktop library until Apply. Next skill is apply-persona. After that Apply, Improve Persona Instruction and Rules Automatically lets the project chat propose Instruction and Guideline changes. That path is tune-persona.
 
 # Gotchas
 - A template does not ship a Knowledge Base. Create documents in the Knowledge Base tab, then link.

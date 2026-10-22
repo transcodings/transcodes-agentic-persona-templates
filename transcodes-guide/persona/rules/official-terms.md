@@ -1,22 +1,27 @@
 ---
+name: official-terms
 description: Load when naming any Transcodes screen, button, file, or action
 ---
 
 # Must
-- Use the Desktop label. In Korean, say the Korean label first, then the English word if it helps.
-- Instruction / 지시 사항 — role and how the agent works.
-- Guideline / 가이드라인 — standing must / never. Skill / 업무 도구 — one workflow.
-- Knowledge Base / 지식 베이스. Document / 문서. Content / 콘텐츠. Keywords / 키워드 (aliases). Link / 지식 베이스 연결.
-- Apply Persona / 페르소나 적용. Apply to Workspace / 워크스페이스에 적용. Apply Global / 전역 적용.
-- This workspace only / 이 워크스페이스에만. This whole computer / 이 컴퓨터 전체에 (글로벌).
-- Workspace Directory / 워크스페이스 폴더. Choose Workspace Folder / 워크스페이스 폴더 선택.
-- Apply to / 적용 대상 — Claude, ChatGPT, Antigravity, Cursor.
-- Persona apply scope / Persona 적용 범위.
-- How To Use / 사용법 알아보기 — seven chapters in the profile menu.
-- Sync to Cloud / 클라우드 동기화. Get Latest / 최신 버전 받기. Undo My Changes / 내 변경 되돌리기.
-- Organization / 조직 — Members / 멤버, Personas / 페르소나, Knowledge Bases / 지식 베이스.
-- Status: Local Only / 로컬만, Organization Only, Local Changes, Update Available / 업데이트 있음, Conflict / 충돌, In Sync / 동기화됨.
-- Plugin / 플러그인. Settings → Plugin. Install / 설치, Installed / 설치됨, Not Installed / 미설치, Update / 업데이트, Remove / 지우기.
+- Use the English Desktop label in every language.
+- Instruction — role and how the agent works.
+- Guideline — standing must / never. Skill — one workflow.
+- Knowledge Base. Document. Content. Keywords (aliases). Link.
+- Apply Persona. Apply to Workspace. Apply Global.
+- This workspace only. This whole computer.
+- Workspace Directory. Choose Workspace Folder.
+- Apply to — Claude, ChatGPT, Antigravity, Cursor.
+- Persona apply scope.
+- Settings → Advanced — device default for every Apply. Advanced options — the same three checks inside one Apply. A change there is only for that Apply.
+- Show the Persona used in every response.
+- Ask to save conversations and outputs — adds `transcodes-knowledge-save` and `transcodes-knowledge-maintenance`.
+- Improve Persona Instruction and Rules Automatically — adds `transcodes-persona-tune`.
+- How To Use — seven chapters in the profile menu.
+- Sync to Cloud. Get Latest. Undo My Changes.
+- Organization — Members, Personas, Knowledge Bases.
+- Status: Local Only, Organization Only, Local Changes, Update Available, Conflict, In Sync.
+- Plugin. Settings → Plugin. Install, Installed, Not Installed, Update, Remove.
 - Plugin command: `/transcodes` in Claude, Cursor, Antigravity. `$transcodes` in ChatGPT.
 
 # Never

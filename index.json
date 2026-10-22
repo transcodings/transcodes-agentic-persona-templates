@@ -88,8 +88,8 @@
         "en": "Transcodes Guide"
       },
       "summary": {
-        "ko": "Walks through Transcodes Desktop, then applying a Persona and Knowledge Base into a real project folder, plus versioning and organization.",
-        "en": "Walks through Transcodes Desktop, then applying a Persona and Knowledge Base into a real project folder, plus versioning and organization."
+        "ko": "Walks through Transcodes Desktop, then applying a Persona and Knowledge Base into a real project folder. Covers the three Advanced checks that turn on knowledge updates and Persona tuning, plus versioning and organization.",
+        "en": "Walks through Transcodes Desktop, then applying a Persona and Knowledge Base into a real project folder. Covers the three Advanced checks that turn on knowledge updates and Persona tuning, plus versioning and organization."
       },
       "suggestedName": "transcodes-guide",
       "aliases": [
@@ -105,7 +105,7 @@
       "publisher": "Transcodes",
       "counts": {
         "rules": 3,
-        "skills": 8,
+        "skills": 10,
         "knowledge": 0
       }
     },

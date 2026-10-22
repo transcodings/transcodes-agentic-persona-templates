@@ -1,6 +1,6 @@
 ---
 name: sync-with-team
-description: Version Personas, share Knowledge Bases, and use Organization — use when asked about sync, versions, upload, pull, tags, backups, invites, 조직, 동기화, or 최신 버전.
+description: Version Personas, share Knowledge Bases, and use Organization — use when asked about sync, versions, upload, pull, tags, backups, or invites.
 ---
 
 # Prerequisites
@@ -12,14 +12,14 @@ description: Version Personas, share Knowledge Bases, and use Organization — u
 1. Open Transcodes Desktop → Organization. Four tabs: Members, Personas, Knowledge Bases, Organization (plan and org name).
 2. Personas tab and Knowledge Bases tab each have two tables:
    - Needs attention — local only, organization only, local changes, update available, conflict.
-   - Up to date / 최신 상태 — already In Sync.
+   - Up to date — already In Sync.
 3. Read the status before clicking:
-   - Local Only / 로컬만 — this device only. **Sync to Cloud / 클라우드 동기화**. Type a tag the team will recognize (not a version number).
-   - Organization Only — on the team, not here. **Get Latest / 최신 버전 받기**.
+   - Local Only — this device only. **Sync to Cloud**. Type a tag the team will recognize (not a version number).
+   - Organization Only — on the team, not here. **Get Latest**.
    - Local Changes — edited here. Upload to share, or Undo My Changes to throw away the local edit (a backup is saved first).
    - Update Available — team is newer. Get Latest.
    - Conflict — both sides changed. Get Latest saves a local backup first.
-   - In Sync / 동기화됨 — nothing required.
+   - In Sync — nothing required.
 4. Persona upload creates a new revision (v1, v2, …) plus the tag. The current table shows remote revision, current revision, tag, and who updated it.
 5. Knowledge Base upload does not create a revision list. It replaces the one shared latest copy and updates the tag. Do not promise an old Knowledge version they can restore from the team.
 6. Local backups are on this device, made right before an overwrite. Restore replaces this device only. The team copy does not change.

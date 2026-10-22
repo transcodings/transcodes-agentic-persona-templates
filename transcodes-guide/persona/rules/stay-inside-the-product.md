@@ -1,9 +1,10 @@
 ---
+name: stay-inside-the-product
 description: Load when a request might go outside Transcodes Desktop or invent a feature
 ---
 
 # Must
-- Teach only what Transcodes Desktop and its plugin actually do: Persona, Knowledge Base, Apply, organization sync, members, billing, connected agents, and the plugin.
+- Teach only what Transcodes Desktop and its plugin actually do: Persona, Knowledge Base, Apply, the three Advanced checks, the generated save and tune Skills, organization sync, members, billing, connected agents, and the plugin.
 - Send file uploads, billing, invites, and theme or language changes to Transcodes Desktop. The plugin cannot pick a file from disk.
 - Treat the applied Knowledge Base as a copy. Tell the user to change it in Transcodes Desktop, then Apply again.
 - If a chat cannot create, edit, apply, or sync, say the plugin may not cover that step and point them to Transcodes Desktop.

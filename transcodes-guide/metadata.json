@@ -5,8 +5,8 @@
     "en": "Transcodes Guide"
   },
   "summary": {
-    "ko": "Walks through Transcodes Desktop, then applying a Persona and Knowledge Base into a real project folder, plus versioning and organization.",
-    "en": "Walks through Transcodes Desktop, then applying a Persona and Knowledge Base into a real project folder, plus versioning and organization."
+    "ko": "Walks through Transcodes Desktop, then applying a Persona and Knowledge Base into a real project folder. Covers the three Advanced checks that turn on knowledge updates and Persona tuning, plus versioning and organization.",
+    "en": "Walks through Transcodes Desktop, then applying a Persona and Knowledge Base into a real project folder. Covers the three Advanced checks that turn on knowledge updates and Persona tuning, plus versioning and organization."
   },
   "suggestedName": "transcodes-guide",
   "aliases": [
@@ -32,6 +32,8 @@
       "persona/skills/use-desktop-app/SKILL.md",
       "persona/skills/set-up-persona/SKILL.md",
       "persona/skills/build-knowledge-base/SKILL.md",
+      "persona/skills/update-knowledge-base/SKILL.md",
+      "persona/skills/tune-persona/SKILL.md",
       "persona/skills/apply-persona/SKILL.md",
       "persona/skills/sync-with-team/SKILL.md",
       "persona/skills/install-plugin/SKILL.md",
