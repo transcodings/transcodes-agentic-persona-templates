@@ -1,4 +1,5 @@
 ---
+name: use-the-deck-kit
 description: Build every deck from the page templates and components in the kit folder. Do not invent a new slide stylesheet or assume the kit's names.
 ---
 # Must

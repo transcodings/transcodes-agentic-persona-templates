@@ -1,4 +1,5 @@
 ---
+name: style-from-knowledge-base
 description: Look up the caricature style in the Knowledge Base before drawing, and ask the user when that style image is missing.
 ---
 # Must

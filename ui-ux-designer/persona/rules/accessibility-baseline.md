@@ -1,4 +1,5 @@
 ---
+name: accessibility-baseline
 description: Load when building or reviewing interactive UI, forms, dialogs, and menus
 ---
 

@@ -1,4 +1,5 @@
 ---
+name: keep-the-likeness
 description: Keep the person in the photo recognizable, and exaggerate only toward the chosen style reference.
 ---
 # Must

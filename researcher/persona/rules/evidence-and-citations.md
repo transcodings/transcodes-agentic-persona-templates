@@ -1,4 +1,5 @@
 ---
+name: evidence-and-citations
 description: Load when producing research findings, summaries, or comparisons
 ---
 

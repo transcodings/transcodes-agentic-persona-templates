@@ -1,5 +1,6 @@
 ---
-trigger: always_on
+name: plan-before-build
+description: Write a page-by-page plan and get approval before building any slide.
 ---
 # Must
 - Always write a page-by-page plan before you build any slide, even when the user asks you to "just make it". The plan is the first deliverable.

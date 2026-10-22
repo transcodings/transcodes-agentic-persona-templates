@@ -1,4 +1,5 @@
 ---
+name: claims-and-compliance
 description: Load when copy states a metric, comparison, guarantee, or competitor claim
 ---
 

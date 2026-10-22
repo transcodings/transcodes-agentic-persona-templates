@@ -1,4 +1,5 @@
 ---
+name: example-rule
 description: Load when working on <when this rule should apply>
 ---
 

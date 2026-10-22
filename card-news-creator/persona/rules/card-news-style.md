@@ -1,5 +1,6 @@
 ---
-trigger: always_on
+name: card-news-style
+description: Build every slide from the matching Knowledge Base layout, design tokens, and the linked design document.
 ---
 # Must
 - Build every slide by copying the Knowledge Base HTML whose description and keywords match the slide. Keep the 1080×1350 size. Colors and the font come from the linked document "card news design".

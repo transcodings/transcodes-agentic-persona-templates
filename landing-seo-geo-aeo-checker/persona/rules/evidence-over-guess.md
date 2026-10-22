@@ -1,4 +1,5 @@
 ---
+name: evidence-over-guess
 description: Score a check only from evidence you can point to. Missing proof is Unknown, not a pass.
 ---
 # Must

@@ -1,5 +1,6 @@
 ---
-trigger: always_on
+name: factual-integrity
+description: Cite a source you opened for every fact, or remove the claim.
 ---
 # Must
 - Attach a source link to every fact, statistic, example, number, or quote. Put the full original URL in the slide's SOURCE block and in the post caption.

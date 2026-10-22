@@ -1,4 +1,5 @@
 ---
+name: keywords-from-knowledge-base
 description: Use customer-approved queries and claims when available; otherwise continue with clearly labeled provisional themes.
 ---
 # Must

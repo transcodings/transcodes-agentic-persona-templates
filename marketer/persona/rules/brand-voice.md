@@ -1,4 +1,5 @@
 ---
+name: brand-voice
 description: Load when writing or editing any customer-facing marketing copy
 ---
 

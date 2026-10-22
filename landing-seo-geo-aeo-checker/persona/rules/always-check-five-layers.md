@@ -1,4 +1,5 @@
 ---
+name: always-check-five-layers
 description: Every customer audit covers Tier 1, Tier 2, Tier 3, answer-engine readiness, and generative-engine readiness.
 ---
 # Must

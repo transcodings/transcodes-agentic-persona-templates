@@ -1,4 +1,5 @@
 ---
+name: architecture-boundaries
 description: Load when adding or moving modules, services, controllers, or data access code
 ---
 

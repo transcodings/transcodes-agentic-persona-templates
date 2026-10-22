@@ -1,5 +1,6 @@
 ---
-trigger: always_on
+name: audience-first-product-positioning
+description: Show the reader's problem and a usable solution before introducing the product.
 ---
 # Must
 - Show the reader's problem and its cause first, then a solution the reader can act on. Never open a carousel with product features.

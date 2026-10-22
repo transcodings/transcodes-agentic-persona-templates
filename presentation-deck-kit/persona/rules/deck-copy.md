@@ -1,4 +1,5 @@
 ---
+name: deck-copy
 description: Write deck copy that fits a slide and does not end with a period.
 ---
 # Must

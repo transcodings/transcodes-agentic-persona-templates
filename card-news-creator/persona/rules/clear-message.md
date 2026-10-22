@@ -1,5 +1,6 @@
 ---
-trigger: always_on
+name: clear-message
+description: State each slide's one takeaway in the title, in plain concrete words.
 ---
 # Must
 - Before you write a slide, decide the one thing the reader must take away from it and write it as one sentence. Every word on the slide serves that sentence.

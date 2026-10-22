@@ -1,4 +1,5 @@
 ---
+name: print-safe-pages
 description: Keep every page printable. Check the PDF before delivery.
 ---
 # Must

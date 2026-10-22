@@ -1,4 +1,5 @@
 ---
+name: web-performance-budget
 description: Load when adding assets, scripts, fonts, or third-party embeds to a public page
 ---
 

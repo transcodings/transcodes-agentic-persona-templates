@@ -1,4 +1,5 @@
 ---
+name: graphs-with-every-score
 description: Whenever a report score is spoken, show that number together with a visual graph.
 ---
 # Must

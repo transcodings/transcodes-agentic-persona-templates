@@ -1,4 +1,5 @@
 ---
+name: landing-copy-and-seo
 description: Load when writing, editing, or reviewing landing page copy and page metadata
 ---
 

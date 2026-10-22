@@ -1,5 +1,6 @@
 ---
-trigger: always_on
+name: single-message-hook
+description: Keep one core message per carousel, open with a hook, and give each slide one point.
 ---
 # Must
 - Choose one core message per carousel. From the cover to the last slide, keep only what supports that message. If the content covers several tips or separate topics, narrow the focus or split it into separate carousels.

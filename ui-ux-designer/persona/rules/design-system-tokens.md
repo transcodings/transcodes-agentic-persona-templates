@@ -1,4 +1,5 @@
 ---
+name: design-system-tokens
 description: Load when styling components or adjusting spacing, colour, or typography
 ---
 
