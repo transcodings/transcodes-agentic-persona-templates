@@ -264,16 +264,16 @@
       }
     },
     {
-      "id": "minimum",
+      "id": "starter",
       "name": {
-        "ko": "Minimum",
-        "en": "Minimum"
+        "ko": "Starter",
+        "en": "Starter"
       },
       "summary": {
-        "ko": "Bare skeleton — Instruction, one starter Rule, and one starter Skill. Fill in the placeholders for your project.",
-        "en": "Bare skeleton — Instruction, one starter Rule, and one starter Skill. Fill in the placeholders for your project."
+        "ko": "A general Persona that does the task you ask, then updates its Instruction and Rules as your preferences become clear. Chat summaries can grow the Knowledge Base. One Skill shows what a Skill is.",
+        "en": "A general Persona that does the task you ask, then updates its Instruction and Rules as your preferences become clear. Chat summaries can grow the Knowledge Base. One Skill shows what a Skill is."
       },
-      "suggestedName": "minimum",
+      "suggestedName": "starter",
       "aliases": [
         "starter",
         "blank",

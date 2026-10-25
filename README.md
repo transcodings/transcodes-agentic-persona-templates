@@ -62,7 +62,7 @@ Repeat the Guideline and Skill copies for each app you use. Open that project in
 | [ui-ux-designer](ui-ux-designer)                           | Reviews interfaces against the design system. Tokens over hardcoded values. Accessibility is required.             |
 | [marketer](marketer)                                       | Writes campaign and product copy in one brand voice, with every claim traceable.                                   |
 | [researcher](researcher)                                   | Reports findings with sources, confidence, and a line between evidence and inference.                              |
-| [minimum](minimum)                                         | Instruction, one Guideline, and one Skill. Fill in the placeholders.                                               |
+| [starter](starter)                                         | A general Persona that does the task, then updates its Instruction and Rules. Chat summaries can grow the Knowledge Base. |
 
 ## Template format
 

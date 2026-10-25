@@ -1,0 +1,29 @@
+{
+  "id": "starter",
+  "name": {
+    "ko": "Starter",
+    "en": "Starter"
+  },
+  "summary": {
+    "ko": "A general Persona that does the task you ask, then updates its Instruction and Rules as your preferences become clear. Chat summaries can grow the Knowledge Base. One Skill shows what a Skill is.",
+    "en": "A general Persona that does the task you ask, then updates its Instruction and Rules as your preferences become clear. Chat summaries can grow the Knowledge Base. One Skill shows what a Skill is."
+  },
+  "suggestedName": "starter",
+  "aliases": [
+    "starter",
+    "blank",
+    "minimum"
+  ],
+  "popular": false,
+  "developer": "Transcodes",
+  "publisher": "Transcodes",
+  "persona": {
+    "instruction": "persona/AGENTS.md",
+    "rules": [
+      "persona/rules/persona-growth.md"
+    ],
+    "skills": [
+      "persona/skills/handle-a-task/SKILL.md"
+    ]
+  }
+}
