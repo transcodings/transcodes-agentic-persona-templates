@@ -2,6 +2,59 @@
   "version": 1,
   "templates": [
     {
+      "id": "transcodes-guide",
+      "name": {
+        "ko": "Transcodes Guide",
+        "en": "Transcodes Guide"
+      },
+      "summary": {
+        "ko": "Walks through Transcodes Desktop, then applying a Persona and Knowledge Base into a real project folder. Covers the three Advanced checks that turn on knowledge updates and Persona tuning, plus versioning and organization.",
+        "en": "Walks through Transcodes Desktop, then applying a Persona and Knowledge Base into a real project folder. Covers the three Advanced checks that turn on knowledge updates and Persona tuning, plus versioning and organization."
+      },
+      "suggestedName": "transcodes-guide",
+      "aliases": [
+        "guide",
+        "how-to",
+        "transcodes",
+        "onboarding",
+        "help",
+        "plugin"
+      ],
+      "popular": true,
+      "developer": "Transcodes",
+      "publisher": "Transcodes",
+      "counts": {
+        "rules": 3,
+        "skills": 10,
+        "knowledge": 0
+      }
+    },
+    {
+      "id": "starter",
+      "name": {
+        "ko": "Starter",
+        "en": "Starter"
+      },
+      "summary": {
+        "ko": "A general Persona that does the task you ask, then updates its Instruction and Rules as your preferences become clear. Chat summaries can grow the Knowledge Base. One Skill shows what a Skill is.",
+        "en": "A general Persona that does the task you ask, then updates its Instruction and Rules as your preferences become clear. Chat summaries can grow the Knowledge Base. One Skill shows what a Skill is."
+      },
+      "suggestedName": "starter",
+      "aliases": [
+        "starter",
+        "blank",
+        "minimum"
+      ],
+      "popular": false,
+      "developer": "Transcodes",
+      "publisher": "Transcodes",
+      "counts": {
+        "rules": 1,
+        "skills": 1,
+        "knowledge": 0
+      }
+    },
+    {
       "id": "card-news-creator",
       "name": {
         "ko": "Card News Creator",
@@ -78,34 +131,6 @@
       "counts": {
         "rules": 2,
         "skills": 1,
-        "knowledge": 0
-      }
-    },
-    {
-      "id": "transcodes-guide",
-      "name": {
-        "ko": "Transcodes Guide",
-        "en": "Transcodes Guide"
-      },
-      "summary": {
-        "ko": "Walks through Transcodes Desktop, then applying a Persona and Knowledge Base into a real project folder. Covers the three Advanced checks that turn on knowledge updates and Persona tuning, plus versioning and organization.",
-        "en": "Walks through Transcodes Desktop, then applying a Persona and Knowledge Base into a real project folder. Covers the three Advanced checks that turn on knowledge updates and Persona tuning, plus versioning and organization."
-      },
-      "suggestedName": "transcodes-guide",
-      "aliases": [
-        "guide",
-        "how-to",
-        "transcodes",
-        "onboarding",
-        "help",
-        "plugin"
-      ],
-      "popular": true,
-      "developer": "Transcodes",
-      "publisher": "Transcodes",
-      "counts": {
-        "rules": 3,
-        "skills": 10,
         "knowledge": 0
       }
     },
@@ -255,31 +280,6 @@
         "researcher"
       ],
       "popular": true,
-      "developer": "Transcodes",
-      "publisher": "Transcodes",
-      "counts": {
-        "rules": 1,
-        "skills": 1,
-        "knowledge": 0
-      }
-    },
-    {
-      "id": "starter",
-      "name": {
-        "ko": "Starter",
-        "en": "Starter"
-      },
-      "summary": {
-        "ko": "A general Persona that does the task you ask, then updates its Instruction and Rules as your preferences become clear. Chat summaries can grow the Knowledge Base. One Skill shows what a Skill is.",
-        "en": "A general Persona that does the task you ask, then updates its Instruction and Rules as your preferences become clear. Chat summaries can grow the Knowledge Base. One Skill shows what a Skill is."
-      },
-      "suggestedName": "starter",
-      "aliases": [
-        "starter",
-        "blank",
-        "minimum"
-      ],
-      "popular": false,
       "developer": "Transcodes",
       "publisher": "Transcodes",
       "counts": {

@@ -52,17 +52,17 @@ Repeat the Guideline and Skill copies for each app you use. Open that project in
 
 | Folder                                                     | What it does                                                                                                       |
 | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| [transcodes-guide](transcodes-guide)                       | Walks through Transcodes Desktop, then Apply into a real project folder.                                           |
+| [starter](starter)                                         | A general Persona that does the task, then updates its Instruction and Rules. Chat summaries can grow the Knowledge Base. |
 | [card-news-creator](card-news-creator)                     | Plans Instagram and LinkedIn card-news carousels, designs each slide in HTML, and renders PNG plus a LinkedIn PDF. |
 | [presentation-deck-kit](presentation-deck-kit)             | Builds a 16:9 deck as one HTML file, then prints a PDF and, when asked, an editable PowerPoint.                    |
 | [caricature-artist](caricature-artist)                     | Redraws a photo as a caricature and checks the Knowledge Base for the requested style first.                       |
-| [transcodes-guide](transcodes-guide)                       | Walks through Transcodes Desktop, then Apply into a real project folder.                                           |
 | [landing-page-publisher](landing-page-publisher)           | Ships marketing pages: message-first copy, SEO metadata, and a mobile performance budget.                          |
 | [landing-seo-geo-aeo-checker](landing-seo-geo-aeo-checker) | Audits a landing site across technical SEO, relevance, authority, GEO, and AEO, then writes what to improve.       |
 | [fullstack-developer](fullstack-developer)                 | Implements features across API and UI in vertical slices, with a verification step on every change.                |
 | [ui-ux-designer](ui-ux-designer)                           | Reviews interfaces against the design system. Tokens over hardcoded values. Accessibility is required.             |
 | [marketer](marketer)                                       | Writes campaign and product copy in one brand voice, with every claim traceable.                                   |
 | [researcher](researcher)                                   | Reports findings with sources, confidence, and a line between evidence and inference.                              |
-| [starter](starter)                                         | A general Persona that does the task, then updates its Instruction and Rules. Chat summaries can grow the Knowledge Base. |
 
 ## Template format
 
