@@ -1,14 +1,14 @@
 ---
 name: use-the-deck-kit
-description: Build every deck from the page templates and components in the kit folder. Do not invent a new slide stylesheet or assume the kit's names.
+description: Build every deck from starter.html and catalog.html in the Knowledge Base. Do not invent a new slide stylesheet or assume their names.
 ---
 # Must
-- Open the kit folder first. Find the blank deck and the component catalog by what they contain, then start from a copy of the blank deck.
+- Read the Knowledge Base document `deck-kit` first, then `starter.html` and `catalog.html`. Start from a copy of `starter.html`.
 - Reuse the page templates, markup, attributes, and components that those files actually use.
-- Color components with the tones and tokens defined in the kit. Read the names from the design block. Do not substitute a remembered name.
+- Color components with the tones and tokens defined in `starter.html`. Read the names from the design block. Do not substitute a remembered name.
 
 # Never
-- Never write a one-off slide layout when a kit page and component already fit.
+- Never write a one-off slide layout when a page and component in `catalog.html` already fit.
 - Never treat a filename, class, attribute, page type, or color name from memory as the current kit.
-- Never edit the kit's blank deck or catalog while making one deck. Add a missing component to those source files only when the user asks to extend the kit.
+- Never edit `starter.html` or `catalog.html` while making one deck. Add a missing component to those files only when the user asks to extend the kit.
 - Never replace the kit with another deck framework.

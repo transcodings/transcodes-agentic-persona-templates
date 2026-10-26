@@ -1,0 +1,1501 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Deck Kit Catalog</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+    <style id="deck-kit">
+      /* ==========================================================
+         Transcodes Deck Kit · 1920×1080 slides
+         Tokens → Slide frame → Layout primitives → Components
+         Rules: no box-shadow (prints as gray boxes), no raw sizes in
+         slides — use the classes and variables below
+         ========================================================== */
+
+      /* ---------- 1. Tokens ---------- */
+      :root {
+        color-scheme: light;
+
+        --paper: #faf7f2;
+        --white: #ffffff;
+        --ink: #17131f;
+        --muted: #5e5870;
+        --soft: #948da3;
+        --line: #e7e1d8;
+
+        --brand: #6d4dff;
+        --brand-deep: #4a2fd6;
+        --brand-soft: #ece7ff;
+        --coral: #ff7a59;
+        --coral-deep: #c2410c;
+        --coral-soft: #ffe6de;
+        --sun: #ffc53d;
+        --sun-deep: #8a5a00;
+        --sun-soft: #fff2cc;
+        --mint: #14a37f;
+        --mint-deep: #0c7d61;
+        --mint-soft: #daf5ec;
+        --sky: #3b82f6;
+        --sky-deep: #1d5fcf;
+        --sky-soft: #e0ecff;
+
+        --font: 'General Sans', 'Pretendard Variable', Pretendard, sans-serif;
+        --mono: 'JetBrains Mono', monospace;
+
+        --fs-hero: 104px;
+        --fs-title: 64px;
+        --fs-title-s: 48px;
+        --fs-h3: 34px;
+        --fs-lead: 28px;
+        --fs-body: 22px;
+        --fs-small: 18px;
+        --fs-label: 16px;
+
+        --r-s: 12px;
+        --r-m: 20px;
+        --r-l: 28px;
+        --r-xl: 36px;
+
+        --gap: 28px;
+
+        /* default tone = brand. Override with .tone-* on any element */
+        --c: var(--brand);
+        --c-deep: var(--brand-deep);
+        --c-soft: var(--brand-soft);
+        --c-on: var(--white);
+      }
+
+      /* ---------- Tones: put on any component ---------- */
+      .tone-brand { --c: var(--brand); --c-deep: var(--brand-deep); --c-soft: var(--brand-soft); --c-on: var(--white); }
+      .tone-coral { --c: var(--coral); --c-deep: var(--coral-deep); --c-soft: var(--coral-soft); --c-on: var(--white); }
+      .tone-sun { --c: var(--sun); --c-deep: var(--sun-deep); --c-soft: var(--sun-soft); --c-on: var(--ink); }
+      .tone-mint { --c: var(--mint); --c-deep: var(--mint-deep); --c-soft: var(--mint-soft); --c-on: var(--white); }
+      .tone-sky { --c: var(--sky); --c-deep: var(--sky-deep); --c-soft: var(--sky-soft); --c-on: var(--white); }
+      .tone-ink { --c: var(--ink); --c-deep: var(--ink); --c-soft: #eeebe6; --c-on: var(--white); }
+
+      /* ---------- 2. Base + slide frame ---------- */
+      * { box-sizing: border-box; }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--font);
+        -webkit-font-smoothing: antialiased;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      @page { size: 1920px 1080px; margin: 0; }
+
+      h1, h2, h3, h4, p, ul, ol, li, figure, blockquote { margin: 0; padding: 0; word-break: keep-all; }
+      ul, ol { list-style: none; }
+      img { display: block; }
+
+      .slide {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        padding: 168px 112px 120px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background: var(--paper);
+        break-after: page;
+        page-break-after: always;
+      }
+
+      .slide:last-of-type { break-after: auto; page-break-after: auto; }
+      .slide > * { position: relative; z-index: 1; }
+
+      /* Surface themes — on a slide or any container */
+      .purple { background: var(--brand); color: var(--white); --muted: rgba(255, 255, 255, 0.84); --soft: rgba(255, 255, 255, 0.66); --line: rgba(255, 255, 255, 0.24); }
+      .mint { background: var(--mint); color: var(--white); --muted: rgba(255, 255, 255, 0.86); --soft: rgba(255, 255, 255, 0.7); --line: rgba(255, 255, 255, 0.26); }
+      .ink { background: var(--ink); color: var(--white); --muted: rgba(255, 255, 255, 0.72); --soft: rgba(255, 255, 255, 0.5); --line: rgba(255, 255, 255, 0.16); }
+      .white { background: var(--white); }
+
+      /* Slide header / body / footer */
+      .slide-head {
+        position: absolute !important;
+        left: 112px;
+        right: 112px;
+        top: 72px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .slide-body {
+        flex: 1;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+        margin-top: 48px;
+      }
+
+      .slide-foot {
+        position: absolute;
+        left: 112px;
+        right: 112px;
+        bottom: 44px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: var(--mono);
+        font-size: var(--fs-label);
+        color: var(--soft);
+        z-index: 1;
+      }
+
+      .brand-mark {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-family: var(--font);
+        font-size: 17px;
+        font-weight: 650;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+      }
+
+      .brand-mark img { width: 28px; height: 28px; border-radius: 7px; }
+
+      .logo-lockup {
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .logo-lockup img { width: 52px; height: 52px; border-radius: 13px; background: var(--white); }
+
+      /* ---------- 3. Layout primitives ---------- */
+      .grid { display: grid; gap: var(--gap); grid-template-columns: var(--cols, 1fr); align-items: stretch; }
+      .c2 { --cols: repeat(2, minmax(0, 1fr)); }
+      .c3 { --cols: repeat(3, minmax(0, 1fr)); }
+      .c4 { --cols: repeat(4, minmax(0, 1fr)); }
+      .c5 { --cols: repeat(5, minmax(0, 1fr)); }
+      .span-2 { grid-column: span 2; }
+      .span-3 { grid-column: span 3; }
+      .span-all { grid-column: 1 / -1; }
+
+      .stack { display: flex; flex-direction: column; gap: var(--gap); }
+      .row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--gap); }
+      .row.nowrap { flex-wrap: nowrap; }
+      .between { justify-content: space-between; }
+
+      .fill { flex: 1; min-height: 0; }
+      .center { display: flex; align-items: center; justify-content: center; }
+      .v-center { align-items: center; align-content: center; }
+      .v-end { align-items: end; }
+      .to-bottom { margin-top: auto; }
+
+      .gap-0 { --gap: 0px; }
+      .gap-xs { --gap: 8px; }
+      .gap-s { --gap: 14px; }
+      .gap-m { --gap: 28px; }
+      .gap-l { --gap: 48px; }
+      .gap-xl { --gap: 72px; }
+
+      .mt-s { margin-top: 16px; }
+      .mt-m { margin-top: 32px; }
+      .mt-l { margin-top: 56px; }
+
+      /* ---------- 4. Typography ---------- */
+      .eyebrow {
+        font-family: var(--mono);
+        font-size: var(--fs-label);
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--soft);
+      }
+
+      .hero { font-size: var(--fs-hero); font-weight: 750; letter-spacing: -0.045em; line-height: 1.08; }
+      .title { font-size: var(--fs-title); font-weight: 750; letter-spacing: -0.04em; line-height: 1.16; }
+      .title.s { font-size: var(--fs-title-s); }
+      .h3 { font-size: var(--fs-h3); font-weight: 750; letter-spacing: -0.035em; line-height: 1.25; }
+      .lead { font-size: var(--fs-lead); line-height: 1.5; color: var(--muted); max-width: 1320px; }
+      .text { font-size: var(--fs-body); line-height: 1.55; color: var(--muted); }
+      .small { font-size: var(--fs-small); line-height: 1.5; color: var(--muted); }
+      .mono { font-family: var(--mono); }
+      .strong { color: var(--ink); font-weight: 650; }
+      .purple .strong, .mint .strong, .ink .strong { color: var(--white); }
+
+      /* highlight: <em> uses the element's tone; on dark surfaces it turns yellow */
+      em, .hl { font-style: normal; color: var(--c); }
+      .purple em, .mint em, .ink em,
+      .slide[data-page='cover'] > * em,
+      .slide[data-page='closing'] > * em { color: var(--sun); }
+      .slide[data-page='cover'] .card em,
+      .slide[data-page='closing'] .card:not(.glass) em { color: var(--c); }
+
+      /* ---------- 5. Components ---------- */
+
+      /* Tag — pill label, tone colored */
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 9px 18px;
+        border-radius: 999px;
+        background: var(--c-soft);
+        color: var(--c-deep);
+        font-family: var(--mono);
+        font-size: var(--fs-label);
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .tag.solid { background: var(--c); color: var(--c-on); }
+
+      /* Chip — outline pill, .on = selected, may hold an <img> logo */
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 18px;
+        border-radius: 999px;
+        border: 2px solid var(--line);
+        background: var(--white);
+        color: var(--ink);
+        font-size: var(--fs-small);
+        font-weight: 600;
+      }
+
+      .chip img { width: 22px; height: 22px; object-fit: contain; }
+      .chip.on { background: var(--c-soft); border-color: var(--c); color: var(--c-deep); }
+      .chip.fill-on { background: var(--c); border-color: var(--c); color: var(--c-on); }
+
+      /* Dot */
+      .dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: var(--c); flex: none; }
+
+      /* Icon tile — letter, number, or emoji-free glyph */
+      .ico {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        background: var(--c);
+        color: var(--c-on);
+        font-family: var(--mono);
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .ico.s { width: 36px; height: 36px; border-radius: 10px; font-size: 15px; }
+      .ico.l { width: 72px; height: 72px; border-radius: 20px; font-size: 30px; }
+      .ico.round { border-radius: 50%; }
+      .ico.soft { background: var(--c-soft); color: var(--c-deep); }
+
+      /* Logo tile — put your own logo <img> on a neutral tile */
+      .logo-tile {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+        background: var(--paper);
+        border: 1.5px solid var(--line);
+      }
+
+      .logo-tile img { width: 30px; height: 30px; object-fit: contain; }
+      .logo-tile.l { width: 88px; height: 88px; border-radius: 24px; }
+      .logo-tile.l img { width: 48px; height: 48px; }
+
+      /* Card — the main building block
+         default: white + outline · .soft: tone tint · .solid: tone fill · .dash: dashed */
+      .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        padding: 40px 38px;
+        border-radius: var(--r-l);
+        background: var(--white);
+        border: 2px solid var(--line);
+        overflow: hidden;
+        color: var(--ink);
+        --muted: #5e5870;
+        --soft: #948da3;
+        --line: #e7e1d8;
+      }
+
+      .card em { color: var(--c); }
+
+      .card.soft { background: var(--c-soft); border-color: transparent; }
+      .card.solid { background: var(--c); border-color: transparent; color: var(--c-on); --muted: rgba(255, 255, 255, 0.86); --soft: rgba(255, 255, 255, 0.7); }
+      .card.solid.tone-sun { --muted: rgba(23, 19, 31, 0.72); --soft: rgba(23, 19, 31, 0.55); }
+      .card.dash { background: transparent; border-style: dashed; }
+      .card.glass { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.22); color: var(--white); --muted: rgba(255, 255, 255, 0.84); --soft: rgba(255, 255, 255, 0.66); }
+      .card.glass em, .card.solid em { color: inherit; text-decoration: underline; text-underline-offset: 6px; }
+      .card.tight { padding: 26px 28px; gap: 8px; border-radius: var(--r-m); }
+
+      .card-kicker { font-family: var(--mono); font-size: var(--fs-label); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-deep); }
+      .card.solid .card-kicker, .card.glass .card-kicker { color: inherit; opacity: 0.8; }
+      .card-title { font-size: var(--fs-h3); font-weight: 750; letter-spacing: -0.035em; line-height: 1.22; }
+      .card-text { font-size: var(--fs-body); line-height: 1.55; color: var(--muted); }
+      .card-foot { margin-top: auto; padding-top: 18px; }
+      .card-big { font-size: 120px; font-weight: 700; line-height: 1; letter-spacing: -0.05em; color: var(--c); }
+      .card.solid .card-big { color: inherit; }
+
+      /* Stat — big number with label */
+      .stat { display: flex; flex-direction: column; gap: 10px; }
+      .stat-value { font-size: 112px; font-weight: 700; line-height: 1; letter-spacing: -0.05em; color: var(--c); }
+      .stat-value small { font-size: 0.42em; letter-spacing: -0.02em; margin-left: 6px; }
+      .stat-label { font-size: var(--fs-body); font-weight: 650; color: var(--ink); }
+      .stat-note { font-size: var(--fs-small); color: var(--muted); }
+      .purple .stat-value, .mint .stat-value, .ink .stat-value { color: var(--sun); }
+      .purple .stat-label, .mint .stat-label, .ink .stat-label { color: var(--white); }
+
+      /* Table — .compact, .zebra; highlight a column with class="hl" on th/td */
+      .table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        background: var(--white);
+        border: 2px solid var(--line);
+        border-radius: var(--r-l);
+        overflow: hidden;
+        font-size: var(--fs-body);
+        color: var(--ink);
+      }
+
+      .table th,
+      .table td { padding: 22px 28px; text-align: left; vertical-align: middle; border-bottom: 1.5px solid var(--line); line-height: 1.45; }
+      .table tr:last-child td { border-bottom: none; }
+      .table th { background: #f4f0ea; font-family: var(--mono); font-size: var(--fs-label); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+      .table td:first-child { font-weight: 650; }
+      .table .hl { background: var(--c-soft); color: var(--c-deep); }
+      .table th.hl { background: var(--c); color: var(--c-on); }
+      .table.zebra tbody tr:nth-child(even) td:not(.hl) { background: #fbf9f6; }
+      .table.compact th, .table.compact td { padding: 14px 22px; font-size: var(--fs-small); }
+      .table .num { text-align: right; font-variant-numeric: tabular-nums; }
+
+      /* marks for tables and lists */
+      .yes, .no, .part {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        font-size: 18px;
+        font-weight: 800;
+      }
+
+      .yes { background: var(--mint-soft); color: var(--mint-deep); }
+      .yes::before { content: '✓'; }
+      .no { background: #f1ede6; color: var(--soft); }
+      .no::before { content: '—'; }
+      .part { background: var(--sun-soft); color: var(--sun-deep); }
+      .part::before { content: '△'; font-size: 15px; }
+
+      /* Check list */
+      .checks { display: flex; flex-direction: column; gap: 16px; }
+      .checks li { display: flex; align-items: flex-start; gap: 16px; font-size: var(--fs-body); line-height: 1.45; }
+      .checks li::before {
+        content: '✓';
+        flex: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        margin-top: 0;
+        border-radius: 50%;
+        background: var(--c);
+        color: var(--c-on);
+        font-size: 17px;
+        font-weight: 800;
+      }
+
+      .checks.x li::before { content: '✕'; background: #f1ede6; color: var(--soft); }
+
+      /* Bullet list */
+      .bullets { display: flex; flex-direction: column; gap: 14px; }
+      .bullets li { position: relative; padding-left: 28px; font-size: var(--fs-body); line-height: 1.5; color: var(--muted); }
+      .bullets li::before { content: ''; position: absolute; left: 4px; top: 0.62em; width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
+      .bullets b { color: var(--ink); font-weight: 650; }
+
+      /* Key–value list */
+      .kv { display: grid; grid-template-columns: max-content 1fr; column-gap: 40px; font-size: var(--fs-body); }
+      .kv dt, .kv dd { margin: 0; padding: 18px 0; border-bottom: 1.5px solid var(--line); line-height: 1.45; }
+      .kv dt { font-family: var(--mono); font-size: var(--fs-label); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-deep); padding-top: 22px; }
+      .kv dd { color: var(--ink); }
+
+      /* Steps — horizontal with dashed connector (.v = vertical) */
+      .steps { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: var(--gap); position: relative; counter-reset: step; }
+      .steps::before { content: ''; position: absolute; left: 44px; right: 44px; top: 42px; border-top: 4px dashed var(--line); }
+      .steps > li { position: relative; display: flex; flex-direction: column; gap: 12px; counter-increment: step; }
+      .steps > li::before {
+        content: counter(step);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 88px;
+        height: 88px;
+        margin-bottom: 14px;
+        border-radius: 50%;
+        background: var(--c);
+        color: var(--c-on);
+        font-size: 38px;
+        font-weight: 700;
+        outline: 8px solid var(--paper);
+      }
+
+      .purple .steps > li::before { outline-color: var(--brand); }
+      .steps h3 { font-size: 32px; font-weight: 750; letter-spacing: -0.03em; }
+      .steps p { font-size: var(--fs-body); line-height: 1.55; color: var(--muted); }
+
+      .steps.v { grid-auto-flow: row; grid-auto-rows: auto; gap: 18px; }
+      .steps.v::before { left: 31px; right: auto; top: 30px; bottom: 30px; border-top: none; border-left: 4px dashed var(--line); }
+      .steps.v > li { display: grid; grid-template-columns: 64px 1fr; column-gap: 26px; row-gap: 4px; align-items: start; }
+      .steps.v > li::before { grid-row: span 2; width: 64px; height: 64px; margin: 0; font-size: 28px; }
+      .steps.v h3 { font-size: 28px; padding-top: 12px; }
+
+      /* Flow — boxes with arrows between */
+      .flow { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 56px; }
+      .flow > * { position: relative; }
+      .flow > *:not(:last-child)::after {
+        content: '→';
+        position: absolute;
+        right: -44px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: var(--mono);
+        font-size: 32px;
+        color: var(--soft);
+      }
+
+      /* Timeline — dated milestones on a line */
+      .timeline { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); position: relative; }
+      .timeline::before { content: ''; position: absolute; left: 0; right: 0; top: 64px; height: 4px; background: var(--line); border-radius: 4px; }
+      .timeline > li { position: relative; display: flex; flex-direction: column; gap: 10px; padding-right: 28px; }
+      .timeline .when { font-family: var(--mono); font-size: var(--fs-label); font-weight: 600; letter-spacing: 0.1em; color: var(--c-deep); height: 40px; }
+      .timeline > li::before { content: ''; position: absolute; left: 0; top: 54px; width: 24px; height: 24px; border-radius: 50%; background: var(--c); outline: 6px solid var(--paper); }
+      .timeline > li.done::before { background: var(--c); }
+      .timeline > li.next::before { background: var(--paper); border: 4px solid var(--c); }
+      .timeline h3 { margin-top: 40px; font-size: 30px; font-weight: 750; letter-spacing: -0.03em; }
+      .timeline p { font-size: var(--fs-small); line-height: 1.5; color: var(--muted); }
+
+      /* Bar chart — vertical bars, set --v per bar (0–100%) */
+      .bars { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 28px; align-items: end; height: 420px; }
+      .bar { display: flex; flex-direction: column; justify-content: flex-end; align-items: stretch; gap: 12px; height: 100%; }
+      .bar i { display: block; height: var(--v, 50%); border-radius: 16px 16px 6px 6px; background: var(--c-soft); }
+      .bar.on i { background: var(--c); }
+      .bar b { font-size: 30px; font-weight: 700; letter-spacing: -0.03em; text-align: center; }
+      .bar span { font-size: var(--fs-small); color: var(--muted); text-align: center; }
+
+      /* Meter — horizontal progress bar, set --v */
+      .meter { display: flex; flex-direction: column; gap: 10px; }
+      .meter-head { display: flex; justify-content: space-between; font-size: var(--fs-body); font-weight: 650; }
+      .meter-head span:last-child { color: var(--c-deep); font-family: var(--mono); }
+      .meter-track { height: 18px; border-radius: 999px; background: #efeae2; overflow: hidden; }
+      .meter-track i { display: block; height: 100%; width: var(--v, 50%); border-radius: 999px; background: var(--c); }
+
+      /* Quote */
+      .quote { padding-left: 36px; border-left: 6px solid var(--c); }
+      .quote p { font-size: 44px; font-weight: 650; line-height: 1.35; letter-spacing: -0.03em; }
+      .quote cite { display: block; margin-top: 22px; font-style: normal; font-size: var(--fs-small); color: var(--muted); }
+
+      /* Callout — tinted note box with icon */
+      .callout { display: flex; align-items: flex-start; gap: 20px; padding: 26px 30px; border-radius: var(--r-m); background: var(--c-soft); font-size: var(--fs-body); line-height: 1.5; color: var(--ink); }
+      .callout b { color: var(--c-deep); }
+
+      /* Chat bubbles */
+      .chat { display: flex; flex-direction: column; gap: 16px; }
+      .bubble { max-width: 86%; padding: 20px 24px; font-size: var(--fs-body); line-height: 1.55; }
+      .bubble.q { align-self: flex-end; border-radius: 22px 22px 6px 22px; background: var(--ink); color: var(--white); font-weight: 600; }
+      .bubble.a { align-self: flex-start; border-radius: 22px 22px 22px 6px; background: var(--white); border: 1.5px solid var(--line); color: var(--ink); }
+      .source { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding-top: 14px; border-top: 1.5px solid var(--line); font-size: 17px; font-weight: 600; color: var(--c-deep); }
+
+      /* VS — two panels with a badge between */
+      .vs { display: grid; grid-template-columns: 1fr 96px 1fr; align-items: stretch; }
+      .vs-badge { align-self: center; justify-self: center; display: flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 50%; background: var(--ink); color: var(--white); font-family: var(--mono); font-size: 20px; font-weight: 700; }
+
+      /* Plan — pricing / package card */
+      .plan { gap: 18px; }
+      .plan-price { font-size: 72px; font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
+      .plan-price small { font-size: 22px; font-weight: 500; color: var(--muted); letter-spacing: 0; margin-left: 6px; }
+      .plan .checks { margin-top: 8px; }
+
+      /* Person — avatar initials + name + role */
+      .person { display: flex; align-items: center; gap: 16px; }
+      .avatar { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 60px; height: 60px; border-radius: 50%; background: var(--c-soft); color: var(--c-deep); font-size: 22px; font-weight: 750; }
+      .person b { display: block; font-size: 21px; }
+      .person span { font-size: 17px; color: var(--muted); }
+
+      /* Sticker — tilted label */
+      .sticker { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 999px; background: var(--sun); color: var(--ink); font-size: 22px; font-weight: 750; transform: rotate(-4deg); }
+      .sticker b { font-size: 44px; letter-spacing: -0.04em; }
+
+      /* Divider line */
+      .divider { height: 0; border: none; border-top: 2px solid var(--line); margin: 0; }
+
+      /* Big faded number — section dividers */
+      .bignum { font-size: 340px; font-weight: 700; line-height: 0.9; letter-spacing: -0.06em; color: rgba(255, 255, 255, 0.22); }
+      .bignum + .hero { margin-top: -40px; font-size: 150px; letter-spacing: -0.05em; line-height: 1; }
+
+      /* App window mock */
+      .window { display: flex; flex-direction: column; border-radius: 26px; background: var(--white); border: 2px solid var(--line); overflow: hidden; color: var(--ink); }
+      .window-bar { flex: none; height: 50px; display: flex; align-items: center; gap: 9px; padding: 0 20px; background: #f1ede6; border-bottom: 1.5px solid var(--line); }
+      .window-bar i { width: 13px; height: 13px; border-radius: 50%; background: #ff6b5b; }
+      .window-bar i:nth-child(2) { background: #ffc53d; }
+      .window-bar i:nth-child(3) { background: #3cc36b; }
+      .window-body { flex: 1; display: grid; grid-template-columns: 200px 1fr; min-height: 520px; }
+      .window-body.full { grid-template-columns: 1fr; }
+      .window-side { padding: 26px 16px; background: #f8f5f0; border-right: 1.5px solid var(--line); }
+      .window-brand { display: flex; align-items: center; gap: 10px; margin: 0 8px 26px; font-size: 15px; font-weight: 750; }
+      .window-brand img { width: 26px; height: 26px; border-radius: 7px; }
+      .nav-item { padding: 11px 14px; margin-bottom: 4px; border-radius: 10px; font-size: 16px; color: #5e5870; }
+      .nav-item.on { background: var(--c-soft); color: var(--c-deep); font-weight: 700; }
+      .window-main { padding: 32px 36px; display: flex; flex-direction: column; gap: 16px; }
+      .window-kicker { font-family: var(--mono); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #948da3; }
+      .window-title { font-size: 30px; font-weight: 750; letter-spacing: -0.03em; margin-top: -8px; }
+      .field label { display: block; margin-bottom: 8px; font-size: 15px; font-weight: 700; }
+      .input { padding: 14px 16px; border-radius: 12px; border: 1.5px solid #e7e1d8; background: var(--white); font-size: 17px; line-height: 1.45; color: #5e5870; }
+      .input.drop { border: 2px dashed var(--c); background: var(--c-soft); color: var(--c-deep); text-align: center; font-weight: 600; }
+      .list-row { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 16px 0; border-bottom: 1.5px solid #e7e1d8; }
+      .list-row:last-child { border-bottom: none; }
+      .list-row b { display: block; font-size: 19px; margin-bottom: 4px; }
+      .list-row small { font-size: 15px; color: #5e5870; }
+      .btn { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; padding: 13px 20px; border-radius: 11px; background: var(--ink); color: var(--white); font-size: 16px; font-weight: 700; }
+      .btn.tone { background: var(--c); color: var(--c-on); }
+      .btn.ghost { background: var(--white); color: var(--ink); border: 1.5px solid #e7e1d8; }
+      .status { padding: 8px 14px; border-radius: 999px; background: var(--c-soft); color: var(--c-deep); font-size: 14px; font-weight: 700; }
+
+      /* Screenshot frame — real image in window chrome */
+      .shot { border-radius: 26px; border: 2px solid var(--line); overflow: hidden; background: var(--white); }
+      .shot img { width: 100%; height: auto; }
+
+      /* CTA button */
+      .cta { display: inline-flex; align-items: center; gap: 14px; padding: 22px 38px; border-radius: 999px; background: var(--sun); color: var(--ink); font-size: 28px; font-weight: 750; text-decoration: none; }
+      .cta.tone { background: var(--c); color: var(--c-on); }
+
+      /* Decorative shapes — absolute, behind content
+         shape: .circle .square .ring · corner: .tl .tr .bl .br · size: --size · color: tone */
+      .deco { position: absolute; z-index: 0 !important; width: var(--size, 400px); height: var(--size, 400px); background: var(--c); pointer-events: none; }
+      .deco.circle { border-radius: 50%; }
+      .deco.square { border-radius: 28%; transform: rotate(var(--turn, 14deg)); }
+      .deco.ring { border-radius: 50%; background: transparent; border: calc(var(--size, 400px) * 0.12) solid var(--c); }
+      .deco.tl { left: calc(var(--size, 400px) * -0.3); top: calc(var(--size, 400px) * -0.3); }
+      .deco.tr { right: calc(var(--size, 400px) * -0.3); top: calc(var(--size, 400px) * -0.3); }
+      .deco.bl { left: calc(var(--size, 400px) * -0.3); bottom: calc(var(--size, 400px) * -0.3); }
+      .deco.br { right: calc(var(--size, 400px) * -0.3); bottom: calc(var(--size, 400px) * -0.3); }
+      .deco.soft { background: var(--c-soft); }
+      .deco.lighten { background: rgba(255, 255, 255, 0.12); }
+
+      /* ==========================================================
+         6. Page templates
+         Every slide declares data-page; the page script adds the header,
+         footer, page number and decoration so all pages match.
+
+         data-page:  cover | content | split | divider | statement | closing
+         data-section="Persona"   → top-left label
+         data-tag="Setup"         → top-right tag
+         data-tone="mint"         → tone for tag, <em>, components (divider: bg)
+         ========================================================== */
+
+      /* Title block — the same position and size on every content page */
+      .page-title { display: flex; flex-direction: column; gap: 20px; max-width: 1500px; }
+      .page-title .lead { margin-top: 2px; }
+
+      /* content: title on top, components below */
+      .slide[data-page='content'] .slide-body { margin-top: 52px; }
+
+      /* split: copy on the left, visual on the right */
+      .slide[data-page='split'] .split {
+        flex: 1;
+        min-height: 0;
+        display: grid;
+        grid-template-columns: var(--split, 0.9fr 1.1fr);
+        gap: 80px;
+        align-items: center;
+      }
+      .slide[data-page='split'] .split.reverse { --split: 1.1fr 0.9fr; }
+      .split-copy { display: flex; flex-direction: column; gap: 24px; }
+      .split-copy .slide-body { margin-top: 20px; }
+
+      /* cover */
+      .slide[data-page='cover'] { background: var(--brand); color: var(--white); --muted: rgba(255, 255, 255, 0.86); --soft: rgba(255, 255, 255, 0.68); --line: rgba(255, 255, 255, 0.24); }
+      .slide[data-page='cover'] .cover-main { flex: 1; display: grid; grid-template-columns: var(--split, 1.1fr 0.9fr); gap: 40px; align-items: center; }
+      .slide[data-page='cover'] .cover-copy { display: flex; flex-direction: column; gap: 36px; }
+      .slide[data-page='cover'] .lead { font-size: 32px; }
+
+      /* divider */
+      .slide[data-page='divider'] { background: var(--c); color: var(--c-on); --muted: rgba(255, 255, 255, 0.88); --soft: rgba(255, 255, 255, 0.7); justify-content: center; }
+      .slide[data-page='divider'].tone-sun { --muted: rgba(23, 19, 31, 0.75); --soft: rgba(23, 19, 31, 0.55); }
+      .slide[data-page='divider'] .hero { font-size: 150px; letter-spacing: -0.05em; line-height: 1; margin-top: -40px; }
+      .slide[data-page='divider'] .lead { margin-top: 36px; font-size: 38px; font-weight: 550; letter-spacing: -0.02em; line-height: 1.45; color: var(--muted); max-width: 1100px; }
+      .slide[data-page='divider'] em { color: var(--sun); }
+      .slide[data-page='divider'].tone-sun em { color: var(--white); }
+
+      /* statement: one big message, centered */
+      .slide[data-page='statement'] { justify-content: center; }
+      .slide[data-page='statement'] .statement { max-width: 1500px; font-size: 88px; font-weight: 750; letter-spacing: -0.045em; line-height: 1.18; }
+      .slide[data-page='statement'] .lead { margin-top: 40px; }
+      .slide[data-page='statement'].ink em { color: var(--sun); }
+
+      /* closing */
+      .slide[data-page='closing'] { background: var(--brand); color: var(--white); --muted: rgba(255, 255, 255, 0.86); --soft: rgba(255, 255, 255, 0.68); --line: rgba(255, 255, 255, 0.24); }
+      .slide[data-page='closing'] .contact { display: inline-flex; gap: 36px; margin-left: 36px; font-size: 24px; color: var(--muted); }
+
+      /* dark surfaces: keep step/timeline outlines matching the bg */
+      .slide[data-page='divider'] .steps > li::before,
+      .slide[data-page='closing'] .steps > li::before,
+      .slide[data-page='cover'] .steps > li::before { outline-color: var(--brand); }
+    </style>
+    <style>
+      /* catalog page only — not part of the kit */
+      body.catalog { background: #f3efe8; }
+      .cat-nav { position: fixed; left: 0; top: 0; bottom: 0; width: 250px; padding: 32px 24px; overflow-y: auto; background: var(--white); border-right: 1.5px solid var(--line); }
+      .cat-nav b { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; font-size: 17px; }
+      .cat-nav b img { width: 26px; height: 26px; border-radius: 7px; }
+      .cat-nav p { margin: 18px 0 6px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft); }
+      .cat-nav a { display: block; padding: 5px 8px; border-radius: 6px; font-size: 14px; color: var(--ink); text-decoration: none; }
+      .cat-nav a:hover { background: var(--brand-soft); }
+      .cat-main { margin-left: 250px; padding: 48px 56px 120px; max-width: 1060px; }
+      .cat-main > h1 { font-size: 40px; letter-spacing: -0.03em; }
+      .cat-main > .intro { margin: 12px 0 8px; font-size: 16px; line-height: 1.6; color: var(--muted); max-width: 760px; }
+      .cat-group { margin-top: 64px; }
+      .cat-group > h2 { font-size: 28px; letter-spacing: -0.02em; padding-bottom: 12px; border-bottom: 2px solid var(--ink); }
+      .demo { margin-top: 36px; }
+      .demo figcaption h3 { font-size: 19px; }
+      .demo figcaption h3 code { margin-left: 8px; font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--brand-deep); background: var(--brand-soft); padding: 3px 8px; border-radius: 6px; }
+      .demo figcaption p { margin-top: 6px; font-size: 14px; line-height: 1.55; color: var(--muted); }
+      .demo-stage { margin-top: 14px; border: 1.5px solid var(--line); border-radius: 14px; background: var(--paper); overflow: hidden; }
+      .demo-canvas { zoom: 0.5; width: 1696px; padding: 56px; }
+      .demo-stage.dark { background: var(--brand); }
+      .demo-stage.page { background: transparent; border: none; }
+      .demo-stage.page .slide { zoom: 0.5; border-radius: 20px; }
+      .code { position: relative; margin-top: 10px; }
+      .code pre { margin: 0; max-height: 260px; overflow: auto; padding: 16px 18px; border-radius: 12px; background: #1d1926; color: #e9e4f5; font-family: var(--mono); font-size: 12.5px; line-height: 1.55; white-space: pre; }
+      .code button { position: absolute; right: 10px; top: 10px; padding: 6px 12px; border: none; border-radius: 8px; background: var(--white); font: 600 12px var(--font); cursor: pointer; }
+      .code button.done { background: var(--mint); color: var(--white); }
+    </style>
+  </head>
+  <body class="catalog">
+    <nav class="cat-nav">
+      <b>Deck Kit</b>
+      <p>Start</p>
+      <a href="#pages">Page templates</a>
+      <a href="#layout">Layout</a>
+      <a href="#type">Typography</a>
+      <p>Basics</p>
+      <a href="#tag">Tag · Chip</a>
+      <a href="#icon">Icon · Logo</a>
+      <a href="#card">Card</a>
+      <a href="#stat">Stat</a>
+      <p>Data</p>
+      <a href="#table">Table</a>
+      <a href="#table-data">Data table</a>
+      <a href="#bars">Bar chart</a>
+      <a href="#meter">Meter</a>
+      <p>Lists · flows</p>
+      <a href="#checks">Check list</a>
+      <a href="#bullets">Bullets · Key-value</a>
+      <a href="#steps">Steps</a>
+      <a href="#steps-v">Vertical steps</a>
+      <a href="#flow">Flow</a>
+      <a href="#timeline">Timeline</a>
+      <p>Story</p>
+      <a href="#quote">Quote · Callout</a>
+      <a href="#chat">Chat</a>
+      <a href="#vs">Before / after</a>
+      <a href="#plan">Plan</a>
+      <a href="#person">Person · Sticker</a>
+      <p>Screens</p>
+      <a href="#window">App window</a>
+      <a href="#shot">Screenshot</a>
+      <p>Decoration</p>
+      <a href="#deco">Shapes</a>
+      <a href="#tones">Tones</a>
+    </nav>
+
+    <main class="cat-main">
+      <h1>Deck Kit Catalog</h1>
+      <p class="intro">
+        Build a slide like Lego. Pick a page template, then drop components into its <code>.slide-body</code>.
+        Every block below is live — hit <b>Copy</b> and paste it into your deck. Previews are shown at 50%.
+        Add <code>tone-coral</code>, <code>tone-sun</code>, <code>tone-mint</code>, <code>tone-sky</code> or
+        <code>tone-ink</code> to any component to recolor it.
+      </p>
+
+      <!-- ================= PAGES ================= -->
+      <section class="cat-group" id="pages">
+        <h2>Page templates</h2>
+
+        <figure class="demo">
+          <figcaption><h3>Content page <code>data-page="content"</code></h3><p>The default. Header, title block and footer are always in the same place — only the <code>.slide-body</code> changes</p></figcaption>
+          <div class="demo-stage page">
+            <section class="slide" data-page="content" data-section="Section" data-tag="Tag">
+              <header class="page-title">
+                <h2 class="title">Page title<br /><em>with a highlight</em></h2>
+                <p class="lead">Optional one-line lead</p>
+              </header>
+              <div class="slide-body">
+                <!-- components go here -->
+              </div>
+            </section>
+          </div>
+        </figure>
+
+        <figure class="demo">
+          <figcaption><h3>Split page <code>data-page="split"</code></h3><p>Copy on the left, a visual on the right. Add <code>reverse</code> to <code>.split</code> to flip, or set <code>style="--split: 1fr 1fr"</code></p></figcaption>
+          <div class="demo-stage page">
+            <section class="slide" data-page="split" data-section="Section" data-tag="Tag">
+              <div class="split">
+                <div class="split-copy">
+                  <h2 class="title">Title<br /><em>highlight</em></h2>
+                  <p class="text">Two or three lines of description</p>
+                </div>
+                <div class="card dash center" style="height: 560px"><p class="small">visual component</p></div>
+              </div>
+            </section>
+          </div>
+        </figure>
+
+        <figure class="demo">
+          <figcaption><h3>Cover <code>data-page="cover"</code></h3><p>Brand name and URL are added automatically (logo image only if <code>data-logo</code> is set on html). Right column takes any component</p></figcaption>
+          <div class="demo-stage page">
+            <section class="slide" data-page="cover">
+              <div class="cover-main">
+                <div class="cover-copy">
+                  <h1 class="hero">Stop explaining<br /><em>to your AI</em></h1>
+                  <p class="lead">Subtitle in one or two lines</p>
+                </div>
+                <div></div>
+              </div>
+            </section>
+          </div>
+        </figure>
+
+        <figure class="demo">
+          <figcaption><h3>Section divider <code>data-page="divider"</code></h3><p>Big number counts up by itself. <code>data-tone</code> picks the color: brand, mint, coral, sky, ink</p></figcaption>
+          <div class="demo-stage page">
+            <section class="slide" data-page="divider" data-section="Part" data-tone="mint">
+              <h1 class="hero">Knowledge Base</h1>
+              <p class="lead">One or two lines about this section</p>
+            </section>
+          </div>
+        </figure>
+
+        <figure class="demo">
+          <figcaption><h3>Statement <code>data-page="statement"</code></h3><p>One big message. Add <code>class="slide ink"</code> for a dark version</p></figcaption>
+          <div class="demo-stage page">
+            <section class="slide ink" data-page="statement" data-section="Why now">
+              <p class="statement">Your AI is smart but it does not know <em>how your team works</em></p>
+            </section>
+          </div>
+        </figure>
+
+        <figure class="demo">
+          <figcaption><h3>Closing <code>data-page="closing"</code></h3><p>Next steps and contact. Use <code>.card.glass</code> on purple</p></figcaption>
+          <div class="demo-stage page">
+            <section class="slide" data-page="closing" data-section="Get started">
+              <h2 class="title" style="font-size: 80px">One team, two weeks<br /><em>see the difference</em></h2>
+              <div class="slide-body">
+                <div class="row to-bottom">
+                  <a class="cta" href="https://www.transcodes.io/booking">Book a demo →</a>
+                  <span class="contact"><span>www.transcodes.io/booking</span><span>hello@bigstrider.co</span></span>
+                </div>
+              </div>
+            </section>
+          </div>
+        </figure>
+      </section>
+
+      <!-- ================= LAYOUT ================= -->
+      <section class="cat-group" id="layout">
+        <h2>Layout</h2>
+        <figure class="demo">
+          <figcaption><h3>Grid <code>.grid.c2 / .c3 / .c4 / .c5</code></h3><p>Equal columns. Custom ratio: <code>style="--cols: 1.4fr 1fr"</code>. Stretch a cell with <code>.span-2</code>. Spacing: <code>.gap-s / .gap-l / .gap-xl</code></p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas">
+<div class="grid c4">
+  <div class="card dash center"><p class="small">1</p></div>
+  <div class="card dash center"><p class="small">2</p></div>
+  <div class="card dash center span-2"><p class="small">3 · span-2</p></div>
+</div>
+<div class="grid mt-m" style="--cols: 1.4fr 1fr">
+  <div class="card dash center"><p class="small">1.4fr</p></div>
+  <div class="card dash center"><p class="small">1fr</p></div>
+</div>
+          </div></div>
+        </figure>
+        <figure class="demo">
+          <figcaption><h3>Stack · Row <code>.stack / .row</code></h3><p>Vertical or horizontal groups with the same gap. <code>.between</code> spreads a row, <code>.to-bottom</code> pins a block to the bottom of a column</p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas">
+<div class="row between">
+  <div class="stack gap-s">
+    <span class="tag">Stack</span>
+    <span class="tag tone-mint">of</span>
+    <span class="tag tone-coral">tags</span>
+  </div>
+  <div class="row gap-s">
+    <span class="chip">Row</span><span class="chip">of</span><span class="chip">chips</span>
+  </div>
+</div>
+          </div></div>
+        </figure>
+      </section>
+
+      <!-- ================= TYPE ================= -->
+      <section class="cat-group" id="type">
+        <h2>Typography</h2>
+        <figure class="demo">
+          <figcaption><h3>Text styles <code>.hero .title .h3 .lead .text .small .eyebrow</code></h3><p><code>&lt;em&gt;</code> highlights in the current tone. No periods at the end of sentences</p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas">
+<div class="stack gap-s">
+  <p class="eyebrow">Eyebrow label</p>
+  <h1 class="hero">Hero <em>headline</em></h1>
+  <h2 class="title">Slide title with <em>highlight</em></h2>
+  <h3 class="h3">Heading three</h3>
+  <p class="lead">Lead paragraph for the one line under a title</p>
+  <p class="text">Body text for descriptions inside cards and columns</p>
+  <p class="small">Small supporting note</p>
+</div>
+          </div></div>
+        </figure>
+      </section>
+
+      <!-- ================= BASICS ================= -->
+      <section class="cat-group" id="tag">
+        <h2>Tag · Chip</h2>
+        <figure class="demo">
+          <figcaption><h3>Tag <code>.tag</code> · Chip <code>.chip</code></h3><p>Tag = label. Chip = option; <code>.on</code> for selected, <code>.fill-on</code> for strong selected. Put an <code>&lt;img&gt;</code> inside a chip for a logo</p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas">
+<div class="stack gap-m">
+  <div class="row gap-s">
+    <span class="tag">Brand</span>
+    <span class="tag tone-coral">Coral</span>
+    <span class="tag tone-sun">Sun</span>
+    <span class="tag tone-mint">Mint</span>
+    <span class="tag tone-sky">Sky</span>
+    <span class="tag solid">Solid</span>
+  </div>
+  <div class="row gap-s">
+    <span class="chip">Option</span>
+    <span class="chip on">Selected</span>
+    <span class="chip fill-on">Strong</span>
+    <span class="chip"><span class="dot tone-mint"></span>With dot</span>
+    <span class="chip on"><span class="dot"></span>Option A</span>
+    <span class="chip"><span class="dot tone-coral"></span>Option B</span>
+  </div>
+</div>
+          </div></div>
+        </figure>
+      </section>
+
+      <section class="cat-group" id="icon">
+        <h2>Icon · Logo</h2>
+        <figure class="demo">
+          <figcaption><h3>Icon tile <code>.ico</code> · Logo tile <code>.logo-tile</code></h3><p>Sizes <code>.s / .l</code>, shape <code>.round</code>, tint <code>.soft</code>. Logo tile holds an <code>&lt;img&gt;</code> of your logo</p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas">
+<div class="row">
+  <span class="ico s">1</span>
+  <span class="ico">A</span>
+  <span class="ico l tone-coral">R</span>
+  <span class="ico round tone-mint">✓</span>
+  <span class="ico soft tone-sky">K</span>
+  <!-- put <img src="your-logo.svg" alt="" /> inside -->
+  <span class="logo-tile"><span class="small mono">LOGO</span></span>
+  <span class="logo-tile l"><span class="small mono">LOGO</span></span>
+</div>
+          </div></div>
+        </figure>
+      </section>
+
+      <section class="cat-group" id="card">
+        <h2>Card</h2>
+        <figure class="demo">
+          <figcaption><h3>Card variants <code>.card / .soft / .solid / .dash / .tight</code></h3><p>The main block. Parts: <code>.card-kicker .card-title .card-text .card-big .card-foot</code></p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas">
+<div class="grid c4">
+  <div class="card">
+    <p class="card-kicker">Default</p>
+    <p class="card-title">Outline card</p>
+    <p class="card-text">White with a line border</p>
+  </div>
+  <div class="card soft tone-coral">
+    <p class="card-kicker">Soft</p>
+    <p class="card-title">Tinted card</p>
+    <p class="card-text">Tone color, light</p>
+  </div>
+  <div class="card solid tone-mint">
+    <p class="card-kicker">Solid</p>
+    <p class="card-title">Filled card</p>
+    <p class="card-text">For the one card that matters</p>
+  </div>
+  <div class="card dash">
+    <p class="card-kicker">Dash</p>
+    <p class="card-title">Placeholder</p>
+    <p class="card-text">Coming soon, optional</p>
+  </div>
+</div>
+          </div></div>
+        </figure>
+        <figure class="demo">
+          <figcaption><h3>Number card <code>.card-big</code></h3><p>Problem lists, key points, numbered reasons</p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas">
+<div class="grid c3">
+  <div class="card soft">
+    <p class="card-big">01</p>
+    <p class="card-title">Explained again and again</p>
+    <p class="card-text">Every new chat starts from zero</p>
+  </div>
+  <div class="card soft tone-coral">
+    <p class="card-big">02</p>
+    <p class="card-title">Different per person</p>
+    <p class="card-text">Same task, different quality</p>
+  </div>
+  <div class="card soft tone-sun">
+    <p class="card-big">03</p>
+    <p class="card-title">Confident wrong answers</p>
+    <p class="card-text">It does not know your documents</p>
+  </div>
+</div>
+          </div></div>
+        </figure>
+      </section>
+
+      <section class="cat-group" id="stat">
+        <h2>Stat</h2>
+        <figure class="demo">
+          <figcaption><h3>Stat <code>.stat</code></h3><p>Big numbers. Put three or four in a <code>.grid</code>; wrap in a card if you want a box</p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas">
+<div class="grid c4">
+  <div class="stat">
+    <p class="stat-value">3<small>min</small></p>
+    <p class="stat-label">to create a Persona</p>
+    <p class="stat-note">with a role template</p>
+  </div>
+  <div class="stat tone-mint">
+    <p class="stat-value">4</p>
+    <p class="stat-label">AI tools supported</p>
+    <p class="stat-note">Claude, Cursor, ChatGPT, Antigravity</p>
+  </div>
+  <div class="stat tone-coral">
+    <p class="stat-value">14</p>
+    <p class="stat-label">role templates</p>
+    <p class="stat-note">from designer to support</p>
+  </div>
+  <div class="card soft tone-sky">
+    <div class="stat tone-sky">
+      <p class="stat-value">10<small>MB</small></p>
+      <p class="stat-label">per knowledge file</p>
+    </div>
+  </div>
+</div>
+          </div></div>
+        </figure>
+      </section>
+
+      <!-- ================= DATA ================= -->
+      <section class="cat-group" id="table">
+        <h2>Table</h2>
+        <figure class="demo">
+          <figcaption><h3>Comparison table <code>table.table</code></h3><p>Highlight our column with <code>class="hl"</code> on its cells. Marks: <code>.yes .no .part</code></p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas">
+<table class="table">
+  <thead>
+    <tr><th>Capability</th><th>Prompt notes</th><th>Per-tool settings</th><th class="hl">Transcodes</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Set once, use in every AI</td><td><span class="no"></span></td><td><span class="no"></span></td><td class="hl"><span class="yes"></span></td></tr>
+    <tr><td>Same version for the whole team</td><td><span class="no"></span></td><td><span class="part"></span></td><td class="hl"><span class="yes"></span></td></tr>
+    <tr><td>Answers grounded in your documents</td><td><span class="part"></span></td><td><span class="no"></span></td><td class="hl"><span class="yes"></span></td></tr>
+  </tbody>
+</table>
+          </div></div>
+        </figure>
+      </section>
+
+      <section class="cat-group" id="table-data">
+        <h2>Data table</h2>
+        <figure class="demo">
+          <figcaption><h3>Data table <code>.table.compact.zebra</code></h3><p>Dense rows. Right-align numbers with <code>class="num"</code></p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas">
+<table class="table compact zebra">
+  <thead>
+    <tr><th>Item</th><th>Scope</th><th>Where it lives</th><th class="num">Limit</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Connection key</td><td>Per computer</td><td>This device only</td><td class="num">—</td></tr>
+    <tr><td>Knowledge file</td><td>Per Persona</td><td>Your organization</td><td class="num">10 MB</td></tr>
+    <tr><td>Skill file</td><td>Per Persona</td><td>Your organization</td><td class="num">20 MB</td></tr>
+    <tr><td>Members</td><td>Organization</td><td>Owner · Admin · Member</td><td class="num">—</td></tr>
+  </tbody>
+</table>
+          </div></div>
+        </figure>
+      </section>
+
+      <section class="cat-group" id="bars">
+        <h2>Bar chart</h2>
+        <figure class="demo">
+          <figcaption><h3>Bars <code>.bars &gt; .bar</code></h3><p>Set each height with <code>style="--v: 72%"</code>. <code>.on</code> fills the bar you want to point at</p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas">
+<div class="bars">
+  <div class="bar" style="--v: 90%"><b>25m</b><i></i><span>Before</span></div>
+  <div class="bar" style="--v: 60%"><b>15m</b><i></i><span>Week 1</span></div>
+  <div class="bar on" style="--v: 22%"><b>5m</b><i></i><span>Week 2</span></div>
+</div>
+          </div></div>
+        </figure>
+      </section>
+
+      <section class="cat-group" id="meter">
+        <h2>Meter</h2>
+        <figure class="demo">
+          <figcaption><h3>Meter <code>.meter</code></h3><p>Horizontal progress. Set the fill with <code>style="--v: 64%"</code></p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas">
+<div class="stack">
+  <div class="meter">
+    <div class="meter-head"><span>Setup done</span><span>80%</span></div>
+    <div class="meter-track"><i style="--v: 80%"></i></div>
+  </div>
+  <div class="meter tone-mint">
+    <div class="meter-head"><span>Answers with a source</span><span>64%</span></div>
+    <div class="meter-track"><i style="--v: 64%"></i></div>
+  </div>
+</div>
+          </div></div>
+        </figure>
+      </section>
+
+      <!-- ================= LISTS ================= -->
+      <section class="cat-group" id="checks">
+        <h2>Check list</h2>
+        <figure class="demo">
+          <figcaption><h3>Check list <code>ul.checks</code></h3><p>Benefits. <code>.checks.x</code> for what it does not do</p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas">
+<div class="grid c2">
+  <ul class="checks">
+    <li>Set once, use in any AI</li>
+    <li>Same rules for every teammate</li>
+    <li>Answers from your own documents</li>
+  </ul>
+  <ul class="checks x">
+    <li>We do not sell a new AI model</li>
+    <li>We do not store your connection keys</li>
+  </ul>
+</div>
+          </div></div>
+        </figure>
+      </section>
+
+      <section class="cat-group" id="bullets">
+        <h2>Bullets · Key-value</h2>
+        <figure class="demo">
+          <figcaption><h3>Bullets <code>ul.bullets</code> · Key-value <code>dl.kv</code></h3><p>Plain points, and spec-style label → value lists</p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas">
+<div class="grid c2 gap-xl">
+  <ul class="bullets">
+    <li><b>Instruction</b> role, goal and output standard</li>
+    <li><b>Rule</b> what it must and must never do</li>
+    <li><b>Skill</b> step-by-step procedures</li>
+  </ul>
+  <dl class="kv">
+    <dt>OS</dt><dd>macOS, Windows</dd>
+    <dt>AI tools</dt><dd>Claude, Cursor, ChatGPT, Antigravity</dd>
+    <dt>Files</dt><dd>PDF, Word, text</dd>
+  </dl>
+</div>
+          </div></div>
+        </figure>
+      </section>
+
+      <section class="cat-group" id="steps">
+        <h2>Steps</h2>
+        <figure class="demo">
+          <figcaption><h3>Steps <code>ol.steps</code></h3><p>Numbers are automatic. Any count of <code>&lt;li&gt;</code> fits the width</p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas">
+<ol class="steps">
+  <li><h3>Pick a role</h3><p>Choose one of 14 templates or write your own</p></li>
+  <li><h3>Refine it</h3><p>Role, tasks and rules become Instructions, Rules and Skills</p></li>
+  <li><h3>Apply</h3><p>Choose a folder or the whole computer, and the AI tools</p></li>
+  <li><h3>Reopen the AI</h3><p>New chats follow your team from the first message</p></li>
+</ol>
+          </div></div>
+        </figure>
+      </section>
+
+      <section class="cat-group" id="steps-v">
+        <h2>Vertical steps</h2>
+        <figure class="demo">
+          <figcaption><h3>Vertical steps <code>ol.steps.v</code></h3><p>Fits a split page column</p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas" style="width: 900px">
+<ol class="steps v tone-mint">
+  <li><h3>Upload files</h3><p>PDF, Word and text are extracted automatically</p></li>
+  <li><h3>Check keywords</h3><p>Tell the AI when to read each document</p></li>
+  <li><h3>Link to a Persona</h3><p>Only linked roles use these documents</p></li>
+</ol>
+          </div></div>
+        </figure>
+      </section>
+
+      <section class="cat-group" id="flow">
+        <h2>Flow</h2>
+        <figure class="demo">
+          <figcaption><h3>Flow <code>.flow</code></h3><p>Any blocks with arrows between them. Put cards, stats or chips inside</p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas">
+<div class="flow">
+  <div class="card tight"><p class="card-kicker">01</p><p class="card-title">Write</p><p class="card-text">Role and rules</p></div>
+  <div class="card tight"><p class="card-kicker">02</p><p class="card-title">Apply</p><p class="card-text">Pick the AI</p></div>
+  <div class="card tight"><p class="card-kicker">03</p><p class="card-title">Reopen</p><p class="card-text">Restart the AI</p></div>
+  <div class="card tight solid"><p class="card-kicker">04</p><p class="card-title">Delegate</p><p class="card-text">It works your way</p></div>
+</div>
+          </div></div>
+        </figure>
+      </section>
+
+      <section class="cat-group" id="timeline">
+        <h2>Timeline</h2>
+        <figure class="demo">
+          <figcaption><h3>Timeline <code>ol.timeline</code></h3><p>Roadmaps and pilots. <code>li.next</code> shows an open dot for upcoming items</p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas">
+<ol class="timeline">
+  <li><span class="when">DAY 1</span><h3>Kickoff</h3><p>Pick one team and one role</p></li>
+  <li><span class="when">WEEK 1</span><h3>Build</h3><p>Persona and one knowledge base</p></li>
+  <li class="next"><span class="when">WEEK 2</span><h3>Share</h3><p>Push to the team, everyone pulls</p></li>
+  <li class="next"><span class="when">DAY 14</span><h3>Review</h3><p>Compare time spent re-explaining</p></li>
+</ol>
+          </div></div>
+        </figure>
+      </section>
+
+      <!-- ================= STORY ================= -->
+      <section class="cat-group" id="quote">
+        <h2>Quote · Callout</h2>
+        <figure class="demo">
+          <figcaption><h3>Quote <code>blockquote.quote</code> · Callout <code>.callout</code></h3><p>Customer voice, and a tinted note for caveats or tips</p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas">
+<div class="grid c2 gap-l v-center">
+  <blockquote class="quote">
+    <p>We stopped pasting the same instructions into every chat</p>
+    <cite>Marketing lead, pilot team</cite>
+  </blockquote>
+  <div class="callout tone-sun">
+    <span class="ico s tone-sun">!</span>
+    <p><b>Note</b> The example numbers are illustrative. Replace them with your own pilot results</p>
+  </div>
+</div>
+          </div></div>
+        </figure>
+      </section>
+
+      <section class="cat-group" id="chat">
+        <h2>Chat</h2>
+        <figure class="demo">
+          <figcaption><h3>Chat <code>.chat .bubble.q / .bubble.a .source</code></h3><p>Show a real question and answer. Put it in a <code>.card.soft</code> for a panel</p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas" style="width: 1000px">
+<div class="card soft tone-mint">
+  <p class="card-title">With Knowledge Base</p>
+  <div class="chat">
+    <p class="bubble q">Can an annual plan be refunded mid-term?</p>
+    <div class="bubble a">
+      Yes. Unused months are refunded pro rata within five business days
+      <span class="source">▤ Source · Refund policy.pdf</span>
+    </div>
+  </div>
+</div>
+          </div></div>
+        </figure>
+      </section>
+
+      <section class="cat-group" id="vs">
+        <h2>Before / after</h2>
+        <figure class="demo">
+          <figcaption><h3>VS <code>.vs</code></h3><p>Two panels with a badge in the middle. Change the badge text to → for before/after</p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas">
+<div class="vs">
+  <div class="card soft tone-coral">
+    <p class="card-kicker">Without</p>
+    <p class="card-title">Every chat starts from zero</p>
+    <ul class="checks x"><li>Re-explain the role</li><li>Guess the policy</li></ul>
+  </div>
+  <span class="vs-badge">VS</span>
+  <div class="card soft tone-mint">
+    <p class="card-kicker">With Transcodes</p>
+    <p class="card-title">Every chat starts ready</p>
+    <ul class="checks tone-mint"><li>Role is already set</li><li>Answers cite your docs</li></ul>
+  </div>
+</div>
+          </div></div>
+        </figure>
+      </section>
+
+      <section class="cat-group" id="plan">
+        <h2>Plan</h2>
+        <figure class="demo">
+          <figcaption><h3>Plan card <code>.card.plan</code></h3><p>Pricing or packages. Make the recommended one <code>.solid</code></p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas">
+<div class="grid c3">
+  <div class="card plan">
+    <p class="card-kicker">Personal</p>
+    <p class="plan-price">$0<small>/ month</small></p>
+    <p class="card-text">For trying it on your own</p>
+    <ul class="checks"><li>1 Persona</li><li>1 knowledge base</li></ul>
+  </div>
+  <div class="card plan solid">
+    <div class="row between"><p class="card-kicker">Team</p><span class="tag tone-sun solid">Recommended</span></div>
+    <p class="plan-price">$—<small>/ seat</small></p>
+    <p class="card-text">Share one version with the team</p>
+    <ul class="checks tone-sun"><li>Unlimited Personas</li><li>Organization sync</li><li>Member roles</li></ul>
+  </div>
+  <div class="card plan">
+    <p class="card-kicker">Enterprise</p>
+    <p class="plan-price">Talk to us</p>
+    <p class="card-text">Security review and onboarding</p>
+    <ul class="checks"><li>Everything in Team</li><li>Dedicated support</li></ul>
+  </div>
+</div>
+          </div></div>
+        </figure>
+      </section>
+
+      <section class="cat-group" id="person">
+        <h2>Person · Sticker</h2>
+        <figure class="demo">
+          <figcaption><h3>Person <code>.person</code> · Sticker <code>.sticker</code></h3><p>Owners, testimonials, contacts. The sticker is a tilted callout for one number</p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas">
+<div class="row between">
+  <div class="row gap-l">
+    <div class="person"><span class="avatar">GS</span><div><b>Name Surname</b><span>Role, Company</span></div></div>
+    <div class="person tone-mint"><span class="avatar">HK</span><div><b>Name Surname</b><span>Role, Company</span></div></div>
+  </div>
+  <span class="sticker">about <b>3 min</b></span>
+</div>
+          </div></div>
+        </figure>
+      </section>
+
+      <!-- ================= SCREENS ================= -->
+      <section class="cat-group" id="window">
+        <h2>App window</h2>
+        <figure class="demo">
+          <figcaption><h3>App window <code>.window</code></h3><p>Mock app screen. Parts: <code>.window-side .nav-item .window-main .field .input .input.drop .list-row .btn .status</code>. Drop the sidebar with <code>.window-body.full</code></p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas" style="width: 1200px">
+<div class="window tone-mint">
+  <div class="window-bar"><i></i><i></i><i></i></div>
+  <div class="window-body">
+    <aside class="window-side">
+      <p class="window-brand">Transcodes</p>
+      <p class="nav-item">Personas</p>
+      <p class="nav-item on">Knowledge Base</p>
+      <p class="nav-item">Organization</p>
+    </aside>
+    <main class="window-main">
+      <p class="window-kicker">New knowledge base</p>
+      <p class="window-title">Add files for your AI</p>
+      <div class="field"><label>Name</label><div class="input">Customer operations</div></div>
+      <div class="field"><label>Files</label><div class="input drop">Drop files · PDF, Word, text · 10 MB each</div></div>
+      <div class="list-row"><div><b>Refund policy</b><small>refund · cancel · billing</small></div><span class="status">Ready</span></div>
+      <span class="btn tone">Create and link</span>
+    </main>
+  </div>
+</div>
+          </div></div>
+        </figure>
+      </section>
+
+      <section class="cat-group" id="shot">
+        <h2>Screenshot</h2>
+        <figure class="demo">
+          <figcaption><h3>Screenshot frame <code>.shot</code></h3><p>Put a real screenshot in window chrome. Replace the image path with your PNG</p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas" style="width: 1000px">
+<figure class="shot">
+  <div class="window-bar"><i></i><i></i><i></i></div>
+  <!-- replace with <img src="your-screenshot.png" alt="" /> -->
+  <div class="center small" style="height: 420px">your screenshot here</div>
+</figure>
+          </div></div>
+        </figure>
+      </section>
+
+      <!-- ================= DECORATION ================= -->
+      <section class="cat-group" id="deco">
+        <h2>Shapes</h2>
+        <figure class="demo">
+          <figcaption><h3>Decoration <code>i.deco</code></h3><p>Shapes <code>.circle .square .ring</code>, corners <code>.tl .tr .bl .br</code>, size <code>--size</code>, rotation <code>--turn</code>, color by tone, <code>.soft</code> or <code>.lighten</code>. Place as a direct child of <code>.slide</code> — it sits behind content</p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas" style="position: relative; height: 700px; overflow: hidden">
+<i class="deco circle soft tr" style="--size: 520px"></i>
+<i class="deco square tone-coral bl" style="--size: 260px"></i>
+<i class="deco ring tone-sun br" style="--size: 300px"></i>
+<i class="deco circle tone-mint" style="--size: 120px; left: 700px; top: 200px"></i>
+          </div></div>
+        </figure>
+      </section>
+
+      <section class="cat-group" id="tones">
+        <h2>Tones</h2>
+        <figure class="demo">
+          <figcaption><h3>Tone classes <code>.tone-brand .tone-coral .tone-sun .tone-mint .tone-sky .tone-ink</code></h3><p>One class recolors a component and everything inside it. Change the palette in <code>:root</code> of the style block</p></figcaption>
+          <div class="demo-stage"><div class="demo-canvas">
+<div class="grid c3">
+  <div class="card soft tone-brand"><p class="card-title">tone-brand</p><ul class="checks"><li>Default</li></ul></div>
+  <div class="card soft tone-coral"><p class="card-title">tone-coral</p><ul class="checks"><li>Problems, warnings</li></ul></div>
+  <div class="card soft tone-sun"><p class="card-title">tone-sun</p><ul class="checks"><li>Highlights, notes</li></ul></div>
+  <div class="card soft tone-mint"><p class="card-title">tone-mint</p><ul class="checks"><li>Knowledge, success</li></ul></div>
+  <div class="card soft tone-sky"><p class="card-title">tone-sky</p><ul class="checks"><li>Personal, info</li></ul></div>
+  <div class="card soft tone-ink"><p class="card-title">tone-ink</p><ul class="checks"><li>Neutral, serious</li></ul></div>
+</div>
+          </div></div>
+        </figure>
+      </section>
+    </main>
+
+    <!-- catalog only: capture each demo's source before the page script decorates the pages -->
+    <script>
+      const dedent = (src) => {
+        const lines = src.replace(/^\n+|\s+$/g, '').split('\n')
+        const indent = Math.min(...lines.filter((l) => l.trim()).map((l) => l.match(/^ */)[0].length))
+        return lines.map((l) => l.slice(indent)).join('\n')
+      }
+      document.querySelectorAll('.demo').forEach((demo) => {
+        const stage = demo.querySelector('.demo-stage')
+        const holder = stage.classList.contains('page') ? stage : stage.querySelector('.demo-canvas')
+        const src = dedent(holder.innerHTML)
+        const wrap = document.createElement('div')
+        wrap.className = 'code'
+        const pre = document.createElement('pre')
+        pre.textContent = src
+        const btn = document.createElement('button')
+        btn.textContent = 'Copy'
+        btn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(src)
+          } catch {
+            const r = document.createRange()
+            r.selectNodeContents(pre)
+            getSelection().removeAllRanges()
+            getSelection().addRange(r)
+            document.execCommand('copy')
+          }
+          btn.textContent = 'Copied'
+          btn.classList.add('done')
+          setTimeout(() => {
+            btn.textContent = 'Copy'
+            btn.classList.remove('done')
+          }, 1400)
+        })
+        wrap.append(pre, btn)
+        demo.append(wrap)
+      })
+    </script>
+    <script id="deck-kit-pages">
+      /* ==========================================================
+         Transcodes Deck Kit · page templates
+         Runs once on load. For every <section class="slide" data-page>:
+         - applies data-tone as a .tone-* class
+         - adds the header (data-section left, data-tag right)
+         - adds the footer (brand mark left, "03 / 14" right)
+         - adds decoration shapes for cover / divider / closing
+         - numbers dividers automatically (01, 02 …)
+         Opt out of a part per slide: data-no-head, data-no-foot, data-no-deco
+         ========================================================== */
+      ;(() => {
+        // optional logo image: <html data-logo="path/to/logo.svg">. Without it, only the brand name shows
+        const LOGO = document.documentElement.dataset.logo
+        const LOGO_IMG = LOGO ? `<img src="${LOGO}" alt="" />` : ''
+        const BRAND = document.documentElement.dataset.brand || 'Transcodes'
+        const URL_TEXT = document.documentElement.dataset.url || 'www.transcodes.io'
+        const COMPANY = document.documentElement.dataset.company || 'Bigstrider Inc'
+
+        const pad = (n) => String(n).padStart(2, '0')
+        const el = (html) => {
+          const t = document.createElement('template')
+          t.innerHTML = html.trim()
+          return t.content.firstElementChild
+        }
+
+        const DECO = {
+          cover: [
+            '<i class="deco circle lighten" style="--size: 900px; right: -180px; top: -200px"></i>',
+            '<i class="deco circle tone-sun" style="--size: 320px; left: 860px; bottom: -140px"></i>',
+            '<i class="deco square tone-coral" style="--size: 200px; left: -40px; top: 650px; --turn: 18deg"></i>'
+          ],
+          divider: [
+            '<i class="deco circle lighten" style="--size: 760px; right: -120px; top: 160px"></i>',
+            '<i class="deco circle lighten" style="--size: 480px; right: 20px; top: 300px"></i>',
+            '<i class="deco square tone-sun" style="--size: 130px; right: 540px; top: 100px; --turn: -12deg"></i>'
+          ],
+          closing: [
+            '<i class="deco circle lighten" style="--size: 820px; right: -200px; bottom: -260px"></i>',
+            '<i class="deco square tone-coral" style="--size: 110px; right: 200px; top: 80px; --turn: 20deg"></i>'
+          ],
+          statement: ['<i class="deco circle soft" style="--size: 520px; right: -160px; bottom: -200px"></i>']
+        }
+
+        const slides = [...document.querySelectorAll('.slide')]
+        let dividerCount = 0
+
+        slides.forEach((slide, i) => {
+          const page = slide.dataset.page || 'content'
+          const tone = slide.dataset.tone
+          if (tone) slide.classList.add(`tone-${tone}`)
+
+          // header
+          if (!('noHead' in slide.dataset) && !slide.querySelector(':scope > .slide-head')) {
+            let head
+            if (page === 'cover') {
+              head = el(`<header class="slide-head"><span class="logo-lockup">${LOGO_IMG}${BRAND}</span></header>`)
+            } else {
+              const section = slide.dataset.section || ''
+              const tag = slide.dataset.tag ? `<span class="tag">${slide.dataset.tag}</span>` : '<span></span>'
+              head = el(`<header class="slide-head"><span class="eyebrow">${section}</span>${tag}</header>`)
+            }
+            slide.prepend(head)
+          }
+
+          // divider number
+          if (page === 'divider') {
+            dividerCount += 1
+            if (!slide.querySelector('.bignum')) {
+              const num = el(`<p class="bignum">${slide.dataset.num || pad(dividerCount)}</p>`)
+              const head = slide.querySelector(':scope > .slide-head')
+              head ? head.after(num) : slide.prepend(num)
+            }
+          }
+
+          // footer
+          if (!('noFoot' in slide.dataset) && !slide.querySelector(':scope > .slide-foot')) {
+            const left =
+              page === 'content' || page === 'split' || page === 'statement'
+                ? `<span class="brand-mark">${LOGO_IMG}${BRAND.toUpperCase()}</span>`
+                : '<span></span>'
+            const right =
+              page === 'cover'
+                ? URL_TEXT
+                : page === 'closing'
+                  ? `${COMPANY} · ${pad(i + 1)} / ${pad(slides.length)}`
+                  : `${pad(i + 1)} / ${pad(slides.length)}`
+            slide.append(el(`<footer class="slide-foot">${left}<span>${right}</span></footer>`))
+          }
+
+          // decoration
+          if (!('noDeco' in slide.dataset) && DECO[page]) {
+            const dark = slide.matches('.ink, .purple, .mint')
+            DECO[page].forEach((html) => slide.prepend(el(dark ? html.replace(' soft"', ' lighten"') : html)))
+          }
+        })
+      })()
+    </script>
+  </body>
+</html>

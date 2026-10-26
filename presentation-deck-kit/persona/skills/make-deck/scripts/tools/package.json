@@ -1,0 +1,9 @@
+{
+  "name": "deck-kit-tools",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "pptxgenjs": "^3.12.0",
+    "puppeteer-core": "^23.0.0"
+  }
+}

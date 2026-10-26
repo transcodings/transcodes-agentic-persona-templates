@@ -29,5 +29,25 @@
     "skills": [
       "persona/skills/make-deck/SKILL.md"
     ]
+  },
+  "knowledge": {
+    "id": "deck-kit",
+    "name": "deck kit",
+    "description": "Page types, components, the blank deck, and the component catalog for a 16:9 deck.",
+    "documents": [
+      "knowledge/deck-kit.md"
+    ],
+    "contents": [
+      {
+        "file": "knowledge/starter.html",
+        "description": "Blank 16:9 deck. Copy this file to start a new deck. It carries the master design.",
+        "aliases": ["starter", "blank deck", "blank"]
+      },
+      {
+        "file": "knowledge/catalog.html",
+        "description": "Every page template and component, with the markup to copy into a deck.",
+        "aliases": ["catalog", "components", "page template"]
+      }
+    ]
   }
 }

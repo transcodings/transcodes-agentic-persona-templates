@@ -53,7 +53,7 @@ Repeat the Guideline and Skill copies for each app you use. Open that project in
 | Folder                                                     | What it does                                                                                                       |
 | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | [transcodes-guide](transcodes-guide)                       | Walks through Transcodes Desktop, then Apply into a real project folder.                                           |
-| [starter](starter)                                         | A general Persona that does the task, then updates its Instruction and Rules. Chat summaries can grow the Knowledge Base. |
+| [starter](starter)                                         | A general Persona that does the task, then updates its Instruction and Rules. One sample document shows how to add a file to the Knowledge Base. |
 | [card-news-creator](card-news-creator)                     | Plans Instagram and LinkedIn card-news carousels, designs each slide in HTML, and renders PNG plus a LinkedIn PDF. |
 | [presentation-deck-kit](presentation-deck-kit)             | Builds a 16:9 deck as one HTML file, then prints a PDF and, when asked, an editable PowerPoint.                    |
 | [caricature-artist](caricature-artist)                     | Redraws a photo as a caricature and checks the Knowledge Base for the requested style first.                       |
