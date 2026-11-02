@@ -32,40 +32,19 @@
     "skills": [
       "persona/skills/create-card-news/SKILL.md",
       "persona/skills/html-to-png/SKILL.md",
-      "persona/skills/preview-from-sample/SKILL.md"
+      "persona/skills/preview-from-sample/SKILL.md",
+      "persona/skills/post-style-index/SKILL.md",
+      "persona/skills/post-style-nocturne/SKILL.md",
+      "persona/skills/post-style-gallery/SKILL.md",
+      "persona/skills/post-style-paper/SKILL.md"
     ]
   },
   "knowledge": {
     "id": "card-news-layouts",
     "name": "card news layouts",
-    "description": "Card news templates in four systems: paper, Index, Nocturne, and Gallery. Copy one system and change only the words.",
+    "description": "How to choose one card-news template skill and copy the HTML in its references folder.",
     "documents": [
-      "knowledge/design-4.md",
-      "knowledge/design-1.md",
-      "knowledge/design-2.md",
-      "knowledge/design-3.md"
-    ],
-    "contents": [
-      {
-        "file": "knowledge/style-4.html",
-        "description": "Paper desk, 1080×1350. Six slides in one file: cover, text, score, steps, screen, and cta. Pair only with design-4.md. Copy the card whose data-layout matches the slide.",
-        "aliases": ["style 4", "paper", "cover", "text", "score", "steps", "screenshot", "screen", "cta"]
-      },
-      {
-        "file": "knowledge/style-1.html",
-        "description": "Index cover, 1080×1350. Cream field, black left rail, one red signal. Pair only with design-1.md.",
-        "aliases": ["style 1", "index", "editorial", "swiss"]
-      },
-      {
-        "file": "knowledge/style-2.html",
-        "description": "Nocturne cover, 1080×1350. Warm black field, serif title, antique gold rule. Pair only with design-2.md.",
-        "aliases": ["style 2", "nocturne", "dark", "serif"]
-      },
-      {
-        "file": "knowledge/style-3.html",
-        "description": "Gallery cover, 1080×1350. Warm paper, cropped oxblood circle, italic serif. Pair only with design-3.md.",
-        "aliases": ["style 3", "gallery", "poster"]
-      }
+      "knowledge/sample.md"
     ]
   }
 }

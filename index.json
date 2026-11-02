@@ -77,7 +77,7 @@
       "publisher": "Transcodes",
       "counts": {
         "rules": 6,
-        "skills": 3,
+        "skills": 7,
         "knowledge": 1
       }
     },
@@ -88,8 +88,8 @@
         "en": "Presentation Deck Kit"
       },
       "summary": {
-        "ko": "Builds a 16:9 deck as HTML from three visual styles. A sample image can become the template. index.html shows the render, and yes prints the PDF and, when asked, PowerPoint.",
-        "en": "Builds a 16:9 deck as HTML from three visual styles. A sample image can become the template. index.html shows the render, and yes prints the PDF and, when asked, PowerPoint."
+        "ko": "Builds a 16:9 deck as HTML from four template skills. A sample image can become the template. index.html shows the render, and yes prints the PDF and, when asked, PowerPoint.",
+        "en": "Builds a 16:9 deck as HTML from four template skills. A sample image can become the template. index.html shows the render, and yes prints the PDF and, when asked, PowerPoint."
       },
       "suggestedName": "presentation-deck-kit",
       "aliases": [
@@ -104,7 +104,7 @@
       "publisher": "Transcodes",
       "counts": {
         "rules": 3,
-        "skills": 2,
+        "skills": 6,
         "knowledge": 1
       }
     },

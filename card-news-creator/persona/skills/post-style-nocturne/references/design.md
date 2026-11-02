@@ -1,6 +1,6 @@
 ---
 name: "Nocturne design"
-description: "Style 2 card news. Warm black field, ivory serif, antique gold. Pair with style-2.html. Fraunces and Outfit."
+description: "Style 2 card news. Warm black field, ivory serif, antique gold. Pair with references/style.html. Fraunces and Outfit."
 aliases:
   - "design 2"
   - "style 2"
@@ -11,9 +11,9 @@ aliases:
 
 # Nocturne design
 
-Style 2 is a dark editorial card. The master file is `style-2.html`. Copy that file for every slide. Replace the words. Keep the warm black field, the cropped folio number, the serif title, and the gold rule in the lower third.
+Style 2 is a dark editorial card. The master file is `references/style.html`. Copy that file for every slide. Replace the words. Keep the warm black field, the cropped folio number, the serif title, and the gold rule in the lower third.
 
-Use this pair only. Do not mix it with `style-1.html`, `style-3.html`, or `style-4.html`.
+Use this pair only. Do not mix it with `post-style-index`, `post-style-gallery`, or `post-style-paper`.
 
 ## Colors
 

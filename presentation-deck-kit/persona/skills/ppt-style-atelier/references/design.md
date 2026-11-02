@@ -17,13 +17,14 @@ Text needs 4.5:1. Large text, 24px and up, needs 3:1. A pair that fails is for s
 
 ## Built-in styles
 
-| Style | Files | Direction | Core palette |
+| Skill | Files in that skill | Direction | Core palette |
 |---|---|---|---|
-| Swiss Grid | `starter-1.html`, `catalog-1.html` | Strict grid, uppercase display type, square cards, heavy rules | paper `#F4F1E8`, ink `#101010`, signal red `#E63B2E` |
-| Night Console | `starter-2.html`, `catalog-2.html` | Dark data room, monospace labels, thin borders, technical grid | paper `#07111F`, ink `#F1F6FF`, signal cyan `#35D8C0` |
-| Paper Atelier | `starter-3.html`, `catalog-3.html` | Warm editorial paper, serif display type, organic corners | paper `#F2EADC`, ink `#29251F`, brick `#A33F2B` |
+| `ppt-style-swiss` | `references/starter.html`, `references/catalog.html` | Swiss Grid. Strict grid, uppercase display type, square cards, heavy rules | paper `#F4F1E8`, ink `#101010`, signal red `#E63B2E` |
+| `ppt-style-night` | `references/starter.html`, `references/catalog.html` | Night Console. Dark data room, monospace labels, thin borders, technical grid | paper `#07111F`, ink `#F1F6FF`, signal cyan `#35D8C0` |
+| `ppt-style-atelier` | `references/starter.html`, `references/catalog.html` | Paper Atelier. Warm editorial paper, serif display type, organic corners | paper `#F2EADC`, ink `#29251F`, brick `#A33F2B` |
+| `ppt-style-neutral` | `references/starter.html`, `references/catalog.html` | Original neutral pair | paper `#FAF7F2`, ink `#17131F`, brand `#6D4DFF` |
 
-The original `starter.html` and `catalog.html` remain the neutral compatibility pair. Choose one matching pair and keep it together. The numbered skins change more than color: typography, border weight, radius, spacing, cover treatment, decoration, and catalog chrome are intentionally different.
+Open one template skill and use only the starter and catalog in that skill. The skins change more than color: typography, border weight, radius, spacing, cover treatment, decoration, and catalog chrome are intentionally different.
 
 ## Neutrals
 
@@ -67,7 +68,7 @@ Each hue is a triple. `base` fills a shape. `deep` is the text and the darker ma
 - `sun` and `coral` are shapes and highlights. Their words use `ink` or `deep`.
 - `soft` is a footer or label color. It is not body text.
 - No `box-shadow`. No gradient text, glow, or neon.
-- Change a palette in the deck file's own `:root`. Leave all starter/catalog source pairs unchanged unless the user asks to change the kit.
+- Change a palette in the deck file's own `:root`. Leave every template skill unchanged unless the user asks to change the kit.
 
 ## When a sample sets the colors
 

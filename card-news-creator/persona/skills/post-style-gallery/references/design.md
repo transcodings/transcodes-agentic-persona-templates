@@ -1,6 +1,6 @@
 ---
 name: "Gallery design"
-description: "Style 3 card news. Warm paper, cropped oxblood circle, high-contrast serif. Pair with style-3.html. Cormorant Garamond and Outfit."
+description: "Style 3 card news. Warm paper, cropped oxblood circle, high-contrast serif. Pair with references/style.html. Cormorant Garamond and Outfit."
 aliases:
   - "design 3"
   - "style 3"
@@ -11,9 +11,9 @@ aliases:
 
 # Gallery design
 
-Style 3 is a gallery poster. The master file is `style-3.html`. Copy that file for every slide. Replace the words. Keep the warm paper, the cropped oxblood circle, and the small plate at the lower left.
+Style 3 is a gallery poster. The master file is `references/style.html`. Copy that file for every slide. Replace the words. Keep the warm paper, the cropped oxblood circle, and the small plate at the lower left.
 
-Use this pair only. Do not mix it with `style-1.html`, `style-2.html`, or `style-4.html`.
+Use this pair only. Do not mix it with `post-style-index`, `post-style-nocturne`, or `post-style-paper`.
 
 ## Colors
 

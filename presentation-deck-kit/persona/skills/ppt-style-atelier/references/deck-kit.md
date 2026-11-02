@@ -13,16 +13,16 @@ aliases:
 
 A 16:9 deck is one HTML file at 1920×1080. Pick a page template, then snap components into it.
 
-| File | What it is |
+| Skill | What it is |
 | --- | --- |
-| `starter.html` / `catalog.html` | Original neutral kit, retained for compatibility |
-| `starter-1.html` / `catalog-1.html` | **Swiss Grid** — strict black rules, red signal color, square editorial geometry |
-| `starter-2.html` / `catalog-2.html` | **Night Console** — dark technical surfaces, cyan signals, compact data-room geometry |
-| `starter-3.html` / `catalog-3.html` | **Paper Atelier** — warm paper, serif display type, soft organic editorial forms |
+| `ppt-style-neutral` | Original neutral kit. `references/starter.html` and `references/catalog.html` |
+| `ppt-style-swiss` | **Swiss Grid** — strict black rules, red signal color, square editorial geometry |
+| `ppt-style-night` | **Night Console** — dark technical surfaces, cyan signals, compact data-room geometry |
+| `ppt-style-atelier` | **Paper Atelier** — warm paper, serif display type, soft organic editorial forms |
 
-Choose one pair before planning pages. Use the style the user names. If they do not name one, choose the closest fit to the subject and audience and state the choice. A reference sample takes priority: pick the structurally closest pair, then adapt its tokens in the new deck. Never copy components from a differently numbered catalog.
+Choose one template skill before planning pages. Use the style the user names. If they do not name one, choose the closest fit and state the choice. A reference sample takes priority: pick the structurally closest skill, then adapt its tokens in the new deck. Never copy components from a different template skill.
 
-The print scripts live in the `make-deck` skill, not in this Knowledge Base.
+The print scripts live in the `make-deck` skill.
 
 ## Page templates
 
@@ -61,20 +61,20 @@ Page attributes:
 | Screens | `.window` (side nav, fields, rows, buttons), `.shot` for real screenshots |
 | Decoration | `i.deco` (`.circle .square .ring`, `.tl .tr .bl .br`, `--size`, `--turn`) |
 
-**Color:** the roles, the contrast, and how a sample fills them are in `design.md`. On a component, add `.tone-brand / .tone-coral / .tone-sun / .tone-mint / .tone-sky / .tone-ink`. The values live in `:root` inside the `<style id="deck-kit">` block.
+**Color:** the roles, the contrast, and how a sample fills them are in `references/design.md`. On a component, add `.tone-brand / .tone-coral / .tone-sun / .tone-mint / .tone-sky / .tone-ink`. The values live in `:root` inside the `<style id="deck-kit">` block.
 
 ## Rules
 
-- Use components and tokens, not one-off styles. If something is missing, add it to the matching starter/catalog pair so the next deck in that style gets it too.
+- Use components and tokens, not one-off styles. If something is missing, add it to this skill's starter and catalog so the next deck in that style gets it too.
 - No `box-shadow`. Chrome prints it as gray rectangles in the PDF.
 - No periods at the end of sentences.
 - Check every page in the PDF. Shorten copy if it overflows.
 
 ## Adding a component
 
-1. Add the styles to the `<style id="deck-kit">` block in the matching starter/catalog pair under Components, using `var(--c)`, `var(--c-soft)`, `var(--c-deep)` for color so tones work.
-2. Add a `<figure class="demo">` to that pair's catalog with the markup. The code panel and Copy button appear by themselves.
+1. Add the styles to the `<style id="deck-kit">` block in this skill's `references/starter.html` and `references/catalog.html` under Components, using `var(--c)`, `var(--c-soft)`, `var(--c-deep)` for color so tones work.
+2. Add a `<figure class="demo">` to this skill's `references/catalog.html` with the markup. The code panel and Copy button appear by themselves.
 
 ## Changing the design
 
-Each starter holds the master copy of one design. A new deck copied from it carries its own copy, so later kit changes do not touch finished decks. To update an existing deck, replace its `<style id="deck-kit">` and `<style id="deck-skin-*">` blocks from the same starter style. Keep that style's catalog in step.
+Each starter holds the master copy of one design. A new deck copied from it carries its own copy, so later kit changes do not touch finished decks. To update an existing deck, replace its `<style id="deck-kit">` and `<style id="deck-skin-*">` blocks from this skill's `references/starter.html`. Keep `references/catalog.html` in step.

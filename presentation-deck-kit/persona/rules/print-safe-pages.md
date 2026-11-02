@@ -9,7 +9,7 @@ description: Keep every page printable. Check the PDF before delivery.
 - Keep the header, footer, and page number that the kit page script adds, unless that kit shows how to turn a part off for one page.
 
 # Never
-- Never use a style the `deck-kit` document or the `starter.html` design block says will print badly.
+- Never use a style the selected template skill's `references/deck-kit.md` or `references/starter.html` says will print badly.
 - Never run `build-pdf.sh` or `build-pptx.sh` in the same turn as the first index.html preview.
 - Never deliver the HTML alone and call the deck finished. index.html is a preview.
 - Never claim a page fits without looking at the printed PDF.

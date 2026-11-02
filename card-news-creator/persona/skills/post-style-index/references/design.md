@@ -1,6 +1,6 @@
 ---
 name: "Index design"
-description: "Style 1 card news. Cream paper, black rail, red signal. Pair with style-1.html. Instrument Sans and IBM Plex Mono."
+description: "Style 1 card news. Cream paper, black rail, red signal. Pair with references/style.html. Instrument Sans and IBM Plex Mono."
 aliases:
   - "design 1"
   - "style 1"
@@ -11,9 +11,9 @@ aliases:
 
 # Index design
 
-Style 1 is an editorial index, not the paper-desk look. The master file is `style-1.html`. Copy that file for every slide in the carousel. Replace the words. Keep the black rail, the top rule, the red signal, and the three-column index.
+Style 1 is an editorial index, not the paper-desk look. The master file is `references/style.html`. Copy that file for every slide in the carousel. Replace the words. Keep the black rail, the top rule, the red signal, and the three-column index.
 
-Use this pair only. Do not mix it with `style-2.html`, `style-3.html`, or `style-4.html`.
+Use this pair only. Do not mix it with `post-style-nocturne`, `post-style-gallery`, or `post-style-paper`.
 
 ## Colors
 

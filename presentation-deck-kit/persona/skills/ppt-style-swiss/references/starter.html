@@ -2,25 +2,26 @@
 <!--
   Starter deck · copy this file to begin a new deck
   1. Keep the page types you need and duplicate them
-  2. Fill each page with components from catalog.html
-  3. ./build-pdf.sh starter.html my-deck.pdf
+  2. Fill each page with components from references/catalog.html in this skill
+  3. ./build-pdf.sh the copied deck file my-deck.pdf
 
   Page types (data-page)
-  - cover      purple, brand name top-left, URL bottom-right
+  - cover      Swiss Grid treatment, brand top-left, URL bottom-right
   - content    title block on top, components in .slide-body
   - split      copy left, visual right (.split.reverse flips it)
   - divider    section break, number is automatic, data-tone picks the color
   - statement  one big message (add class="ink" for a dark page)
-  - closing    purple, next steps and contact
+  - closing    Swiss Grid treatment, next steps and contact
 
   Every page gets the same header, footer and page number from the page script at the bottom
   data-section = top-left label · data-tag = top-right tag · data-tone = color
 -->
-<html lang="en" data-brand="Transcodes" data-url="www.transcodes.io" data-company="Bigstrider Inc">
+<html lang="en" data-style="1-swiss-grid" data-brand="Transcodes" data-url="www.transcodes.io" data-company="Bigstrider Inc">
   <head>
     <meta charset="utf-8" />
+    <!-- Style 1 · Swiss Grid -->
     <meta name="viewport" content="width=1920" />
-    <title>{{Deck title}}</title>
+    <title>{{Deck title}} · Swiss Grid</title>
     <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
@@ -678,96 +679,275 @@
       .slide[data-page='closing'] .steps > li::before,
       .slide[data-page='cover'] .steps > li::before { outline-color: var(--brand); }
     </style>
+  
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style id="deck-skin-1">
+
+      /* Style 1 · Swiss Grid
+         Strict black rules, square geometry, red signal color */
+      :root {
+        --paper: #f4f1e8;
+        --white: #fffdf7;
+        --ink: #101010;
+        --muted: #4e4e4e;
+        --soft: #6a6a6a;
+        --line: #101010;
+        --brand: #e63b2e;
+        --brand-deep: #a31f18;
+        --brand-soft: #f7d8d2;
+        --coral: #ff6b35;
+        --coral-deep: #a83a12;
+        --coral-soft: #ffe0d2;
+        --sun: #f3c623;
+        --sun-deep: #725a00;
+        --sun-soft: #fff0a8;
+        --mint: #197d65;
+        --mint-deep: #0d5947;
+        --mint-soft: #d6ede5;
+        --sky: #2456d6;
+        --sky-deep: #17399a;
+        --sky-soft: #dce5ff;
+        --font: 'IBM Plex Sans', sans-serif;
+        --mono: 'IBM Plex Mono', monospace;
+        --r-s: 0px;
+        --r-m: 0px;
+        --r-l: 0px;
+        --r-xl: 0px;
+        --gap: 24px;
+      }
+      .slide { padding: 150px 120px 112px; border-top: 18px solid var(--ink); }
+      .slide-head { left: 120px; right: 120px; top: 62px; padding-bottom: 18px; border-bottom: 3px solid currentColor; }
+      .slide-foot { left: 120px; right: 120px; bottom: 40px; padding-top: 14px; border-top: 2px solid currentColor; }
+      .hero, .title, .h3, .card-title, .statement { letter-spacing: -0.055em; }
+      .hero { font-weight: 700; text-transform: uppercase; }
+      .eyebrow, .tag, .card-kicker { letter-spacing: 0.08em; }
+      .card, .table, .window, .shot, .callout, .bubble, .input, .btn, .tag, .chip, .ico, .logo-tile {
+        border-radius: 0 !important;
+      }
+      .card { border: 3px solid var(--ink); }
+      .card.soft { border-color: var(--ink); }
+      .card.solid { border-color: var(--ink); }
+      .table { border: 3px solid var(--ink); }
+      .table th, .table td { border-color: var(--ink); }
+      .tag { border: 2px solid var(--c-deep); }
+      .chip { border: 2px solid var(--ink); }
+      .sticker { border-radius: 0; transform: rotate(-2deg); border: 3px solid var(--ink); }
+      .deco { border-radius: 0 !important; }
+      .deco.circle { clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
+      .deco.ring { clip-path: none; }
+      .slide[data-page='cover'] {
+        background: var(--paper);
+        color: var(--ink);
+        --muted: #4e4e4e;
+        --soft: #6a6a6a;
+        --line: #101010;
+        border-top-color: var(--brand);
+      }
+      .slide[data-page='cover']::before {
+        content: '';
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 38px;
+        background: var(--brand);
+      }
+      .slide[data-page='cover'] > * em { color: var(--brand); }
+      .slide[data-page='closing'] { background: var(--ink); border-top-color: var(--brand); }
+      .slide[data-page='divider'] { border-top-color: var(--ink); }
+      .bignum { color: rgba(255, 255, 255, 0.34); }
+      .cta { border-radius: 0; border: 3px solid currentColor; }
+      body.catalog { background: #dedbd2; }
+      .cat-nav { background: var(--ink); color: var(--white); border-right: 8px solid var(--brand); }
+      .cat-nav a { color: var(--white); border-radius: 0; }
+      .cat-nav a:hover { background: var(--brand); }
+      .cat-main > h1 { text-transform: uppercase; letter-spacing: -0.055em; }
+      .cat-group > h2 { border-bottom: 4px solid var(--ink); text-transform: uppercase; }
+      .demo-stage, .code pre, .code button { border-radius: 0; }
+
+      /* Swiss Grid compositions: asymmetric editorial rails and ruled matrices */
+      .swiss-cover {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        gap: 72px;
+        align-items: end;
+      }
+      .swiss-folio {
+        align-self: stretch;
+        border-right: 6px solid var(--ink);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 28px 34px 28px 0;
+        font-family: var(--mono);
+        font-size: 18px;
+        text-transform: uppercase;
+      }
+      .swiss-folio strong { font-size: 92px; line-height: 0.86; color: var(--brand); }
+      .swiss-cover-copy { position: relative; z-index: 2; padding-bottom: 16px; }
+      .swiss-cover-copy .hero { font-size: 138px; max-width: 1180px; }
+      .swiss-cover-copy .lead { max-width: 720px; border-top: 3px solid var(--ink); padding-top: 20px; }
+      .swiss-signal {
+        position: absolute;
+        z-index: 0;
+        right: -70px;
+        top: 160px;
+        width: 520px;
+        height: 220px;
+        background: var(--brand);
+      }
+      .swiss-corner {
+        position: absolute;
+        right: 96px;
+        bottom: 86px;
+        width: 120px;
+        height: 120px;
+        background: var(--sun);
+      }
+      .swiss-content {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 0.82fr 1.45fr;
+        gap: 72px;
+        align-items: stretch;
+      }
+      .swiss-content .page-title {
+        border-right: 4px solid var(--ink);
+        padding-right: 52px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .swiss-content .page-title::after {
+        content: '01 — 04';
+        font: 600 22px var(--mono);
+        color: var(--brand);
+      }
+      .swiss-matrix {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        border: 3px solid var(--ink);
+      }
+      .swiss-cell {
+        min-height: 250px;
+        padding: 34px;
+        border-right: 2px solid var(--ink);
+        border-bottom: 2px solid var(--ink);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .swiss-cell:nth-child(2n) { border-right: 0; }
+      .swiss-cell:nth-last-child(-n + 2) { border-bottom: 0; }
+      .swiss-cell strong { font: 700 78px var(--font); letter-spacing: -0.06em; }
+      .swiss-split {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 0.64fr 1.36fr;
+        gap: 0;
+        border: 3px solid var(--ink);
+      }
+      .swiss-split-index {
+        background: var(--ink);
+        color: var(--white);
+        padding: 42px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .swiss-split-index strong { font-size: 240px; line-height: 0.75; color: var(--brand); }
+      .swiss-split-main { padding: 48px 58px; display: grid; grid-template-rows: auto 1fr; gap: 40px; }
+      .swiss-rows { border-top: 3px solid var(--ink); }
+      .swiss-row { display: grid; grid-template-columns: 84px 1fr 180px; gap: 24px; align-items: center; padding: 24px 0; border-bottom: 2px solid var(--ink); }
+      .swiss-row b { font-size: 28px; }
+      .swiss-row span:first-child { font: 600 18px var(--mono); color: var(--brand); }
+      .swiss-row span:last-child { text-align: right; font-family: var(--mono); }
+      .swiss-divider-layout { height: 100%; display: grid; grid-template-columns: 1fr 280px; align-items: end; }
+      .swiss-divider-layout .hero { max-width: 1260px; font-size: 150px; }
+      .swiss-divider-layout .bignum {
+        position: static;
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-left: 6px solid currentColor;
+        font-size: 230px;
+      }
+      .swiss-statement {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 18px 1fr 320px;
+        gap: 52px;
+        align-items: center;
+      }
+      .swiss-statement > span { align-self: stretch; background: var(--brand); }
+      .swiss-statement .statement { max-width: 1080px; }
+      .swiss-statement .side-note { border: 3px solid var(--ink); padding: 28px; font: 600 18px/1.5 var(--mono); text-transform: uppercase; }
+      .swiss-close { height: 100%; display: grid; grid-template-rows: 1fr auto; }
+      .swiss-close-main { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 60px; align-items: end; }
+      .swiss-close-main .title { font-size: 118px !important; }
+      .swiss-actions { border-left: 4px solid var(--brand); padding-left: 34px; display: grid; gap: 20px; }
+      .swiss-action { display: grid; grid-template-columns: 52px 1fr; gap: 18px; border-bottom: 2px solid currentColor; padding-bottom: 18px; }
+      .swiss-close-foot { background: var(--brand); margin: 0 -120px -112px; padding: 30px 120px; display: flex; justify-content: space-between; align-items: center; }
+    </style>
   </head>
   <body>
-    <!-- PAGE · cover -->
-    <section class="slide" data-page="cover">
-      <div class="cover-main">
-        <div class="cover-copy">
-          <h1 class="hero">{{Line 1}}<br />{{Line 2}}<br /><em>{{Highlighted line}}</em></h1>
-          <p class="lead">{{Subtitle, one or two lines}}</p>
-          <div class="row gap-s">
-            <span class="chip"><span class="dot"></span>{{Keyword}}</span>
-            <span class="chip tone-mint"><span class="dot"></span>{{Keyword}}</span>
-          </div>
-        </div>
-        <div class="stack gap-s">
-          <!-- any component works here: a card, a window, a stat -->
-          <div class="card">
-            <p class="card-kicker">{{Label}}</p>
-            <p class="card-title">{{Card title}}</p>
-            <ul class="checks"><li>{{Point}}</li><li>{{Point}}</li><li>{{Point}}</li></ul>
-          </div>
+    <section class="slide" data-page="cover" data-no-deco>
+      <i class="swiss-signal"></i><i class="swiss-corner"></i>
+      <div class="swiss-cover">
+        <aside class="swiss-folio"><span>{{Edition}}<br />{{Date}}</span><strong>01</strong><span>{{Category}}</span></aside>
+        <main class="swiss-cover-copy">
+          <p class="eyebrow">{{Deck type}}</p>
+          <h1 class="hero">{{A precise}}<br /><em>{{editorial title}}</em></h1>
+          <p class="lead">{{A short subtitle aligned to the grid}}</p>
+        </main>
+      </div>
+    </section>
+
+    <section class="slide" data-page="content" data-section="{{Section}}" data-tag="{{Tag}}" data-no-deco>
+      <div class="swiss-content">
+        <header class="page-title"><div><p class="eyebrow">{{Context}}</p><h2 class="title">{{The system}}<br /><em>{{at a glance}}</em></h2><p class="lead">{{One concise framing sentence}}</p></div></header>
+        <div class="swiss-matrix">
+          <article class="swiss-cell"><span class="eyebrow">A / 01</span><strong>{{64%}}</strong><p class="text">{{Metric label}}</p></article>
+          <article class="swiss-cell"><span class="eyebrow">B / 02</span><strong>{{3.2×}}</strong><p class="text">{{Metric label}}</p></article>
+          <article class="swiss-cell"><span class="eyebrow">C / 03</span><h3 class="h3">{{Finding}}</h3><p class="text">{{One line of evidence}}</p></article>
+          <article class="swiss-cell"><span class="eyebrow">D / 04</span><h3 class="h3">{{Finding}}</h3><p class="text">{{One line of evidence}}</p></article>
         </div>
       </div>
     </section>
 
-    <!-- PAGE · content -->
-    <section class="slide" data-page="content" data-section="{{Section}}" data-tag="{{Tag}}">
-      <header class="page-title">
-        <h2 class="title">{{Title}}<br /><em>{{Highlight}}</em></h2>
-        <p class="lead">{{Optional lead}}</p>
-      </header>
-      <div class="slide-body">
-        <!-- drop components here -->
-        <div class="grid c3">
-          <div class="card soft"><p class="card-title">{{Card}}</p><p class="card-text">{{Text}}</p></div>
-          <div class="card soft tone-coral"><p class="card-title">{{Card}}</p><p class="card-text">{{Text}}</p></div>
-          <div class="card soft tone-mint"><p class="card-title">{{Card}}</p><p class="card-text">{{Text}}</p></div>
-        </div>
+    <section class="slide" data-page="split" data-section="{{Section}}" data-tag="{{Tag}}" data-no-deco>
+      <div class="swiss-split">
+        <aside class="swiss-split-index"><span class="eyebrow">Sequence</span><strong>03</strong><p class="small">{{A structured process}}</p></aside>
+        <main class="swiss-split-main">
+          <h2 class="title">{{From input}}<br /><em>{{to outcome}}</em></h2>
+          <div class="swiss-rows">
+            <div class="swiss-row"><span>01</span><b>{{First action}}</b><span>{{Owner}}</span></div>
+            <div class="swiss-row"><span>02</span><b>{{Second action}}</b><span>{{Owner}}</span></div>
+            <div class="swiss-row"><span>03</span><b>{{Final action}}</b><span>{{Owner}}</span></div>
+          </div>
+        </main>
       </div>
     </section>
 
-    <!-- PAGE · split -->
-    <section class="slide" data-page="split" data-section="{{Section}}" data-tag="{{Tag}}" data-tone="mint">
-      <div class="split">
-        <div class="split-copy">
-          <h2 class="title">{{Title}}<br /><em>{{Highlight}}</em></h2>
-          <p class="text">{{Two or three lines}}</p>
-          <ol class="steps v">
-            <li><h3>{{Step}}</h3><p>{{Text}}</p></li>
-            <li><h3>{{Step}}</h3><p>{{Text}}</p></li>
-          </ol>
-        </div>
-        <div class="window">
-          <div class="window-bar"><i></i><i></i><i></i></div>
-          <div class="window-body full">
-            <div class="window-main">
-              <p class="window-kicker">{{Screen label}}</p>
-              <p class="window-title">{{Screen title}}</p>
-              <div class="list-row"><div><b>{{Item}}</b><small>{{Detail}}</small></div><span class="status">{{Status}}</span></div>
-              <div class="list-row"><div><b>{{Item}}</b><small>{{Detail}}</small></div><span class="btn tone">{{Button}}</span></div>
-            </div>
+    <section class="slide" data-page="divider" data-section="Part" data-tone="brand" data-no-deco>
+      <div class="swiss-divider-layout"><div><p class="eyebrow">{{Part label}}</p><h1 class="hero">{{Section title}}</h1><p class="lead">{{One line that opens the chapter}}</p></div><p class="bignum">02</p></div>
+    </section>
+
+    <section class="slide" data-page="statement" data-section="{{Section}}" data-no-deco>
+      <div class="swiss-statement"><span></span><div><p class="eyebrow">{{Principle}}</p><p class="statement">{{One uncompromising}} <em>{{point of view}}</em></p></div><aside class="side-note">{{Evidence note}}<br />{{Source or date}}</aside></div>
+    </section>
+
+    <section class="slide" data-page="closing" data-section="Get started" data-no-deco>
+      <div class="swiss-close">
+        <div class="swiss-close-main">
+          <h2 class="title">{{Make the next}}<br /><em>{{move}}</em></h2>
+          <div class="swiss-actions">
+            <div class="swiss-action"><b>01</b><span><strong>{{Choose}}</strong><br />{{Short detail}}</span></div>
+            <div class="swiss-action"><b>02</b><span><strong>{{Build}}</strong><br />{{Short detail}}</span></div>
+            <div class="swiss-action"><b>03</b><span><strong>{{Review}}</strong><br />{{Short detail}}</span></div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- PAGE · divider (data-tone: brand, mint, coral, sky, ink) -->
-    <section class="slide" data-page="divider" data-section="Part" data-tone="brand">
-      <h1 class="hero">{{Section title}}</h1>
-      <p class="lead">{{One or two lines about this section}}</p>
-    </section>
-
-    <!-- PAGE · statement (add class="ink" for dark) -->
-    <section class="slide" data-page="statement" data-section="{{Section}}">
-      <p class="statement">{{One big message with an}} <em>{{emphasis}}</em></p>
-      <p class="lead">{{Optional supporting line}}</p>
-    </section>
-
-    <!-- PAGE · closing -->
-    <section class="slide" data-page="closing" data-section="Get started">
-      <h2 class="title" style="font-size: 80px">{{Line 1}}<br /><em>{{Highlighted line}}</em></h2>
-      <div class="slide-body">
-        <div class="grid c3">
-          <div class="card glass"><p class="card-kicker">{{STEP 1}}</p><p class="card-title">{{Title}}</p><p class="card-text">{{Text}}</p></div>
-          <div class="card glass"><p class="card-kicker">{{STEP 2}}</p><p class="card-title">{{Title}}</p><p class="card-text">{{Text}}</p></div>
-          <div class="card glass"><p class="card-kicker">{{CHECK}}</p><p class="card-title">{{Title}}</p><p class="card-text">{{Text}}</p></div>
-        </div>
-        <div class="row to-bottom">
-          <a class="cta" href="https://www.transcodes.io/booking">Book a demo →</a>
-          <span class="contact"><span>www.transcodes.io/booking</span><span>hello@bigstrider.co</span></span>
-        </div>
+        <div class="swiss-close-foot"><a class="cta" href="https://www.transcodes.io/booking">Book a demo →</a><span>www.transcodes.io/booking · hello@bigstrider.co</span></div>
       </div>
     </section>
 

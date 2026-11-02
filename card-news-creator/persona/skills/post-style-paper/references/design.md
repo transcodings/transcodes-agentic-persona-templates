@@ -1,6 +1,6 @@
 ---
 name: "Paper design"
-description: "Style 4 card news. Paper desk and Hanken Grotesk. Accent #E8762A, accent text #C9581C, paper #F3EEE4. Pair with style-4.html."
+description: "Style 4 card news. Paper desk and Hanken Grotesk. Accent #E8762A, accent text #C9581C, paper #F3EEE4. Pair with references/style.html."
 aliases:
   - "design 4"
   - "style 4"
@@ -11,9 +11,9 @@ aliases:
 
 # Paper design
 
-Style 4 is the paper-desk card news. The look comes from the Shorts videos (SEO · AEO Shorts v7). The master file is `style-4.html`. It holds six slides. Copy the `.card` whose `data-layout` matches the slide, together with the style block, into a file fixed at 1080×1350. When no brand is given, keep these values. When a brand is given, change only `--accent`, `--accent-text`, and the brand name in the header.
+Style 4 is the paper-desk card news. The look comes from the Shorts videos (SEO · AEO Shorts v7). The master file is `references/style.html`. It holds six slides. Copy the `.card` whose `data-layout` matches the slide, together with the style block, into a file fixed at 1080×1350. When no brand is given, keep these values. When a brand is given, change only `--accent`, `--accent-text`, and the brand name in the header.
 
-Use this pair only. Do not mix it with `style-1.html`, `style-2.html`, or `style-3.html`.
+Use this pair only. Do not mix it with `post-style-index`, `post-style-nocturne`, or `post-style-gallery`.
 
 ## Layouts
 
