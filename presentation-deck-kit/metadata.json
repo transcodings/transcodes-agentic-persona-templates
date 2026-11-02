@@ -5,8 +5,8 @@
     "en": "Presentation Deck Kit"
   },
   "summary": {
-    "ko": "Builds a 16:9 deck as one HTML file from the Deck Kit, then prints a PDF and, when asked, an editable PowerPoint.",
-    "en": "Builds a 16:9 deck as one HTML file from the Deck Kit, then prints a PDF and, when asked, an editable PowerPoint."
+    "ko": "Builds a 16:9 deck as HTML. A sample image can become the template. index.html shows the render, and yes prints the PDF and, when asked, PowerPoint.",
+    "en": "Builds a 16:9 deck as HTML. A sample image can become the template. index.html shows the render, and yes prints the PDF and, when asked, PowerPoint."
   },
   "suggestedName": "presentation-deck-kit",
   "aliases": [
@@ -27,7 +27,8 @@
       "persona/rules/deck-copy.md"
     ],
     "skills": [
-      "persona/skills/make-deck/SKILL.md"
+      "persona/skills/make-deck/SKILL.md",
+      "persona/skills/preview-from-sample/SKILL.md"
     ]
   },
   "knowledge": {
@@ -35,7 +36,8 @@
     "name": "deck kit",
     "description": "Page types, components, the blank deck, and the component catalog for a 16:9 deck.",
     "documents": [
-      "knowledge/deck-kit.md"
+      "knowledge/deck-kit.md",
+      "knowledge/design.md"
     ],
     "contents": [
       {

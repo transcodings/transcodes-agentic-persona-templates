@@ -51,6 +51,24 @@ These are the colors and the font for Transcodes card news. The look comes from 
 - No peach or sky-blue paper shapes in the background.
 - The only dark elements allowed are code blocks and the black cover.
 
+## When a sample sets the colors
+
+A reference image does not add new color names. Before the HTML template, write a `design.md` next to that template and fill this same role list from the sample. The template's `:root` is a copy of that file. A slide does not get its own hex.
+
+| Role | Take from the sample |
+|---|---|
+| `paper` | The largest background |
+| `box` | The panel. Use white when the sample has no panel |
+| `ink` | The main text. Darken it until it is at least 4.5:1 on `paper` and on `box` |
+| `ink-soft` | Secondary text. 4.5:1 on `paper`, or 3:1 when it is only used at 24px and up. Record which |
+| `accent` | The one highlight for lines, marks, and stamps |
+| `accent-text` | A darker shade of that highlight for words, 24px and up, at least 3:1 on `paper` |
+| `tape` | The label fill, and only when `ink` on it is at least 4.5:1. Otherwise keep `#F2DFAE` |
+| `night` | The dark cover, or `#0B0A09` when the sample has no dark slide |
+| `line` | `ink` at low opacity |
+
+Keep one accent moment per card. If the sample has more hues, drop them and name the dropped colors in `design.md`. A gradient becomes the flat token closest to its main stop. No glow or neon. When the sample names no font that can be loaded, keep Hanken Grotesk and say so.
+
 ## Type
 
 Use one font only: **Hanken Grotesk**. Code blocks are the one exception and use the system monospace font.

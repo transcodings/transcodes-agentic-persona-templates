@@ -5,8 +5,8 @@
     "en": "Card News Creator"
   },
   "summary": {
-    "ko": "Plans Instagram and LinkedIn card-news carousels, designs each slide in HTML, and renders PNG plus a LinkedIn PDF. One message per carousel, one job per slide.",
-    "en": "Plans Instagram and LinkedIn card-news carousels, designs each slide in HTML, and renders PNG plus a LinkedIn PDF. One message per carousel, one job per slide."
+    "ko": "Plans Instagram and LinkedIn card-news carousels. A sample image becomes the HTML template, index.html shows the render, and yes writes the PNG and LinkedIn PDF.",
+    "en": "Plans Instagram and LinkedIn card-news carousels. A sample image becomes the HTML template, index.html shows the render, and yes writes the PNG and LinkedIn PDF."
   },
   "suggestedName": "card-news-creator",
   "aliases": [
@@ -31,7 +31,8 @@
     ],
     "skills": [
       "persona/skills/create-card-news/SKILL.md",
-      "persona/skills/html-to-png/SKILL.md"
+      "persona/skills/html-to-png/SKILL.md",
+      "persona/skills/preview-from-sample/SKILL.md"
     ]
   },
   "knowledge": {

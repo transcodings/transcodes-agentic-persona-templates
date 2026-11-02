@@ -57,7 +57,7 @@ Page attributes:
 | Screens | `.window` (side nav, fields, rows, buttons), `.shot` for real screenshots |
 | Decoration | `i.deco` (`.circle .square .ring`, `.tl .tr .bl .br`, `--size`, `--turn`) |
 
-**Color:** add `.tone-brand / .tone-coral / .tone-sun / .tone-mint / .tone-sky / .tone-ink` to any component. Change the palette in `:root` inside the `<style id="deck-kit">` block.
+**Color:** the roles, the contrast, and how a sample fills them are in `design.md`. On a component, add `.tone-brand / .tone-coral / .tone-sun / .tone-mint / .tone-sky / .tone-ink`. The values live in `:root` inside the `<style id="deck-kit">` block.
 
 ## Rules
 

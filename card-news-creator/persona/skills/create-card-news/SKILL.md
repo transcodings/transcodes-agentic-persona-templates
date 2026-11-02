@@ -15,11 +15,12 @@ description: "Use when asked to plan, design, or produce a card news carousel fo
 3. Research every fact in primary sources. Open each page, confirm it supports the claim, and record the full URL.
 4. Write the page-by-page plan with the plan template below. Use this flow: cover → problem → cause or key explanation → solution → example or takeaway → CTA. Fill every cell. Never write "TBD".
 5. Read the takeaway sentences in order. They must tell one story from the hook to the CTA. Cut or merge any page that adds nothing. Then share the plan and wait for approval. Do not write any HTML until the user approves. Apply every change to the plan first.
-6. Build one HTML file per slide (slide-01.html, slide-02.html, …) by copying the Knowledge Base HTML whose description and keywords match that row. Change only the words. Keep the CSS, the 1080×1350 size, and the structure. Each slide must match its approved plan row.
-7. Render every slide with the html-to-png skill and create the preview sheet. Add `--pdf` when the carousel is for LinkedIn.
-8. Check the preview yourself: no title longer than two lines, no single word left alone on a line, no overlapping elements, no source block touching the footer, and no text running off the card. Fix the HTML and render again until it is clean.
-9. Do a final check: one core message, a cover hook that matches the body, no periods at the end of card sentences, every slide says its takeaway clearly, and a working source link for every fact. If any product or brand claim is unconfirmed, ask the user to confirm it.
-10. Deliver the HTML and PNG paths, the preview sheet, the PDF when needed, and a caption for each platform that lists the source links. Publish, schedule, or upload only when the user explicitly asks.
+6. Build one HTML file per slide (slide-01.html, slide-02.html, …). If the user gave a reference image, build the HTML the way preview-from-sample describes in its steps 1–4. Otherwise copy the Knowledge Base HTML whose description and keywords match that row, and change only the words. Each slide must match its approved plan row. Do not show index.html until step 7.
+7. Show index.html with the preview-from-sample skill and wait for yes. Do not render in this turn.
+8. On yes, render every slide with the html-to-png skill and create the preview sheet. Add `--pdf` when the carousel is for LinkedIn. Use the HTML the user just approved.
+9. Check the preview yourself: no title longer than two lines, no single word left alone on a line, no overlapping elements, no source block touching the footer, and no text running off the card. Fix the HTML, show index.html again, and render again only after the next yes.
+10. Do a final check: one core message, a cover hook that matches the body, no periods at the end of card sentences, every slide says its takeaway clearly, and a working source link for every fact. If any product or brand claim is unconfirmed, ask the user to confirm it.
+11. Deliver the HTML and PNG paths, the preview sheet, the PDF when needed, and a caption for each platform that lists the source links. Publish, schedule, or upload only when the user explicitly asks.
 
 # Plan template
 **Brief** — Core message (one sentence) · Audience · Goal · Platform · Brand (name, handle, accent, theme) · CTA · Slide count

@@ -6,10 +6,11 @@ description: "Use when HTML files such as card news slides need to be converted 
 # Prerequisites
 - Confirm the path to the HTML file or the folder that holds the HTML files.
 - Confirm the output size. If none is given, use the card news default of 1080×1350.
-- Python 3, Pillow (`pip install pillow`), and Google Chrome or Chromium must be installed. The templates load Google Fonts, so an internet connection is required.
+- Google Chrome or Chromium, and an internet connection so the templates can load Google Fonts. Pillow is installed with `pip install pillow` when the import fails.
+- Python 3 is not guaranteed to be installed. Check, and install it first when it is missing.
 
 # Steps
-1. Run scripts/render.py from this skill's folder.
+1. Check Python before the render script. Run `python3 --version`. If that fails, try `python --version` and use it only when it reports Python 3. If neither exists, install Python 3 and check again before you continue. macOS with Homebrew: `brew install python`. Windows: `winget install Python.Python.3.12`. Otherwise install Python 3 from python.org and say which installer you used. Then run scripts/render.py from this skill's folder.
    - Whole folder: `python3 scripts/render.py <folder> --sheet`
    - Selected files: `python3 scripts/render.py slide-01.html slide-02.html`
    - LinkedIn PDF: add `--pdf` to also write carousel.pdf, one page per slide in file name order

@@ -9,12 +9,12 @@ You do not invent a second slide system. The page types, components, and tokens 
 - A finished deck is its own HTML file, copied from `starter.html`. It keeps its own copy of the design, so later edits to `starter.html` do not change finished decks.
 
 # How we work
-- Read `deck-kit`, `starter.html`, and `catalog.html` before you design. If those files are missing, say so and stop. Do not recreate them from memory.
+- Read `design`, `deck-kit`, `starter.html`, and `catalog.html` before you design. If those files are missing, say so and stop. Do not recreate them from memory.
 - If the audience, the one message, or the output (PDF, PowerPoint, or both) is missing, ask. Use a short page plan and then build when the brief is enough.
-- Copy `starter.html` to a new HTML file. Leave `starter.html` and `catalog.html` unchanged unless the user asks to add a component to the kit itself.
+- Copy `starter.html` to a new HTML file. Leave `starter.html` and `catalog.html` unchanged unless the user asks to add a component to the kit itself. When the user gives a reference image, the preview-from-sample skill turns that image into the deck HTML, using the kit wherever it matches.
 - Choose page types, markup, attributes, and colors from the files you just read. Copy component markup from `catalog.html` into each page.
 - Set the deck-wide brand, URL, company, and logo the way `starter.html` already does. Add a logo only when the user gives a logo file.
-- Run `scripts/build-pdf.sh` with the new deck path and look at every page. Shorten copy that overflows. Run `scripts/build-pptx.sh` only when asked.
+- Show index.html and wait for yes before printing. Yes runs `scripts/build-pdf.sh` on that same HTML. Look at every page. Shorten copy that overflows. Run `scripts/build-pptx.sh` only when asked.
 - Do not invent metrics, customer names, prices, or claims. Ask when a slide needs a fact you do not have.
 
 # Output
