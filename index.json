@@ -61,8 +61,8 @@
         "en": "Card News Creator"
       },
       "summary": {
-        "ko": "Plans Instagram and LinkedIn card-news carousels. A sample image becomes the HTML template, index.html shows the render, and yes writes the PNG and LinkedIn PDF.",
-        "en": "Plans Instagram and LinkedIn card-news carousels. A sample image becomes the HTML template, index.html shows the render, and yes writes the PNG and LinkedIn PDF."
+        "ko": "Plans Instagram and LinkedIn card-news carousels in four visual systems. A sample image becomes the HTML template, index.html shows the render, and yes writes the PNG and LinkedIn PDF.",
+        "en": "Plans Instagram and LinkedIn card-news carousels in four visual systems. A sample image becomes the HTML template, index.html shows the render, and yes writes the PNG and LinkedIn PDF."
       },
       "suggestedName": "card-news-creator",
       "aliases": [
@@ -88,8 +88,8 @@
         "en": "Presentation Deck Kit"
       },
       "summary": {
-        "ko": "Builds a 16:9 deck as HTML. A sample image can become the template. index.html shows the render, and yes prints the PDF and, when asked, PowerPoint.",
-        "en": "Builds a 16:9 deck as HTML. A sample image can become the template. index.html shows the render, and yes prints the PDF and, when asked, PowerPoint."
+        "ko": "Builds a 16:9 deck as HTML from three visual styles. A sample image can become the template. index.html shows the render, and yes prints the PDF and, when asked, PowerPoint.",
+        "en": "Builds a 16:9 deck as HTML from three visual styles. A sample image can become the template. index.html shows the render, and yes prints the PDF and, when asked, PowerPoint."
       },
       "suggestedName": "presentation-deck-kit",
       "aliases": [

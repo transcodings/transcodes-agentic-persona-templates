@@ -5,8 +5,8 @@
     "en": "Presentation Deck Kit"
   },
   "summary": {
-    "ko": "Builds a 16:9 deck as HTML. A sample image can become the template. index.html shows the render, and yes prints the PDF and, when asked, PowerPoint.",
-    "en": "Builds a 16:9 deck as HTML. A sample image can become the template. index.html shows the render, and yes prints the PDF and, when asked, PowerPoint."
+    "ko": "Builds a 16:9 deck as HTML from three visual styles. A sample image can become the template. index.html shows the render, and yes prints the PDF and, when asked, PowerPoint.",
+    "en": "Builds a 16:9 deck as HTML from three visual styles. A sample image can become the template. index.html shows the render, and yes prints the PDF and, when asked, PowerPoint."
   },
   "suggestedName": "presentation-deck-kit",
   "aliases": [
@@ -49,6 +49,36 @@
         "file": "knowledge/catalog.html",
         "description": "Every page template and component, with the markup to copy into a deck.",
         "aliases": ["catalog", "components", "page template"]
+      },
+      {
+        "file": "knowledge/starter-1.html",
+        "description": "Blank 16:9 deck in Swiss Grid style: cream paper, black rules, red signal color, and square geometry.",
+        "aliases": ["starter 1", "swiss grid", "swiss editorial", "style 1"]
+      },
+      {
+        "file": "knowledge/catalog-1.html",
+        "description": "Page templates and components rendered in the matching Swiss Grid style.",
+        "aliases": ["catalog 1", "swiss grid components", "style 1 catalog"]
+      },
+      {
+        "file": "knowledge/starter-2.html",
+        "description": "Blank 16:9 deck in Night Console style: dark data-room surfaces, cyan signals, and technical geometry.",
+        "aliases": ["starter 2", "night console", "dark digital", "style 2"]
+      },
+      {
+        "file": "knowledge/catalog-2.html",
+        "description": "Page templates and components rendered in the matching Night Console style.",
+        "aliases": ["catalog 2", "night console components", "style 2 catalog"]
+      },
+      {
+        "file": "knowledge/starter-3.html",
+        "description": "Blank 16:9 deck in Paper Atelier style: warm paper, serif display type, and organic editorial forms.",
+        "aliases": ["starter 3", "paper atelier", "warm editorial", "style 3"]
+      },
+      {
+        "file": "knowledge/catalog-3.html",
+        "description": "Page templates and components rendered in the matching Paper Atelier style.",
+        "aliases": ["catalog 3", "paper atelier components", "style 3 catalog"]
       }
     ]
   }

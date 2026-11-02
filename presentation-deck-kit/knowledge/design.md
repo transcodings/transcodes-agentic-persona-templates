@@ -11,11 +11,23 @@ aliases:
 
 # Deck design
 
-Colors for a deck live here. `starter.html` implements this palette in `:root`. A slide uses the token names, not a one-off hex.
+Colors for a deck live here. Every starter implements the same token roles in `:root`; its skin changes typography, geometry, and page treatment. A slide uses the token names, not a one-off hex.
 
 Text needs 4.5:1. Large text, 24px and up, needs 3:1. A pair that fails is for shapes, not for words.
 
+## Built-in styles
+
+| Style | Files | Direction | Core palette |
+|---|---|---|---|
+| Swiss Grid | `starter-1.html`, `catalog-1.html` | Strict grid, uppercase display type, square cards, heavy rules | paper `#F4F1E8`, ink `#101010`, signal red `#E63B2E` |
+| Night Console | `starter-2.html`, `catalog-2.html` | Dark data room, monospace labels, thin borders, technical grid | paper `#07111F`, ink `#F1F6FF`, signal cyan `#35D8C0` |
+| Paper Atelier | `starter-3.html`, `catalog-3.html` | Warm editorial paper, serif display type, organic corners | paper `#F2EADC`, ink `#29251F`, brick `#A33F2B` |
+
+The original `starter.html` and `catalog.html` remain the neutral compatibility pair. Choose one matching pair and keep it together. The numbered skins change more than color: typography, border weight, radius, spacing, cover treatment, decoration, and catalog chrome are intentionally different.
+
 ## Neutrals
+
+The following values describe the original neutral compatibility pair. Numbered pairs override the values in their own skin block.
 
 | Token | Value | Used for |
 |---|---|---|
@@ -55,11 +67,11 @@ Each hue is a triple. `base` fills a shape. `deep` is the text and the darker ma
 - `sun` and `coral` are shapes and highlights. Their words use `ink` or `deep`.
 - `soft` is a footer or label color. It is not body text.
 - No `box-shadow`. No gradient text, glow, or neon.
-- Change a palette in the deck file's own `:root`. Leave `starter.html` and `catalog.html` unchanged unless the user asks to change the kit.
+- Change a palette in the deck file's own `:root`. Leave all starter/catalog source pairs unchanged unless the user asks to change the kit.
 
 ## When a sample sets the colors
 
-Before the deck HTML, write a `design.md` next to that deck and fill the roles from the sample. The deck's `:root` is a copy of that file.
+Before the deck HTML, write a `design.md` next to that deck and fill the roles from the sample. Start from the structurally closest built-in style. The deck's `:root` and skin adjustments are a copy of that file.
 
 | Role | Take from the sample |
 |---|---|
@@ -67,4 +79,4 @@ Before the deck HTML, write a `design.md` next to that deck and fill the roles f
 | `brand`, `brand-deep`, `brand-soft` | The main accent, a darker shade for words, and a light tint |
 | Next hues | Only hues the sample actually has, assigned in order to `coral`, `sun`, `mint`, `sky` |
 
-Each assigned hue still needs `base`, `deep`, and `soft`. A tone you do not assign keeps the kit default, and this deck does not use that `.tone-*` class. Record the contrast for every text pair, and name any sample color you dropped. If the sample names no font that can be loaded, keep General Sans and Pretendard and say so.
+Each assigned hue still needs `base`, `deep`, and `soft`. A tone you do not assign keeps the selected style's default, and this deck does not use that `.tone-*` class. Record the contrast for every text pair, and name any sample color you dropped. If the sample names no font that can be loaded, keep the selected style's fonts and say so.

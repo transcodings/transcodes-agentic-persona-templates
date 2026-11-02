@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080">
+<title>Style 2 · Nocturne</title>
+<!-- Style 2 · Nocturne · 1080x1350 · replace the words, keep the dark field, serif, gold rule, and folio -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,560;0,9..144,640;1,9..144,560&family=Outfit:wght@400;500;600&display=block');
+:root {
+  --paper: #100E0C;
+  --box: #1B1815;
+  --ink: #F6F1E8;
+  --muted: #C8B8A6;
+  --accent: #E0C27A;
+  --night: #100E0C;
+  --line: rgba(246,241,232,.24);
+  --display: 'Fraunces', Georgia, serif;
+  --font: 'Outfit', sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1080px; height:1350px; overflow:hidden; background:var(--paper); }
+.card {
+  position:relative; width:1080px; height:1350px; overflow:hidden;
+  background:var(--paper); color:var(--ink); font-family:var(--font);
+}
+.folio {
+  position:absolute; right:-20px; top:150px;
+  font:560 340px/0.8 var(--display); letter-spacing:-.06em; color:rgba(246,241,232,.07);
+}
+.top {
+  position:absolute; left:80px; right:80px; top:78px;
+  display:flex; justify-content:space-between;
+  font:500 18px/1 var(--font); letter-spacing:.22em; text-transform:uppercase; color:var(--muted);
+}
+.hairline { position:absolute; left:80px; right:80px; top:132px; height:1px; background:var(--line); }
+.kicker {
+  position:absolute; left:80px; top:188px;
+  font:500 18px/1 var(--font); letter-spacing:.2em; text-transform:uppercase; color:var(--accent);
+}
+h1 {
+  position:absolute; left:76px; top:300px; width:900px;
+  font:560 112px/0.96 var(--display); letter-spacing:-.035em;
+}
+h1 em { font-style:italic; font-weight:560; color:var(--accent); }
+.gold { position:absolute; left:0; right:0; top:1024px; height:2px; background:var(--accent); }
+.specs {
+  position:absolute; left:80px; right:80px; top:1068px;
+  display:grid; grid-template-columns:1.2fr .9fr .9fr; gap:36px;
+}
+.specs b {
+  display:block; margin-bottom:14px;
+  font:500 16px/1 var(--font); letter-spacing:.18em; text-transform:uppercase; color:var(--accent);
+}
+.specs span { display:block; font:500 30px/1.25 var(--font); }
+.foot {
+  position:absolute; left:80px; right:80px; bottom:58px;
+  display:flex; justify-content:space-between;
+  font:500 16px/1 var(--font); letter-spacing:.16em; text-transform:uppercase; color:var(--muted);
+}
+.source {
+  position:absolute; left:80px; right:80px; bottom:128px;
+  font:400 18px/1.4 var(--font); color:var(--muted); word-break:break-all;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <p class="folio">02</p>
+  <header class="top"><span>Transcodes</span><span>Nocturne</span></header>
+  <div class="hairline"></div>
+  <p class="kicker">A cover for the quiet claim</p>
+  <h1>The work<br>stays <em>after</em><br>the chat</h1>
+  <div class="gold"></div>
+  <div class="specs">
+    <div><b>Audience</b><span>Busy operators</span></div>
+    <div><b>Proof</b><span>One fact</span></div>
+    <div><b>Move</b><span>Keep reading</span></div>
+  </div>
+  <footer class="foot"><span>Transcodes</span><span>02 / 06</span></footer>
+</div>
+</body>
+</html>

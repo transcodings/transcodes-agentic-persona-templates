@@ -1,18 +1,30 @@
 ---
-name: "card news design"
-description: "Paper desk colors and Hanken Grotesk. Accent #E8762A, accent text #C9581C, paper #F3EEE4. Use these when no brand is given."
+name: "Paper design"
+description: "Style 4 card news. Paper desk and Hanken Grotesk. Accent #E8762A, accent text #C9581C, paper #F3EEE4. Pair with style-4.html."
 aliases:
-  - "design"
-  - "color"
-  - "font"
+  - "design 4"
+  - "style 4"
+  - "paper"
   - "hanken grotesk"
   - "accent"
-  - "paper"
 ---
 
-# card news design
+# Paper design
 
-These are the colors and the font for Transcodes card news. The look comes from the Shorts videos (SEO · AEO Shorts v7). All six templates (`paper-01-cover.html` to `paper-06-cover-black.html`) follow these rules. When no brand is given, keep these values. When a brand is given, change only `--accent`, `--accent-text`, and the brand name in the header.
+Style 4 is the paper-desk card news. The look comes from the Shorts videos (SEO · AEO Shorts v7). The master file is `style-4.html`. It holds six slides. Copy the `.card` whose `data-layout` matches the slide, together with the style block, into a file fixed at 1080×1350. When no brand is given, keep these values. When a brand is given, change only `--accent`, `--accent-text`, and the brand name in the header.
+
+Use this pair only. Do not mix it with `style-1.html`, `style-2.html`, or `style-3.html`.
+
+## Layouts
+
+| `data-layout` | Slide |
+|---|---|
+| `cover` | Opening hook |
+| `text` | A problem, cause, or explanation |
+| `score` | A before-and-after number |
+| `steps` | A short how-to |
+| `screen` | A real screen |
+| `cta` | The last slide, on the black cover |
 
 ## Colors
 

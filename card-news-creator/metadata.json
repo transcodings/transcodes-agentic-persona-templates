@@ -5,8 +5,8 @@
     "en": "Card News Creator"
   },
   "summary": {
-    "ko": "Plans Instagram and LinkedIn card-news carousels. A sample image becomes the HTML template, index.html shows the render, and yes writes the PNG and LinkedIn PDF.",
-    "en": "Plans Instagram and LinkedIn card-news carousels. A sample image becomes the HTML template, index.html shows the render, and yes writes the PNG and LinkedIn PDF."
+    "ko": "Plans Instagram and LinkedIn card-news carousels in four visual systems. A sample image becomes the HTML template, index.html shows the render, and yes writes the PNG and LinkedIn PDF.",
+    "en": "Plans Instagram and LinkedIn card-news carousels in four visual systems. A sample image becomes the HTML template, index.html shows the render, and yes writes the PNG and LinkedIn PDF."
   },
   "suggestedName": "card-news-creator",
   "aliases": [
@@ -38,40 +38,33 @@
   "knowledge": {
     "id": "card-news-layouts",
     "name": "card news layouts",
-    "description": "Paper desk HTML templates for card news slides. Copy the matching layout and change only the words.",
+    "description": "Card news templates in four systems: paper, Index, Nocturne, and Gallery. Copy one system and change only the words.",
     "documents": [
-      "knowledge/card-news-layouts/documents/design.md"
+      "knowledge/design-4.md",
+      "knowledge/design-1.md",
+      "knowledge/design-2.md",
+      "knowledge/design-3.md"
     ],
     "contents": [
       {
-        "file": "knowledge/card-news-layouts/contents/paper-01-cover.html",
-        "description": "Paper cover, 1080×1350. Use for the hook: tape label, title, subtitle, and a score box.",
-        "aliases": ["cover", "hook", "opening"]
+        "file": "knowledge/style-4.html",
+        "description": "Paper desk, 1080×1350. Six slides in one file: cover, text, score, steps, screen, and cta. Pair only with design-4.md. Copy the card whose data-layout matches the slide.",
+        "aliases": ["style 4", "paper", "cover", "text", "score", "steps", "screenshot", "screen", "cta"]
       },
       {
-        "file": "knowledge/card-news-layouts/contents/paper-02-text.html",
-        "description": "Paper text slide, 1080×1350. Use for a two-line headline and body copy.",
-        "aliases": ["text", "problem", "explanation"]
+        "file": "knowledge/style-1.html",
+        "description": "Index cover, 1080×1350. Cream field, black left rail, one red signal. Pair only with design-1.md.",
+        "aliases": ["style 1", "index", "editorial", "swiss"]
       },
       {
-        "file": "knowledge/card-news-layouts/contents/paper-03-score.html",
-        "description": "Paper score slide, 1080×1350. Use for a before-and-after number.",
-        "aliases": ["score", "before-after", "comparison"]
+        "file": "knowledge/style-2.html",
+        "description": "Nocturne cover, 1080×1350. Warm black field, serif title, antique gold rule. Pair only with design-2.md.",
+        "aliases": ["style 2", "nocturne", "dark", "serif"]
       },
       {
-        "file": "knowledge/card-news-layouts/contents/paper-04-steps.html",
-        "description": "Paper steps slide, 1080×1350. Use for a short how-to.",
-        "aliases": ["steps", "how-to", "process"]
-      },
-      {
-        "file": "knowledge/card-news-layouts/contents/paper-05-screen.html",
-        "description": "Paper screenshot slide, 1080×1350. Use when the slide shows a real screen in a browser frame.",
-        "aliases": ["screenshot", "screen", "demo"]
-      },
-      {
-        "file": "knowledge/card-news-layouts/contents/paper-06-cover-black.html",
-        "description": "CTA slide, 1080×1350. Black cover with one large accent word. Use for the last slide: what the reader should do next.",
-        "aliases": ["cta", "closing", "last-slide"]
+        "file": "knowledge/style-3.html",
+        "description": "Gallery cover, 1080×1350. Warm paper, cropped oxblood circle, italic serif. Pair only with design-3.md.",
+        "aliases": ["style 3", "gallery", "poster"]
       }
     ]
   }

@@ -1,6 +1,6 @@
 ---
 name: "Deck kit"
-description: "Page types, components, and tokens for a 16:9 deck. Copy starter.html, then snap catalog.html components into it."
+description: "Page types, components, tokens, and three visual styles for a 16:9 deck. Always use a matching starter/catalog pair."
 aliases:
   - "deck kit"
   - "page template"
@@ -15,23 +15,27 @@ A 16:9 deck is one HTML file at 1920×1080. Pick a page template, then snap comp
 
 | File | What it is |
 | --- | --- |
-| `starter.html` | Blank deck with one of each page type. Copy it to begin. It holds the master design |
-| `catalog.html` | Every page template and component, with the markup to copy |
+| `starter.html` / `catalog.html` | Original neutral kit, retained for compatibility |
+| `starter-1.html` / `catalog-1.html` | **Swiss Grid** — strict black rules, red signal color, square editorial geometry |
+| `starter-2.html` / `catalog-2.html` | **Night Console** — dark technical surfaces, cyan signals, compact data-room geometry |
+| `starter-3.html` / `catalog-3.html` | **Paper Atelier** — warm paper, serif display type, soft organic editorial forms |
+
+Choose one pair before planning pages. Use the style the user names. If they do not name one, choose the closest fit to the subject and audience and state the choice. A reference sample takes priority: pick the structurally closest pair, then adapt its tokens in the new deck. Never copy components from a differently numbered catalog.
 
 The print scripts live in the `make-deck` skill, not in this Knowledge Base.
 
 ## Page templates
 
-Every page is a `<section class="slide">` with `data-page`. The page script at the bottom of the file gives every page the same header, footer, and page number.
+Every page is a `<section class="slide">` with `data-page`. The page script at the bottom of the file gives every page the same header, footer, and page number. The six page purposes are shared, but their internal markup and composition are deliberately different in each numbered catalog. Copy the complete page composition from the selected catalog; do not rebuild it from a generic remembered structure.
 
-| `data-page` | Use | You write |
+| `data-page` | Use | Composition |
 | --- | --- | --- |
-| `cover` | First page | `.cover-main` → `.cover-copy` (hero, lead, chips) + any component |
-| `content` | Most pages | `.page-title` (title, lead) + `.slide-body` (components) |
-| `split` | Copy + visual | `.split` → `.split-copy` + any component. `.split.reverse` flips it |
-| `divider` | Section break | `.hero` + `.lead`. The big number is automatic |
-| `statement` | One big message | `.statement` + optional `.lead`. Add `class="slide ink"` for dark |
-| `closing` | Next steps | `.title` + `.slide-body` (glass cards, CTA) |
+| `cover` | First page | Signature opening composition from the selected style |
+| `content` | Most pages | Style-specific information architecture for evidence and metrics |
+| `split` | Copy + visual | Style-specific relationship between narrative and visual content |
+| `divider` | Section break | Signature chapter geometry; number may be automatic or placed by the composition |
+| `statement` | One big message | A single point of view in the selected style's framing device |
+| `closing` | Next steps | Style-specific invitation, actions, and contact |
 
 Page attributes:
 
@@ -61,16 +65,16 @@ Page attributes:
 
 ## Rules
 
-- Use components and tokens, not one-off styles. If something is missing, add it to the style block of `starter.html` and `catalog.html` so the next deck gets it too.
+- Use components and tokens, not one-off styles. If something is missing, add it to the matching starter/catalog pair so the next deck in that style gets it too.
 - No `box-shadow`. Chrome prints it as gray rectangles in the PDF.
 - No periods at the end of sentences.
 - Check every page in the PDF. Shorten copy if it overflows.
 
 ## Adding a component
 
-1. Add the styles to the `<style id="deck-kit">` block in both `starter.html` and `catalog.html` under Components, using `var(--c)`, `var(--c-soft)`, `var(--c-deep)` for color so tones work.
-2. Add a `<figure class="demo">` to `catalog.html` with the markup. The code panel and Copy button appear by themselves.
+1. Add the styles to the `<style id="deck-kit">` block in the matching starter/catalog pair under Components, using `var(--c)`, `var(--c-soft)`, `var(--c-deep)` for color so tones work.
+2. Add a `<figure class="demo">` to that pair's catalog with the markup. The code panel and Copy button appear by themselves.
 
 ## Changing the design
 
-`starter.html` holds the master copy of the design. A new deck copied from it carries its own copy, so later design changes do not touch finished decks. To update an existing deck, replace its `<style id="deck-kit">` block with the one from `starter.html`. Keep `catalog.html` in step the same way.
+Each starter holds the master copy of one design. A new deck copied from it carries its own copy, so later kit changes do not touch finished decks. To update an existing deck, replace its `<style id="deck-kit">` and `<style id="deck-skin-*">` blocks from the same starter style. Keep that style's catalog in step.
