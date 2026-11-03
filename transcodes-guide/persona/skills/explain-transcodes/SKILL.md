@@ -33,7 +33,7 @@ description: Give the product map — use when asked what Transcodes is, what a 
 
    One contrast line: same sentence, two Personas, two jobs. That is the value. A Marketer or Fullstack Developer Persona would answer a third way — say so only if they ask.
 
-3. After the example, explain only the part they asked. Do not recite the rest of the product. Order, when that part comes up:
+3. After the example, explain the part they asked, then keep going until they are installing a Persona and a linked Knowledge Base. Order:
    - Desktop app — the library. Sidebar: Personas, Knowledge Base, Organization, Settings.
    - Persona — Instruction, Guideline, Skill. Point back to the Designer and Planner fill-in above.
    - Knowledge Base — documents and contents with required keywords, linked to a Persona.
@@ -42,8 +42,8 @@ description: Give the product map — use when asked what Transcodes is, what a 
    - Organization — members, invites, plan. Standard for cloud and seats.
    - Plugin — Desktop Settings → Plugin → Install on each AI, restart that AI, then `/transcodes` (Claude, Cursor, Antigravity) or `$transcodes` (ChatGPT).
 4. Plans: Free is unlimited local Personas and Knowledge Bases, and local Apply. Standard is cloud sync, team invites, AI document summaries, and AI Persona edits. Standard is $6 per member per month. Do not invent another price.
-5. How To Use in the profile menu has seven chapters: confirm Apply, Persona parts, Knowledge Base, apply to agents, organization, versioning, plugin.
-6. If they have no project Apply yet, go to apply-persona next. Do not end on a map.
+5. How To Use in the profile menu has the same seven chapters, with videos. Mention it as a picture they can open later. Do not send them there instead of explaining.
+6. If they have no project Apply yet, walk apply-persona now: Persona, linked Knowledge Base, folder, AIs, Apply to Workspace. Do not end on a map.
 
 # Gotchas
 
@@ -53,5 +53,5 @@ description: Give the product map — use when asked what Transcodes is, what a 
 
 # Output
 
-**Deliverable** — One everyday request, spelled out for the Persona you are explaining, then the next action. Usually that is picking a workspace folder.
-**Done when** — They can say which role they want, whether they still need to Apply, and to which folder.
+**Deliverable** — One everyday request, spelled out for the Persona you are explaining, then the install path: that Persona, its Knowledge Base, the project folder, and Apply.
+**Done when** — They know which Persona and Knowledge Base to install, and which folder still needs Apply.

@@ -22,7 +22,7 @@ description: Create or edit a Persona in Desktop — use when asked to make, gen
 9. Save. Tell them the Persona is only in the Desktop library until Apply. Next skill is apply-persona. After that Apply, Improve Persona Instruction and Rules Automatically lets the project chat propose Instruction and Guideline changes. That path is tune-persona.
 
 # Gotchas
-- A template does not ship a Knowledge Base. Create documents in the Knowledge Base tab, then link.
+- Some templates already include a Knowledge Base. Link it, then Apply both. If the template has none, create the library in the Knowledge Base tab and link it before Apply.
 - Instruction is identity. Guideline is policy. Skill is a procedure.
 - Rename or delete in Desktop does not remove an already Applied copy. Apply again to replace it, or remove that Apply from the project if they meant to take it out.
 - If they will use it in a repo today, do not linger on polish. Apply a first version, then edit; a remembered folder auto-applies later saves.
