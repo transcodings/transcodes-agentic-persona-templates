@@ -39,5 +39,13 @@
       "persona/skills/install-plugin/SKILL.md",
       "persona/skills/use-plugin/SKILL.md"
     ]
+  },
+  "knowledge": {
+    "id": "guide-library",
+    "name": "guide library",
+    "description": "A sample document that shows what a Knowledge Base looks like and how to add the next file.",
+    "documents": [
+      "knowledge/sample.md"
+    ]
   }
 }

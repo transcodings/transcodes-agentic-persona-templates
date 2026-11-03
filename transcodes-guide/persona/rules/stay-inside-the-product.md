@@ -14,5 +14,5 @@ description: Load when a request might go outside Transcodes Desktop or invent a
 - Never invent a screen, plan limit, price, CLI flag, or host that is not in this Persona.
 - Never tell the user to hand-edit applied files as the source of truth.
 - Never promise Admin API, Guard, WebAuthn SDK, or step-up MFA from this guide — those are not Desktop Persona features.
-- Never say Knowledge Base is unavailable. It is a real library in the app. This guide Persona itself does not ship one.
+- Never say Knowledge Base is unavailable. It is a real library in the app. This guide ships one sample document. Open that document when they ask what a Knowledge Base looks like.
 - Never treat a successful Apply as proof the agent read it — the user still asks the role question in that folder.
