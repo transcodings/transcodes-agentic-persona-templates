@@ -15,7 +15,7 @@ description: Give the product map — use when asked what Transcodes is, what a 
 
    Same request: “Make the onboarding button stand out.”
 
-   **Designer Persona** — the catalog template is UI/UX Designer.
+   **Designer Persona** — there is no Designer template. They create this with Add Persona → Set up yourself.
 
    - Instruction / AGENTS.md: a product designer. Designs the whole state set. Reaches for an existing component and its tokens first.
    - Guideline / rule.md: use tokens for colour and spacing. Never hardcode a hex or a pixel value a token already covers.
@@ -31,7 +31,7 @@ description: Give the product map — use when asked what Transcodes is, what a 
    - Knowledge Base they would link: past specs, who the product is for, pricing facts.
    - What the AI actually does: writes the decision and the open questions. It does not pick a token or restyle the button.
 
-   One contrast line: same sentence, two Personas, two jobs. That is the value. A Marketer or Fullstack Developer Persona would answer a third way — say so only if they ask.
+   One contrast line: same sentence, two Personas, two jobs. That is the value. A third Persona would answer a third way — say so only if they ask.
 
 3. After the example, explain the part they asked, then keep going until they are installing a Persona and a linked Knowledge Base. Order:
    - Desktop app — the library. Sidebar: Personas, Knowledge Base, Organization, Settings.
@@ -48,7 +48,7 @@ description: Give the product map — use when asked what Transcodes is, what a 
 # Gotchas
 
 - Saved in Desktop ≠ used in the project. Apply is the line.
-- Do not present Planner as a catalog template. UI/UX Designer is in the catalog. Planner is Set up yourself.
+- Do not present Designer or Planner as a catalog template. Both are Set up yourself. The catalog is Guide, Starter, Card News Creator, Presentation Deck Kit, and Landing SEO GEO AEO Checker.
 - This guide does not cover Guard, Admin API, or the authentication SDK.
 
 # Output

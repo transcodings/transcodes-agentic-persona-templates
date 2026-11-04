@@ -40,12 +40,12 @@ Put them here, in the project root:
 
 For a Knowledge Base, copy `knowledge/` into the project and add the paths to `AGENTS.md`, so the agent reads those files before it answers. `aliases` in a document’s frontmatter, or on a content file in `metadata.json`, are the keywords that say when that file is needed.
 
-Example, the marketer:
+Example, the starter:
 
 ```text
-marketer/persona/AGENTS.md                          →  AGENTS.md
-marketer/persona/rules/brand-voice.md               →  .claude/rules/brand-voice.md
-marketer/persona/skills/campaign-brief/             →  .claude/skills/campaign-brief/
+starter/persona/AGENTS.md                           →  AGENTS.md
+starter/persona/rules/persona-growth.md             →  .claude/rules/persona-growth.md
+starter/persona/skills/handle-a-task/               →  .claude/skills/handle-a-task/
 ```
 
 Repeat the Guideline and Skill copies for each app you use. Open that project in the AI and ask the same check question.
@@ -56,17 +56,13 @@ Repeat the Guideline and Skill copies for each app you use. Open that project in
 | [starter](starter)                                         | A general Persona that does the task, then updates its Instruction and Rules. One sample document shows how to add a file to the Knowledge Base. |
 | [card-news-creator](card-news-creator)                     | Plans Instagram and LinkedIn card-news carousels in four visual systems. A sample image becomes the HTML template, index.html shows the render, and yes writes the PNG and LinkedIn PDF. |
 | [presentation-deck-kit](presentation-deck-kit)             | Builds a 16:9 deck as HTML from four template skills. A sample image can become the template. index.html shows the render, and yes prints the PDF and, when asked, PowerPoint. |
-| [caricature-artist](caricature-artist)                     | Redraws a photo as a caricature and checks the Knowledge Base for the requested style first.                       |
-| [landing-page-publisher](landing-page-publisher)           | Ships marketing pages: message-first copy, SEO metadata, and a mobile performance budget.                          |
 | [landing-seo-geo-aeo-checker](landing-seo-geo-aeo-checker) | Audits a landing site across technical SEO, relevance, authority, GEO, and AEO, then writes what to improve.       |
-| [fullstack-developer](fullstack-developer)                 | Implements features across API and UI in vertical slices, with a verification step on every change.                |
-| [ui-ux-designer](ui-ux-designer)                           | Reviews interfaces against the design system. Tokens over hardcoded values. Accessibility is required.             |
-| [marketer](marketer)                                       | Writes campaign and product copy in one brand voice, with every claim traceable.                                   |
-| [researcher](researcher)                                   | Reports findings with sources, confidence, and a line between evidence and inference.                              |
 
 ## Template format
 
 The app reads `index.json` and each folder’s `metadata.json`.
+
+`category` is a string array. The landing page keeps a row when any value matches the selected filter.
 
 `counts.knowledge` in `index.json` is the number of Knowledge Bases.
 

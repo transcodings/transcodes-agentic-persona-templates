@@ -17,6 +17,7 @@
     "deck-kit"
   ],
   "popular": true,
+  "category": ["content"],
   "developer": "Transcodes",
   "publisher": "Transcodes",
   "persona": {

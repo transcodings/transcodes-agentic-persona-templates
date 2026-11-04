@@ -9,29 +9,20 @@
     "en": "A general Persona that does the task you ask, then updates its Instruction and Rules as your preferences become clear. One sample document shows how to add a file to the Knowledge Base."
   },
   "suggestedName": "starter",
-  "aliases": [
-    "starter",
-    "blank",
-    "minimum"
-  ],
+  "aliases": ["starter", "blank", "minimum"],
   "popular": false,
+  "category": ["templates"],
   "developer": "Transcodes",
   "publisher": "Transcodes",
   "persona": {
     "instruction": "persona/AGENTS.md",
-    "rules": [
-      "persona/rules/persona-growth.md"
-    ],
-    "skills": [
-      "persona/skills/handle-a-task/SKILL.md"
-    ]
+    "rules": ["persona/rules/persona-growth.md"],
+    "skills": ["persona/skills/handle-a-task/SKILL.md"]
   },
   "knowledge": {
     "id": "starter-library",
     "name": "Starter library",
     "description": "A sample document that shows how to add a file to a Knowledge Base.",
-    "documents": [
-      "knowledge/how-to-add-a-file.md"
-    ]
+    "documents": ["knowledge/how-to-add-a-file.md"]
   }
 }

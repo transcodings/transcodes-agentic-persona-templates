@@ -18,6 +18,7 @@
     "plugin"
   ],
   "popular": true,
+  "category": ["templates"],
   "developer": "Transcodes",
   "publisher": "Transcodes",
   "persona": {
