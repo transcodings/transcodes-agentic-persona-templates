@@ -22,3 +22,10 @@ Each visual system is one Skill. Open that Skill and use only the files in its `
 | `ppt-style-neutral` | Original neutral kit | `references/starter.html` and `references/catalog.html` |
 
 Also read `references/deck-kit.md` and `references/design.md` inside the Skill you chose. Use one Skill for the whole deck. Do not mix Skills. Print from the `make-deck` skill.
+
+Two content files sit beside this document. They are samples, not page layouts.
+
+| File | What it is |
+| --- | --- |
+| `contents/sample-logo.png` | Sample logo. Use it when the brand gives no logo. |
+| `contents/sample-font.tiff` | Sample font specimen. Use it when the brand gives no font. |

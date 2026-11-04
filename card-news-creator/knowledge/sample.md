@@ -22,3 +22,10 @@ Each visual system is one Skill. Open that Skill and use only the files in its `
 | `post-style-paper` | Paper, the default | `references/design.md`, `references/style.html` |
 
 Use one Skill for the whole carousel. With no named style, use `post-style-paper`. Copy its HTML and change the words. Do not mix Skills.
+
+Two content files sit beside this document. They are samples, not layouts.
+
+| File | What it is |
+| --- | --- |
+| `contents/sample-logo.png` | Sample logo. Use it when the brand gives no logo. |
+| `contents/sample-font.tiff` | Sample font specimen. Use it when the brand gives no font. |

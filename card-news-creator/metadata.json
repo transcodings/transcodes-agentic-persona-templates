@@ -46,6 +46,18 @@
     "description": "How to choose one card-news template skill and copy the HTML in its references folder.",
     "documents": [
       "knowledge/sample.md"
+    ],
+    "contents": [
+      {
+        "file": "knowledge/contents/sample-logo.png",
+        "description": "Sample logo for card news. Use this mark when the brand gives no logo.",
+        "aliases": ["logo", "sample logo", "brand mark", "card news"]
+      },
+      {
+        "file": "knowledge/contents/sample-font.tiff",
+        "description": "Sample font specimen for card news. A TIFF of the display letters to use when no brand font is given.",
+        "aliases": ["font", "sample font", "tiff", "type specimen"]
+      }
     ]
   }
 }

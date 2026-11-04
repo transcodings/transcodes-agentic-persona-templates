@@ -42,6 +42,18 @@
     "description": "How to choose one deck template skill and copy the starter and catalog in its references folder.",
     "documents": [
       "knowledge/sample.md"
+    ],
+    "contents": [
+      {
+        "file": "knowledge/contents/sample-logo.png",
+        "description": "Sample logo for a deck. Use this mark when the brand gives no logo.",
+        "aliases": ["logo", "sample logo", "brand mark", "deck"]
+      },
+      {
+        "file": "knowledge/contents/sample-font.tiff",
+        "description": "Sample font specimen for a deck. A TIFF of the display letters to use when no brand font is given.",
+        "aliases": ["font", "sample font", "tiff", "type specimen"]
+      }
     ]
   }
 }
