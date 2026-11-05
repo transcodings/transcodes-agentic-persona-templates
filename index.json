@@ -154,6 +154,34 @@
         "skills": 2,
         "knowledge": 1
       }
+    },
+    {
+      "id": "security-audit",
+      "name": {
+        "ko": "Security Audit",
+        "en": "Security Audit"
+      },
+      "summary": {
+        "ko": "Audits a codebase for trust-boundary failures with Cloudflare's security-audit skill. It checks coverage, verifies each candidate independently, and reports only source-backed findings with the smallest fix.",
+        "en": "Audits a codebase for trust-boundary failures with Cloudflare's security-audit skill. It checks coverage, verifies each candidate independently, and reports only source-backed findings with the smallest fix."
+      },
+      "suggestedName": "security-audit",
+      "aliases": [
+        "security",
+        "audit",
+        "vulnerability",
+        "review",
+        "cloudflare"
+      ],
+      "popular": false,
+      "category": ["security"],
+      "developer": "Cloudflare",
+      "publisher": "Transcodes",
+      "counts": {
+        "rules": 4,
+        "skills": 1,
+        "knowledge": 0
+      }
     }
   ]
 }

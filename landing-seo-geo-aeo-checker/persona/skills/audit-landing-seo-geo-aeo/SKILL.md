@@ -17,7 +17,7 @@ description: "Audit a customer's landing site for Tier 1, Tier 2, Tier 3 SEO, GE
 5. For a site-wide request, inspect templates plus a representative sample: home, the target landing, one conversion page, one content page, and localized or parameterized variants when present. List the exact URLs sampled.
 6. Prioritize findings by customer impact, confidence, and effort. Put blockers before optimizations and separate quick wins from structural work.
 7. Save the completed checks as JSON. Do not put a score in that file. The report script calculates it. On every Fail, fill `what` and `how`.
-8. From this skill folder, run `python3 scripts/write_report_pdf.py <audit.json> --out <customer>-seo-geo-aeo-report.pdf`. Install `fpdf2` if the script asks for it. Pass `--font` only when it cannot find a Korean-capable font.
+8. Open the `seo-report-template` skill and run `python3 scripts/write_report_pdf.py <audit.json> --out <customer>-seo-geo-aeo-report.pdf` from that skill folder. Install `fpdf2` if the script asks for it. Pass `--font` only when it cannot find a Korean-capable font.
 9. Use the script's printed score, grade, coverage, and fix count in the reply. Show each score as a bar chart with the number on it. Do not invent or round a different score.
 10. Open the `seo-report-template` skill. Read `references/report-template.md` for the description and keywords, and copy `references/report-template.pdf`. Do not edit the files in that skill. Set `description` to `Overall {overall}/100 · SEO Tier 1 {tier1}/100 · SEO Tier 2 {tier2}/100 · SEO Tier 3 {tier3}/100 · GEO {geo}/100 · AEO {aeo}/100`. Set aliases to `seo`, `geo`, `aeo`, `overall-{overall}`, `seo-tier-1-{tier1}`, `seo-tier-2-{tier2}`, `seo-tier-3-{tier3}`, `geo-{geo}`, and `aeo-{aeo}`. A layer the script did not score is `0`. Save the PDF from this run in the linked Knowledge Base with that same description and those aliases.
 11. Stop after the PDF and that Knowledge Base update unless the user explicitly asked for implementation.
@@ -229,7 +229,7 @@ Write one object. `language` is `ko` or `en`. `layer` is `tier1`, `tier2`, `tier
 - Do not Fail a deliberate training-crawler opt-out. Fail a citation-crawler block only when the customer wants that engine to cite them.
 - Do not apply `FAQPage` merely because the page has questions. Use only markup that is applicable, supported, visible, and valid.
 - Do not compare customers against remembered rankings or remembered chatbot answers. Use live evidence or mark the comparison Unknown.
-- The readiness score belongs to `scripts/write_report_pdf.py`. A hand-written score is not the report.
+- The readiness score belongs to `seo-report-template/scripts/write_report_pdf.py`. A hand-written score is not the report.
 - A score without its graph is not a report. Use the PDF graphs, and repeat the same values in the reply as a bar chart.
 - A Fail without both `what` and `how` is incomplete. Name the element, the change, and the check that proves it.
 
