@@ -58,7 +58,7 @@ Repeat the Guideline and Skill copies for each app you use. Open that project in
 | [presentation-deck-kit](presentation-deck-kit)             | Builds a 16:9 deck as HTML from four template skills. A sample image can become the template. index.html shows the render, and yes prints the PDF and, when asked, PowerPoint. |
 | [landing-page-builder](landing-page-builder)               | Collects the complete brief, presents a production plan for approval, then builds and visually verifies a cinematic landing page. |
 | [landing-seo-geo-aeo-checker](landing-seo-geo-aeo-checker) | Audits a landing site across technical SEO, relevance, authority, GEO, and AEO, then writes what to improve.       |
-| [security-audit](security-audit)                           | Audits a codebase for trust-boundary failures with Cloudflare's security-audit skill, then reports source-backed findings and the smallest fix. |
+| [security-audit](security-audit)                           | Audits a codebase for trust-boundary failures with Cloudflare's security-audit skill, then writes the source-backed findings and the smallest fix into a PDF. |
 
 ## Template format
 

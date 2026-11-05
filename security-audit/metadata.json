@@ -5,8 +5,8 @@
     "en": "Security Audit"
   },
   "summary": {
-    "ko": "Audits a codebase for trust-boundary failures with Cloudflare's security-audit skill. It checks coverage, verifies each candidate independently, and reports only source-backed findings with the smallest fix.",
-    "en": "Audits a codebase for trust-boundary failures with Cloudflare's security-audit skill. It checks coverage, verifies each candidate independently, and reports only source-backed findings with the smallest fix."
+    "ko": "Audits a codebase for trust-boundary failures with Cloudflare's security-audit skill. It checks coverage, verifies each candidate independently, and writes the source-backed findings and the smallest fix into a PDF.",
+    "en": "Audits a codebase for trust-boundary failures with Cloudflare's security-audit skill. It checks coverage, verifies each candidate independently, and writes the source-backed findings and the smallest fix into a PDF."
   },
   "suggestedName": "security-audit",
   "aliases": [
@@ -29,7 +29,8 @@
       "persona/rules/smallest-source-fix.md"
     ],
     "skills": [
-      "persona/skills/security-audit/SKILL.md"
+      "persona/skills/security-audit/SKILL.md",
+      "persona/skills/security-report-template/SKILL.md"
     ]
   }
 }
