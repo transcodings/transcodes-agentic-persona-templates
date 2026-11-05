@@ -56,6 +56,7 @@ Repeat the Guideline and Skill copies for each app you use. Open that project in
 | [starter](starter)                                         | A general Persona that does the task, then updates its Instruction and Rules. One sample document shows how to add a file to the Knowledge Base. |
 | [card-news-creator](card-news-creator)                     | Plans Instagram and LinkedIn card-news carousels in four visual systems. A sample image becomes the HTML template, index.html shows the render, and yes writes the PNG and LinkedIn PDF. |
 | [presentation-deck-kit](presentation-deck-kit)             | Builds a 16:9 deck as HTML from four template skills. A sample image can become the template. index.html shows the render, and yes prints the PDF and, when asked, PowerPoint. |
+| [landing-page-builder](landing-page-builder)               | Collects the complete brief, presents a production plan for approval, then builds and visually verifies a cinematic landing page. |
 | [landing-seo-geo-aeo-checker](landing-seo-geo-aeo-checker) | Audits a landing site across technical SEO, relevance, authority, GEO, and AEO, then writes what to improve.       |
 
 ## Template format

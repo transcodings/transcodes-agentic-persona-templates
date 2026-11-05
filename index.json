@@ -97,6 +97,34 @@
       }
     },
     {
+      "id": "landing-page-builder",
+      "name": {
+        "ko": "Landing Page Builder",
+        "en": "Landing Page Builder"
+      },
+      "summary": {
+        "ko": "Asks for the complete brief, presents a production plan for approval, then builds and visually verifies a cinematic landing page.",
+        "en": "Asks for the complete brief, presents a production plan for approval, then builds and visually verifies a cinematic landing page."
+      },
+      "suggestedName": "landing-page-builder",
+      "aliases": [
+        "landing",
+        "landing-page",
+        "hero",
+        "website",
+        "motionsites"
+      ],
+      "popular": true,
+      "category": ["content", "landing"],
+      "developer": "Transcodes",
+      "publisher": "Transcodes",
+      "counts": {
+        "rules": 3,
+        "skills": 1,
+        "knowledge": 1
+      }
+    },
+    {
       "id": "landing-seo-geo-aeo-checker",
       "name": {
         "ko": "Landing SEO GEO AEO Checker",
@@ -123,7 +151,7 @@
       "publisher": "Transcodes",
       "counts": {
         "rules": 4,
-        "skills": 1,
+        "skills": 2,
         "knowledge": 1
       }
     }

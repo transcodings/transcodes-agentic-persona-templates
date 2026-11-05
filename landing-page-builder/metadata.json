@@ -1,0 +1,42 @@
+{
+  "id": "landing-page-builder",
+  "name": {
+    "ko": "Landing Page Builder",
+    "en": "Landing Page Builder"
+  },
+  "summary": {
+    "ko": "Asks for the complete brief, presents a production plan for approval, then builds and visually verifies a cinematic landing page.",
+    "en": "Asks for the complete brief, presents a production plan for approval, then builds and visually verifies a cinematic landing page."
+  },
+  "suggestedName": "landing-page-builder",
+  "aliases": [
+    "landing",
+    "landing-page",
+    "hero",
+    "website",
+    "motionsites"
+  ],
+  "popular": true,
+  "category": ["content", "landing"],
+  "developer": "Transcodes",
+  "publisher": "Transcodes",
+  "persona": {
+    "instruction": "persona/AGENTS.md",
+    "rules": [
+      "persona/rules/brief-and-approval-gate.md",
+      "persona/rules/spec-before-build.md",
+      "persona/rules/knowledge-assets-first.md"
+    ],
+    "skills": [
+      "persona/skills/motionsites-web-builder/SKILL.md"
+    ]
+  },
+  "knowledge": {
+    "id": "landing-page-assets",
+    "name": "Landing page assets",
+    "description": "Approved logos, design guides, fonts, images, videos, and reusable artifacts used as the primary source for landing pages.",
+    "documents": [
+      "knowledge/sample.md"
+    ]
+  }
+}
